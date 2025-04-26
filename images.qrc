@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/player">
+        <file>Images/player/哥玛兽.png</file>
+        <file>Images/player/跳跃.png</file>
+        <file>Images/player/滑铲.png</file>
+    </qresource>
+    <qresource prefix="/BackGround">
+        <file>Images/BackGround/beijing1.png</file>
+        <file>Images/BackGround/地面块.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix1"/>
+</RCC>
