@@ -7,6 +7,8 @@ ApplicationWindow {
     width: Screen.width
     height: Screen.height
     visible: true
+    visibility: Window.FullScreen
+
     title: "天天跑酷"
 
     StackView {
@@ -15,7 +17,6 @@ ApplicationWindow {
         anchors.fill: parent
     }
 
-    //开始菜单
     Component {
         id: mainMenu
         MainMenu {}

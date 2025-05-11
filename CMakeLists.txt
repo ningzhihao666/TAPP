@@ -18,7 +18,7 @@ qt_add_qml_module(apptiantiankupao
     QML_FILES Player.qml
     QML_FILES ObstacleGenerator.qml
     QML_FILES GameControlPanel.qml
-    QML_FILES CollisionDetector.qml
+    QML_FILES
     QML_FILES CoinGenerator.qml
     RESOURCES images.qrc
     RESOURCES android/gradle/gradlew.bat
@@ -28,7 +28,9 @@ qt_add_qml_module(apptiantiankupao
     RESOURCES android/gradle/gradle.properties
     RESOURCES android/gradle/wrapper/gradle-wrapper.properties
     RESOURCES android/gradle/wrapper/gradle-wrapper.jar
-    QML_FILES Grounds.qml
+    QML_FILES
+    QML_FILES Page_jiesuan.qml
+    QML_FILES Page_begin.qml
 )
 
 target_compile_features(apptiantiankupao PRIVATE cxx_std_20)
@@ -59,15 +61,10 @@ install(TARGETS apptiantiankupao
 set_target_properties(
     apptiantiankupao   #目标名称
     PROPERTIES
-    QT_ANDROID_PACKAGE_SOURCE_DIR    #指定Android平台打包使用的资源目录
+    QT_ANDROID_PACKAGE_SOURCE_DIR           #指定Android平台打包使用的资源目录
     "${CMAKE_SOURCE_DIR}/android/gradle"    #构建时会从该目录下复制所有资源文件
-                                     #放在最后生成的APK文件中，覆盖QT默认生成的Android配置
+                                            #放在最后生成的APK文件中，覆盖QT默认生成的Android配置
 )
-
-
-
-
-
 
 
 

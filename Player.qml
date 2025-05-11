@@ -5,72 +5,70 @@ import QtQuick.Window
 
 Item {
     id: player
-    width: Screen.width/12
-    height: Screen.height/7
 
-    property bool jumping: false
-    property bool sliding: false
+    property var run_images:["qrc:/player/Images/player/跑动1.png",
+                             "qrc:/player/Images/player/跑动2.png",
+                             "qrc:/player/Images/player/跑动3.png",
+                             "qrc:/player/Images/player/跑动4.png",
+                             "qrc:/player/Images/player/跑动5.png",
+    ]
+
+    //"qrc:/player/Images/player/滑铲1.png",
+    //"qrc:/player/Images/player/跳跃1.png",
+    //"qrc:/player/Images/player/跳跃2.png",
+
+    property int currentImage: 3
+    property bool isJumping: false
+    property bool isSliding: false
+    property bool isDowning: false
+
+    property bool gameRunning:false
+    property bool zhengxiang:true              //正向
+    property bool isSiding:false
+
+    width: Screen.width/12
+    height:Screen.height/6
 
     Image {
-        source: "qrc:/player/Images/player/哥玛兽.png"
+        id:play_img
+        source: "qrc:/player/Images/player/跑动4.png"
         anchors.fill: parent
-    }
+        fillMode: Image.PreserveAspectFit
 
-    // 跳跃动画
-    SequentialAnimation on y {
-        id: jumpAnimation
-        running: false
-        NumberAnimation {
-            from: player.y
-            to: player.y - 150
-            duration: 300
-            easing.type: Easing.OutQuad
-        }
-        NumberAnimation {
-            from: player.y - 150
-            to: player.y
-            duration: 300
-            easing.type: Easing.InQuad
-        }
-        onFinished: jumping = false
-    }
-
-    // 滑动动画
-    ParallelAnimation {
-        id: slideAnimation
-        running: false
-        NumberAnimation {
-            target: player
-            property: "height"
-            from: 80
-            to: 40
-            duration: 200
-        }
-        NumberAnimation {
-            target: player
-            property: "y"
-            from: player.y
-            to: player.y + 40
-            duration: 200
-        }
-        onFinished: {
-            sliding = false
-            player.height = 80
-            player.y = player.y - 40
-        }
-    }
-
-    function jump() {
-        if (!jumping && !sliding) {
-            jumping = true
-            jumpAnimation.start()
-        }
-    }
-
-    function slide() {
-        if (!jumping && !sliding) {
-            sliding = true
-            slideAnimation.start()
+        //跑动,跳跃，滑铲图片转化
+        Timer{
+            interval:100
+            repeat:true
+            running:gameRunning
+            onTriggered: {
+                console.log("当前高度为：",height)
+                console.log("当前宽度为:",width)
+                //切换到下一帧
+                if(isSliding){
+                    play_img.source="qrc:/player/Images/player/滑铲1.png"
+                }
+                else if(isJumping){
+                    play_img.source="qrc:/player/Images/player/跳跃1.png"
+                }
+                else if(isDowning){
+                    play_img.source="qrc:/player/Images/player/跳跃2.png"
+                }
+                else{
+                    if(zhengxiang){
+                        currentImage=(currentImage+1)%run_images.length
+                        if(currentImage===0){
+                            zhengxiang=false
+                            currentImage=3
+                        }
+                    }
+                    else{
+                        currentImage-=1
+                        if(currentImage===0)
+                            zhengxiang=true
+                    }
+                    play_img.source=run_images[currentImage]
+                }
+            }
         }
     }
 }

@@ -3,10 +3,27 @@
         <file>Images/player/哥玛兽.png</file>
         <file>Images/player/跳跃.png</file>
         <file>Images/player/滑铲.png</file>
+        <file>Images/player/金枪小帅.png</file>
+        <file>Images/player/跳跃2.png</file>
+        <file>Images/player/跑动1.png</file>
+        <file>Images/player/跑动2.png</file>
+        <file>Images/player/跑动3.png</file>
+        <file>Images/player/跑动4.png</file>
+        <file>Images/player/跑动5.png</file>
+        <file>Images/player/跳跃1.png</file>
+        <file>Images/player/页面图.png</file>
+        <file>Images/player/滑铲1.png</file>
     </qresource>
     <qresource prefix="/BackGround">
         <file>Images/BackGround/beijing1.png</file>
-        <file>Images/BackGround/地面块.png</file>
+        <file>Images/BackGround/金币.png</file>
+        <file>Images/BackGround/地面块1.png</file>
+        <file>Images/BackGround/天天酷跑.jpg</file>
+        <file>Images/BackGround/封面图.jpg</file>
+        <file>Images/BackGround/结算背景.jpg</file>
+        <file>Images/BackGround/结算面板.png</file>
+        <file>Images/BackGround/历史排行榜.png</file>
+        <file>Images/BackGround/背景2.jpg</file>
     </qresource>
     <qresource prefix="/new/prefix1"/>
 </RCC>

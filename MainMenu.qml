@@ -6,6 +6,11 @@ import QtQuick.Controls 2.15
 Rectangle {
     color: "#f0f0f0"
 
+    Image{
+        source:"qrc:/BackGround/Images/BackGround/天天酷跑.jpg"
+        anchors.fill:parent
+    }
+
     Column {
         anchors.centerIn: parent
         spacing: 20
@@ -13,25 +18,31 @@ Rectangle {
         Text {
             text: "天天跑酷"
             font.pixelSize: 36
+            font.family: "Arial"
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         Button {
+            background: Rectangle{ color:"white";  radius:5}
             text: "开始游戏"
-            onClicked: stackView.push(gameScreen)
+            onClicked: stackView.push("Page_begin.qml")
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         Button {
+            background: Rectangle{ color:"white";   radius:5}
             text: "设置"
-            // 打开设置界面
+            onClicked: stackView.push("Page_jiesuan.qml")
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         Button {
+            background: Rectangle{ color:"white";   radius:5}
             text: "退出"
             onClicked: Qt.quit()
             anchors.horizontalCenter: parent.horizontalCenter
         }
     }
+
+
 }
