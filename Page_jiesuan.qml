@@ -145,7 +145,10 @@ Page{
             Label{text:"重新开始"; color:"black"; anchors.centerIn: parent}
             onClicked: {
                 console.log("按钮被点击")
-                stackView.replace("Page_begin.qml")
+                stackView.replace("Page_begin.qml",{
+                                  "current_Score":score,
+                                  "current_Distance":distance
+                                  })
             }
         }
     }

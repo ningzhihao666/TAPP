@@ -37,12 +37,12 @@ Item {
 
         //跑动,跳跃，滑铲图片转化
         Timer{
-            interval:100
+            interval:80
             repeat:true
             running:gameRunning
             onTriggered: {
-                console.log("当前高度为：",height)
-                console.log("当前宽度为:",width)
+                //console.log("当前高度为：",height)
+                //console.log("当前宽度为:",width)
                 //切换到下一帧
                 if(isSliding){
                     play_img.source="qrc:/player/Images/player/滑铲1.png"

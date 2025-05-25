@@ -25,5 +25,14 @@
         <file>Images/BackGround/历史排行榜.png</file>
         <file>Images/BackGround/背景2.jpg</file>
     </qresource>
-    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/musics">
+        <file>musics/两难.mp3</file>
+        <file>musics/跳楼机.mp3</file>
+    </qresource>
+    <qresource prefix="/obstacle">
+        <file>Images/obstacle/墙.png</file>
+        <file>Images/obstacle/小怪物.png</file>
+        <file>Images/obstacle/地刺.png</file>
+        <file>Images/obstacle/弹簧.png</file>
+    </qresource>
 </RCC>
