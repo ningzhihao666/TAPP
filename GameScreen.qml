@@ -29,7 +29,6 @@ Page {
     property bool no_change_ground:true                         //该地面块无变化
     property bool ground_hasBigGap:false                        //具有长空缺
     property var  tanhuang_ground:({})                          //具有弹簧的地面块
-    property bool tanhuang_active:false                         //弹簧启动
 
     //——————————————————————————————————玩家属性———————————————————————————————————
     property int  player_normal_x:sc_x*30                       //玩家初始x坐标
@@ -43,7 +42,7 @@ Page {
 
     //_________滑铲__________
     property int  player_slide_height:Screen.height/9.5         //人物滑铲高度
-    property int  player_slide_width:Screen.width/8             //人物滑铲宽度
+    property int  player_slide_width:Screen.width*0.11          //人物滑铲宽度
     property bool isSliding:false                               //是否滑铲
     property bool need_slide:false                              //是否需要滑铲
     property bool mustSlide:false                               //锁定滑铲状态
@@ -72,10 +71,14 @@ Page {
     //——————————————————————————————————奖励关卡———————————————————————————————————
     property int  energy_max:100                                //100的满格能量
     property int  current_energy:0                              //当前能量
+    property bool goto_bonusLevel:false                         //进入奖励关卡
+    property string background_original_img:"qrc:/BackGround/Images/BackGround/beijing1.png"       //原始背景图
+    property string background_bonusLevel_img:"qrc:/bonus_level/Images/bonus_level/奖励关卡背景图.jpg"     //奖励关卡背景图
 
     // 游戏背景
     Image {
-        source: "qrc:/BackGround/Images/BackGround/beijing1.png"
+        id:background_img
+        source: background_original_img
         anchors.fill: parent
     }
 
@@ -89,10 +92,33 @@ Page {
     ListModel{ id:activeGrounds }          //地面块容器
     ListModel{ id:activeCoins }            //金币容器
 
+    //资源加载器
+    Loader{
+        id:loader
+        anchors.fill:parent
+        z:100
+    }
+
+    //奖励关卡
+    Component{
+        id:bonus_level
+        Bonus_level{
+            score:gameScreen.score
+            distance: gameScreen.distance
+            speed:gameScreen.speed
+            coin_num:gameScreen.coin_num
+            gameRunning:gameScreen.goto_bonusLevel
+            onShuxingChange:{
+                gameScreen.score=newScore
+                gameScreen.distance=newDistance
+                gameScreen.coin_num=newCoinNum
+            }
+        }
+    }
 
     Component.onCompleted: {
         var is_initGround=true          //该条件用于初始化时地面的高度不产生变化
-        //初始化地面
+        //初始化地面y
         for(var i=0;i<10;i++){
             generateGround(i*ground_width,is_initGround)
         }
@@ -188,7 +214,7 @@ Page {
     }
 
     function end_slide(){
-        if(!isJumping && isSliding && !mustSlide){
+        if(!isJumping && isSliding){
             isSliding=false
             player_height=player_normal_height
             player_width=player_normal_width
@@ -511,7 +537,7 @@ Page {
     Timer{
         id:tanhuang_jishi
         interval:1000
-        running:tanhuang_active
+        running:false
         repeat:false
         onTriggered:{
             gameScreen.speed-=1
@@ -530,6 +556,7 @@ Page {
         speed:gameScreen.speed
         ground_hasBigGap:gameScreen.ground_hasBigGap
         tanhuang_ground:gameScreen.tanhuang_ground
+        goto_bonusLevel:gameScreen.goto_bonusLevel
 
         //传入人物属性
         player_normal_x:gameScreen.player_normal_x
@@ -555,10 +582,6 @@ Page {
             gameScreen.speed+=1
             gameScreen.jump_top*=1.5
             gameScreen.jump()
-            tanhuang_active=true
-            console.log("触发次数:I")
-            console.log("jump_top",gameScreen.jump_top)
-            console.log("speed",gameScreen.speed)
             tanhuang_jishi.start()
         }
         onReadyTanhuang:  {  gameScreen.ground_hasBigGap=false}
@@ -646,14 +669,42 @@ Page {
 
     //增加能量
     function add_energy(){
-        if(energy_du.width<Screen.width*0.3){
-            energy_du.width+=Screen.width*0.003
-            gameScreen.current_energy+=1
+        if(!goto_bonusLevel){
+            if(energy_du.width<Screen.width*0.3){
+                energy_du.width+=Screen.width*0.003
+                gameScreen.current_energy+=1
+            }
+            //进入奖励关卡，同时进度清0
+            else{
+                energy_du.width=0
+                gameScreen.current_energy=0
+                start_BonusLevel()
+            }
         }
-        //进入奖励关卡，同时进度清0
-        else{
-            energy_du.width=0
-            gameScreen.current_energy=0
+    }
+
+    //开始奖励关卡
+    function start_BonusLevel(){
+        if(!goto_bonusLevel){
+            goto_bonusLevel=true
+            gameScreen.gameRunning=false
+            //销毁地面块、障碍物、原始金币
+            for(var j=0;j<activeCoins.count; j++) {  activeCoins.remove(j)  }
+            obstacle_generator.destory_obstacle()
+            loader.sourceComponent=bonus_level
+            jiangli.start()
+        }
+    }
+
+    Timer{
+        id:jiangli
+        repeat:false
+        running:false
+        interval: 10000
+        onTriggered: {
+            goto_bonusLevel=false
+            loader.sourceComponent=null
+            gameScreen.gameRunning=true
         }
     }
 }

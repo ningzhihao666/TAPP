@@ -35,4 +35,11 @@
         <file>Images/obstacle/地刺.png</file>
         <file>Images/obstacle/弹簧.png</file>
     </qresource>
+    <qresource prefix="/bonus_level">
+        <file>Images/bonus_level/地面图层1.png</file>
+        <file>Images/bonus_level/地面图层2.png</file>
+        <file>Images/bonus_level/地面图层4.png</file>
+        <file>Images/bonus_level/奖励关卡背景图.jpg</file>
+    </qresource>
+    <qresource prefix="/new/prefix1"/>
 </RCC>

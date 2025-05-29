@@ -32,7 +32,7 @@ Rectangle {
         Button {
             background: Rectangle{ color:"white";   radius:5}
             text: "设置"
-            onClicked: stackView.push("Page_jiesuan.qml")
+            onClicked: stackView.push("Bonus_level.qml")
             anchors.horizontalCenter: parent.horizontalCenter
         }
 

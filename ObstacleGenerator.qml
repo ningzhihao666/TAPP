@@ -11,6 +11,7 @@ Item {
     property int  speed                                      //游戏速度
     property bool ground_hasBigGap:false                     //具有长空缺(用于弹簧逻辑)
     property var  tanhuang_ground:({})                       //具有弹簧的地面块
+    property bool goto_bonusLevel:false                      //进入奖励关卡
 
     //传入角色参数
     property int  player_x                                   //人物X坐标
@@ -90,7 +91,7 @@ Item {
     //障碍物生成计时器
     Timer {
         interval: 500
-        running: obstacleGenerator.gameRunning
+        running: obstacleGenerator.gameRunning &&!goto_bonusLevel
         repeat: true
         onTriggered: {
             generateObstacle()
@@ -256,6 +257,12 @@ Item {
                 }
             }
         }
+    }
+
+    //障碍物销毁，用于奖励关卡调用
+    function destory_obstacle(){
+        for(var i=0;i<active_obstacles.count;i++){  active_obstacles.remove(i)  }
+        for(var j=0;j<active_tanhuang.count;j++){   active_tanhuang.remove(j)  }
     }
 
     Component {
