@@ -514,14 +514,57 @@ Page{
         score: bonus_level.score
         distance:bonus_level.distance
         gameRunning: bonus_level.gameRunning
-        onStartGame: bonus_level.gameRunning = true
-        onPauseGame: bonus_level.gameRunning = false
+        onPauseGame: gamePauseDialog.open()
     }
 
     function gameOver() {
         is_Dead=true
         gameRunning = false
         gameOverDialog.open()
+    }
+
+    //游戏暂停弹窗
+    Dialog {
+        id: gamePauseDialog
+        height:Screen.height*3/5
+        width:Screen.width*3/5
+        title: "游戏暂停"
+        modal:true
+        dim:true             //添加半透明黑色遮罩
+        closePolicy:Popup.NoAutoClose       //禁止点击外部关闭
+        anchors.centerIn: parent
+
+        Rectangle{
+            height:parent.height*0.3
+            width:parent.width*0.3
+            border.width:1
+            radius:5
+            anchors{
+                bottom:parent.bottom
+                bottomMargin:parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
+
+            Button{
+                background: Rectangle{color:"transparent"}
+                anchors.fill:parent
+                Label{text:"结算"; color:"black"; anchors.centerIn: parent}
+                onClicked: {
+                    stackView.replace("Page_jiesuan.qml",{
+                        "distance":distance/16,
+                        "score":score,
+                        "coins_num":coin_num,
+                    })
+                    gameOverDialog.close()
+                }
+            }
+        }
+
+        Label {
+            text: "你的得分: " + score
+            color:"black"
+            anchors.centerIn: parent
+        }
     }
 
     //能量条

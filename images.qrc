@@ -15,7 +15,6 @@
         <file>Images/player/滑铲1.png</file>
     </qresource>
     <qresource prefix="/BackGround">
-        <file>Images/BackGround/beijing1.png</file>
         <file>Images/BackGround/金币.png</file>
         <file>Images/BackGround/地面块1.png</file>
         <file>Images/BackGround/天天酷跑.jpg</file>
@@ -24,6 +23,12 @@
         <file>Images/BackGround/结算面板.png</file>
         <file>Images/BackGround/历史排行榜.png</file>
         <file>Images/BackGround/背景2.jpg</file>
+        <file>Images/BackGround/砖石.png</file>
+        <file>Images/BackGround/游戏主页面背景.jpg</file>
+        <file>Images/BackGround/积分.png</file>
+        <file>Images/BackGround/距离.png</file>
+        <file>Images/BackGround/暂停.png</file>
+        <file>Images/BackGround/暂停面板背景.jpg</file>
     </qresource>
     <qresource prefix="/musics">
         <file>musics/两难.mp3</file>
@@ -41,5 +46,14 @@
         <file>Images/bonus_level/地面图层4.png</file>
         <file>Images/bonus_level/奖励关卡背景图.jpg</file>
     </qresource>
-    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/daoju">
+        <file>Images/daoju/变大.png</file>
+        <file>Images/daoju/磁铁.png</file>
+        <file>Images/daoju/箱子.png</file>
+        <file>Images/daoju/X2.png</file>
+    </qresource>
+    <qresource prefix="/boss_level">
+        <file>Images/boss_level/地砖.png</file>
+        <file>Images/boss_level/手里剑.png</file>
+    </qresource>
 </RCC>

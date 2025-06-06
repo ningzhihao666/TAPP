@@ -14,40 +14,51 @@ Page{
 
     property int  current_Score:0                               //当前得分
     property int  current_Distance:0                            //当前距离
-    property var  history_Scores:[]                              //历史得分
-    property var  history_Distances:[]                           //历史距离
+
+    //本地存储数据
+    property string historyScores:"0,0,0"                       //历史前三得分
+    property string historyDistance:"0,0,0"                     //历史前三距离
+    property int coin_num:0                                     //金币数量
+    property int masonry_num:0                                  //砖石数量
+
+    // 转换为数组的只读属性
+    property var history_Scores: historyScores.split(',').map(Number)
+    property var history_Distances: historyDistance.split(',').map(Number)
+
 
     //设置存储
     Settings{
         id:gameSettings
         category:"GameRecords"
 
-        property var history_Scores:page_begin.history_Score
-        property var history_Distances:page_begin.history_Distance
+        property alias historyScores:page_begin.historyScores
+        property alias historyDistance:page_begin.historyDistance
     }
 
     //初始化历史记录
     Component.onCompleted: {
-        if(!history_Scores || history_Scores.length ===0){
-            history_Scores=[0,0,0]
-            history_Distances=[0,0,0]
-            gameSettings.sync()
-        }
         if(current_Distance){
-            console.log("current_distance=",current_Distance)
             saveRecord(current_Score,current_Distance)
         }
     }
 
     //保存新记录
     function saveRecord(score,distance){
-        //更新得分
-        var newScore=history_Scores.concat(score).sort((a,b)=> b-a).slice(0,3)
-        history_Scores=newScore
+        //转化字符串为数组
+        var scoreArray=historyScores.split(',').map(Number)
+        var distanceArray=historyDistance.split(',').map(Number)
 
-        //更新距离
-        var newDistance=history_Distances.concat(score).sort((a,b)=> b-a).slice(0,3)
-        history_Distances=newDistance
+        //更新记录
+        scoreArray.push(score)
+        distanceArray.push(distance)
+
+        //排序保留前三
+        scoreArray.sort((a,b)=>b-a)
+        distanceArray.sort((a,b)=>b-a)
+
+        //更新字符串属性
+        historyScores=scoreArray.slice(0,3).join(',')
+        historyDistance=distanceArray.slice(0,3).join(',')
 
         gameSettings.sync()
     }
@@ -140,6 +151,67 @@ Page{
         }
     }
 
+    //金币容器
+    Rectangle{
+        id:coin_list
+        height:Screen.height*0.05;    width:Screen.width*0.13
+        border.width:1;     color:"lightblue"
+        radius:Screen.height*0.02
+        anchors{
+            left:mianban.right;  leftMargin: parent.width*0.05
+            top:parent.top;      topMargin:parent.height*0.05
+        }
+
+        Image{
+            id:coin_l
+            height:parent.height*0.8;  width:height
+            anchors{
+                left:parent.left;  leftMargin:parent.width*0.05
+                verticalCenter: parent.verticalCenter
+            }
+            source:"qrc:/BackGround/Images/BackGround/金币.png"
+        }
+
+        Rectangle{
+            width:parent.width*0.6; height:parent.height*0.8; border.width:1
+            anchors{
+                left:coin_l.right;  leftMargin: parent.width*0.04
+                verticalCenter: parent.verticalCenter
+            }
+            Label{text:coin_num;  color:"black";  anchors.centerIn:parent  }
+        }
+    }
+
+    //砖石容器
+    Rectangle{
+        height:Screen.height*0.05;    width:Screen.width*0.13
+        border.width:1;     color:"lightblue"
+        radius:Screen.height*0.02
+        anchors{
+            left:coin_list.right;  leftMargin: parent.width*0.05
+            top:parent.top;      topMargin:parent.height*0.05
+        }
+
+        Image{
+            id:zhuanshi_l
+            height:parent.height*0.8;  width:height
+            anchors{
+                left:parent.left;  leftMargin:parent.width*0.05
+                verticalCenter: parent.verticalCenter
+            }
+            source:"qrc:/BackGround/Images/BackGround/砖石.png"
+        }
+
+        Rectangle{
+            width:parent.width*0.6; height:parent.height*0.8; border.width:1
+            anchors{
+                left:zhuanshi_l.right;  leftMargin: parent.width*0.04
+                verticalCenter: parent.verticalCenter
+            }
+            Label{text:coin_num;  color:"black";  anchors.centerIn:parent  }
+        }
+    }
+
     //角色展示
     Rectangle{
         id:juese
@@ -182,7 +254,9 @@ Page{
             background: Rectangle{color:"yellow"; border.width:1; radius:5}
             Label{text:"开始游戏"; color:"black"; anchors.centerIn: parent}
             onClicked: {
-                stackView.replace("GameScreen.qml")
+                stackView.replace("GameScreen.qml",{
+                                  "gameRunning":true
+                                  })
             }
         }
     }

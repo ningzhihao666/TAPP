@@ -1,7 +1,8 @@
-//Player.qml    角色逻辑判定
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Window
+
+//人物角色页面
 
 Item {
     id: player

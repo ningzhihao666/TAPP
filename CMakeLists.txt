@@ -27,6 +27,7 @@ qt_add_qml_module(apptiantiankupao
     RESOURCES android/res/values/libs.xml
     QML_FILES ObstacleGenerator.qml
     QML_FILES Bonus_level.qml
+    QML_FILES Boss_level.qml
 )
 
 target_compile_features(apptiantiankupao PRIVATE cxx_std_20)

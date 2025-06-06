@@ -72,8 +72,23 @@ Page {
     property int  energy_max:100                                //100的满格能量
     property int  current_energy:0                              //当前能量
     property bool goto_bonusLevel:false                         //进入奖励关卡
-    property string background_original_img:"qrc:/BackGround/Images/BackGround/beijing1.png"       //原始背景图
+    property string background_original_img:"qrc:/BackGround/Images/BackGround/游戏主页面背景.jpg"       //原始背景图
     property string background_bonusLevel_img:"qrc:/bonus_level/Images/bonus_level/奖励关卡背景图.jpg"     //奖励关卡背景图
+
+    //—————————————————————————————————道具属性————————————————————————————————————
+    property real attractPower: 1.0                             //吸引力强度系数
+    property bool isAttracting: false                           //吸引力激活状态
+    property bool doublePointsActive: false                     //双倍积分激活状态
+    property int  baseScoreRate:20                              //基础得分系数
+
+    property bool isEnlarged: false                             //是否变大状态标志
+    property int  player_enlarge_slide_height:(Screen.height/9.5)*1.5           //人物初始滑铲高度
+    property int  player_enlarge_slide_width:(Screen.width/8) *1.5            //人物初始滑铲宽度
+    property int  doublePointsRemaining: 0
+
+    property bool isShielded: false                             //护盾激活状态标志
+    property int  shieldRemaining: 0                            //护盾剩余时间
+    property var shieldVisual: null                             //正确定义shieldVisual 为游戏屏幕的属性
 
     // 游戏背景
     Image {
@@ -132,13 +147,17 @@ Page {
     //更新地面位置
     function generateGround(startX,is_initGround){
         var hasGap=Math.random()>0.75           //设立25%的概率为空缺
-        var hasChange=Math.random()>0.9        //设立10%的概率为高度变化
-        var obstacle=Math.random()>0.9         //设置10%概率生成障碍物
-        var change_height=Math.random()>0.5    //设立50%的概率变高，为了让变化高度都要在10以上
-        var generate_coin =false               //是否有金币生成
-        var keep_ground=0                      //用于标记障碍物后面地面块变化
-        var is_longGround=Math.random()>0.5    //50%概率为长地面块
+        var hasChange=Math.random()>0.9         //设立10%的概率为高度变化
+        var obstacle=Math.random()>0.9          //设置10%概率生成障碍物
+        var change_height=Math.random()>0.5     //设立50%的概率变高，为了让变化高度都要在10以上
+        var generate_coin =false                //是否有金币生成
+        var keep_ground=0                       //用于标记障碍物后面地面块变化
+        var is_longGround=Math.random()>0.5     //50%概率为长地面块
         var current_width=ground_width
+
+        //标记生成箱子或者障碍物
+        var spawn_obstacle=false                //生成箱子
+        var spawn_daoju=false                   //生成道具箱子
 
         if(!is_initGround){
             if(!hasGap){
@@ -164,6 +183,8 @@ Page {
             }
         }
 
+        if(Math.random()>0.5) spawn_obstacle=true
+        else spawn_daoju=true
 
         var newX=startX !==undefined? startX:(activeGrounds.count>0?activeGrounds.get(activeGrounds.count-1).x+activeGrounds.get(activeGrounds.count-1).width:0)
 
@@ -171,10 +192,12 @@ Page {
         "x":newX,
         "width":current_width,
         "height":Screen.height/3,
-        "top":groundheight,                   //用于判定地面的顶端
+        "top":groundheight,                    //用于判定地面的顶端
         "hasGap":hasGap,
         "generate_coin":generate_coin,
-        "is_longGround":is_longGround         //是否为长地面块
+        "is_longGround":is_longGround,         //是否为长地面块
+        "spawn_obstacle":spawn_obstacle,       //允许生成箱子
+        "spawn_daoju":spawn_daoju              //允许生成道具
         });
 
         if(hasGap)     //恢复地面高度
@@ -208,16 +231,28 @@ Page {
     function begin_slide(){
         if(!isJumping && !isSliding){
             isSliding=true
-            player_height=player_slide_height
-            player_width=player_slide_width
+              if(isEnlarged){
+                  player_height=player_enlarge_slide_height
+                  player_width=player_enlarge_slide_width
+            }
+            else{
+               player_height=player_slide_height
+               player_width=player_slide_width
+              }
         }
     }
 
     function end_slide(){
-        if(!isJumping && isSliding){
+        if(!isJumping && isSliding && !mustSlide){
             isSliding=false
-            player_height=player_normal_height
-            player_width=player_normal_width
+            if(isEnlarged){
+                player_height=player_normal_height*1.5
+                player_width=player_normal_width*1.5
+            }
+            else{
+                player_height=player_normal_height
+                player_width=player_normal_width
+            }
         }
     }
 
@@ -293,18 +328,20 @@ Page {
         }
     }
 
-    //连续空缺检测
+    //速度计时器
     Timer{
         interval:20000     //20s速度+1
         running:gameRunning&&!is_Dead
         repeat:true
         onTriggered:{
-            if(speed!==max_speed)
+            if(speed!==max_speed){
                 speed+=1
+                gravity+=sc_y*0.1
+            }
         }
     }
 
-    //速度计时器
+    //连续空缺检测
     Timer{
         interval:1000     //1s检测一次
         running:gameRunning&&!is_Dead
@@ -523,8 +560,10 @@ Page {
         score: gameScreen.score
         distance:gameScreen.distance
         gameRunning: gameScreen.gameRunning
-        onStartGame: gameScreen.gameRunning = true
-        onPauseGame: gameScreen.gameRunning = false
+        onPauseGame: {
+            gameScreen.gameRunning=false
+            gamePauseDialog.open()
+        }
     }
 
     function gameOver() {
@@ -588,25 +627,375 @@ Page {
         onAddEnergy:      {  gameScreen.add_energy()          }
     }
 
+    //——————————————————————————————道具模块——————————————————————————————
+    DaojuGenerator {
+        id: daojugenerator
+
+        speed:gameScreen.speed
+        running: gameScreen.gameRunning
+        parent: gameScreen
+        anchors.fill: parent
+        activeGrounds: activeGrounds
+    }
+
+    DaojuDetector {
+        id: daojuDetector
+        player: player
+        daojus: daojugenerator.daojus  // 绑定到 DaojuGenerator 的 ListModel
+        onDaojuCollected: gameScreen.activateDoublePoints(5000)
+        onAttractActivated: gameScreen.handleAttractEffect(5000)
+        onEnlargeActivated: gameScreen.activateEnlargeEffect(5000)
+        onShieldActivated:gameScreen.activateShieldEffect(5000)
+        onObstacleHit: gameOver()
+    }
+
+    // 新增双倍积分计时器
+    Timer {
+        id: doublePointsTimer
+        interval: 1000  // 每秒更新
+        repeat: true
+        onTriggered: {
+            doublePointsRemaining = Math.max(0, doublePointsRemaining - 1000)
+            if (doublePointsRemaining <= 0) {
+                doublePointsActive = false
+            }
+        }
+    }
+    function activateDoublePoints(duration) {
+        // 如果已有双倍效果，时间累加但不超过10秒
+        const maxDuration = 10000
+        doublePointsRemaining = Math.min(maxDuration, doublePointsRemaining + duration)
+
+        // 保证计时器运行
+        if (!doublePointsTimer.running) {
+            doublePointsTimer.start()
+        }
+
+        // 强制激活状态
+        doublePointsActive = true
+    }
+
+    function addScore(points) {
+        score += doublePointsActive ? points * 2 : points // 实际翻倍逻辑应在此类函数中实现[7](@ref)
+    }
+
+    //双倍积分提示动画
+    Label {
+        id: doublePointsIndicator
+        visible: doublePointsActive
+        text: "双倍积分！剩余: " + (doublePointsRemaining/1000) + "秒"
+        color: "#FFD700"  // 金色
+        font.bold: true
+        font.pixelSize: 24
+        anchors {
+            top: parent.top
+            horizontalCenter: parent.horizontalCenter
+            topMargin: 20
+        }
+        // 添加闪烁效果
+        SequentialAnimation on opacity {
+            running: doublePointsActive
+            loops: Animation.Infinite
+            NumberAnimation { to: 0.5; duration: 500 }
+            NumberAnimation { to: 1.0; duration: 500 }
+        }
+    }
+
+    //吸引力激活特效
+    Rectangle {
+        visible: isAttracting
+        width: Screen.width*0.1
+        height: width
+        radius: width/2
+        color: "#00FF0022"
+        border.color: "#00FF00"
+        border.width: 3
+        anchors.centerIn: player
+
+        // 脉冲动画
+        SequentialAnimation on scale {
+            running: isAttracting
+            loops: Animation.Infinite
+            NumberAnimation { to: 1.5; duration: 1000; easing.type: Easing.OutQuad }
+            NumberAnimation { to: 1.0; duration: 1000; easing.type: Easing.InQuad }
+        }
+    }
+
+    //磁铁处理器
+    function handleAttractEffect(duration) {
+        // 1. 启动吸引力计时器
+        isAttracting = true
+        attractPower = 1.0
+        //启动持续时间和衰减效果
+        attractTimer.interval = duration
+        attractTimer.start()
+        // 启动金币移动
+        attractMovementTimer.start()
+        //吸引力衰减动画
+        attractDecayAnimation.start()
+        // 在吸引力激活时播放音效
+        //attractSound.play()
+    }
+
+    //磁铁计时器
+    Timer {
+        id: attractTimer
+        onTriggered: {
+            isAttracting = false
+            console.log("吸引力效果结束")
+        }
+    }
+
+    // 金币移动控制
+    Timer {
+        id: attractMovementTimer
+        interval: 16
+        running: isAttracting
+        repeat: true
+        onTriggered:attractCoins()
+    }
+
+    //磁体处理函数
+    function attractCoins() {
+        if (!isAttracting || activeCoins.count === 0) return
+
+        // 使用玩家中心点坐标
+        const playerCenter = Qt.point(
+            player.x + player.width/2,
+            player.y + player.height/2
+        )
+
+        // 优化遍历方式（从后往前遍历）
+        for (let i = activeCoins.count - 1; i >= 0; i--) {
+               const coin = activeCoins.get(i)
+               if (!coin) continue
+
+        // 计算相对位置（考虑吸引力强度系数）
+        const dx = (playerCenter.x - (coin.x + coin.width/2)) * attractPower
+        const dy = (playerCenter.y - (coin.y + coin.height/2)) * attractPower
+        // 动态调整移动速度（距离越近速度越快）
+        const distance = Math.sqrt(dx*dx + dy*dy)
+        const speedFactor = Math.min(1, 150/(distance + 30))
+
+        // 更新位置（增加边界判断gameScreen）
+        coin.x = Math.max(0, coin.x + dx * 0.25 * speedFactor)
+         coin.y = Math.max(0, coin.y + dy * 0.25 * speedFactor)
+        }
+    }
+
+    // 新增吸引力衰减动画
+    SequentialAnimation {
+        id: attractDecayAnimation
+        alwaysRunToEnd: true
+
+        NumberAnimation {
+            target: gameScreen
+            property: "attractPower"
+            from: 1.0
+            to: 0.2
+            duration: attractTimer.interval
+            easing.type: Easing.InQuad
+        }
+
+        onFinished: {
+            isAttracting = false
+
+        }
+    }
+
+    //磁铁动画
+    Item {
+        visible: gameScreen.isAttracting
+        anchors.centerIn: player
+
+        // 引力场波纹
+        Repeater {
+            model: 3
+            delegate: Rectangle {
+                width: 100 * index
+                height: width
+                radius: width/2
+                color: "transparent"
+                border.color: Qt.rgba(0,1,0, 0.5 - index*0.15)
+                opacity: 0.7
+
+                NumberAnimation on width {
+                    from: 50
+                    to: 300
+                    duration: 1500
+                    loops: Animation.Infinite
+                    easing.type: Easing.OutQuad
+                }
+
+                NumberAnimation on opacity {
+                    from: 0.7
+                    to: 0
+                    duration: 1500
+                    loops: Animation.Infinite
+                    easing.type: Easing.InQuad
+                }
+            }
+        }
+    }
+
+    //变大处理函数
+    function activateEnlargeEffect(duration) {
+        // 如果已经处于变大状态，则直接返回
+        if (isEnlarged) {
+            console.log("玩家已处于变大状态，忽略本次触发")
+            return;
+        }
+
+        isEnlarged = true  // 标记为变大状态
+
+        // 启动放大动画
+        enlargeAnim.start()
+
+        // 设置还原定时器
+        enlargeRestoreTimer.interval = duration-500
+        enlargeRestoreTimer.start()
+    }
+
+    //变大动画
+    ParallelAnimation {
+        id: enlargeAnim
+        running: false
+        NumberAnimation {
+            target: player
+            property: "width"
+            from: gameScreen.player_width
+            to: gameScreen.player_width * 1.5
+            duration: 50
+            easing.type: Easing.OutBack
+        }
+        NumberAnimation {
+            target: player
+            property: "height"
+            from: gameScreen.player_height
+            to: gameScreen.player_height * 1.5
+            duration: 50
+            easing.type: Easing.OutBack
+        }
+        onStopped: {
+            gameScreen.player_width = gameScreen.player_normal_width * 1.5;
+            gameScreen.player_height = gameScreen.player_normal_height * 1.5;
+            console.log(player.x,player.y,player.height,player.width)
+            if(gameScreen.isSliding){
+                gameScreen.player_width = gameScreen.player_enlarge_slide_width;
+                gameScreen.player_height = gameScreen.player_enlarge_slide_height;
+            }
+
+            var ground = get_CurrentGround();
+        }
+    }
+
+    //变大计时器
+    Timer {
+        id: enlargeRestoreTimer
+        onTriggered: {
+            console.log("开始恢复，已等待:", interval, "ms")
+            // 先停止可能正在进行的放大动画
+            if(enlargeAnim.running) {
+                enlargeAnim.stop()
+                gameScreen.player_width = gameScreen.player_width * 1.5;
+                gameScreen.player_height = gameScreen.player_height * 1.5;
+            }
+            shrinkAnim.start()
+        }
+    }
+
+    //缩小动画
+    ParallelAnimation {
+        id: shrinkAnim
+        NumberAnimation {
+            target: gameScreen
+            property: "player_width"
+            to: gameScreen.player_normal_width
+            duration: 200
+            easing.type: Easing.InOutQuad
+        }
+        NumberAnimation {
+            target: gameScreen
+            property: "player_height"
+            to: gameScreen.player_normal_height
+            duration: 200
+            easing.type: Easing.InOutQuad
+        }
+        onStopped: {
+
+            if(gameScreen.isSliding){
+                gameScreen.player_width = gameScreen.player_slide_width;
+                gameScreen.player_height = gameScreen.player_slide_height;
+            }
+            else{
+                gameScreen.player_width = gameScreen.player_normal_width;
+                gameScreen.player_height = gameScreen.player_normal_height;
+            }
+
+            var ground = get_CurrentGround();
+            //player.y = ground.top - gameScreen.player_height;  // 更新 y 坐标
+            isEnlarged = false;
+        }
+    }
+
+
+    // 护盾效果视觉表现
+    Rectangle {
+        id: shieldEffect
+        visible: gameScreen.isShielded
+        width: Screen.width * 0.15
+        height: width
+        radius: width / 2
+        color: "#00BFFF22"  // 护盾颜色，带有透明度
+        border.color: "#00BFFF"  // 护盾边框颜色（亮蓝色）
+        border.width: 3
+        anchors.centerIn: player
+
+        // 脉冲动画
+        SequentialAnimation on scale {
+            running: gameScreen.isShielded
+            loops: Animation.Infinite
+            NumberAnimation { to: 1.3; duration: 1000; easing.type: Easing.OutQuad }
+            NumberAnimation { to: 1.0; duration: 1000; easing.type: Easing.InQuad }
+        }
+    }
+
+    // 函数：激活护盾效果
+    function activateShieldEffect(duration) {
+        // 启动护盾计时器
+        isShielded = true
+        shieldTimer.interval = duration
+        shieldTimer.start()
+
+    }
+
+    // 护盾计时器
+    Timer {
+        id: shieldTimer
+        onTriggered: {
+            gameScreen.isShielded = false
+            console.log("护盾效果结束")
+        }
+    }
+
 
     //游戏结束弹窗
     Dialog {
         id: gameOverDialog
-        height:Screen.height*3/5
-        width:Screen.width*3/5
+        height:Screen.height*3/5;   width:Screen.width*3/5
         title: "游戏结束"
         modal:true
-        dim:true             //添加半透明黑色遮罩
         closePolicy:Popup.NoAutoClose       //禁止点击外部关闭
-
+        Image{
+            source:"qrc:/BackGround/Images/BackGround/暂停面板背景.jpg"
+            anchors.fill:parent
+        }
 
         anchors.centerIn: parent
 
         Rectangle{
-            height:parent.height*0.3
-            width:parent.width*0.3
-            border.width:1
-            radius:5
+            height:parent.height*0.3;  width:parent.width*0.3;  color:"lightgreen"
+            border.width:1;   radius:parent.height*0.15
             anchors{
                 bottom:parent.bottom
                 bottomMargin:parent.height*0.1
@@ -632,6 +1021,74 @@ Page {
             text: "你的得分: " + score
             color:"black"
             anchors.centerIn: parent
+        }
+    }
+
+    //游戏暂停弹窗
+    Dialog {
+        id: gamePauseDialog
+        height:Screen.height*3/5
+        width:Screen.width*3/5
+        modal:true
+        closePolicy:Popup.NoAutoClose       //禁止点击外部关闭
+        anchors.centerIn: parent
+
+        Image{
+            source:"qrc:/BackGround/Images/BackGround/暂停面板背景.jpg"
+            anchors.fill:parent
+        }
+
+        Rectangle{
+            id:jixu;   height:parent.height*0.2;   width:parent.width*0.5;    radius:parent.height*0.1;
+            color:"lightgreen"
+            Button{
+                background: Rectangle{color:"transparent"; }
+                Label{ text:"继续游戏";  color:"black";  anchors.centerIn:parent}
+                onClicked: { gamePauseDialog.close(); gameScreen.gameRunning=true }
+                anchors.fill:parent
+            }
+            anchors{
+                top:parent.top;    topMargin: parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
+        }
+
+        Rectangle{
+            id:regame;   height:parent.height*0.2;   width:parent.width*0.5;   radius:parent.height*0.1;
+            color:"lightgreen"
+            Button{
+                z:2
+                background: Rectangle{color:"transparent"}
+                Label{ text:"重新开始";  color:"black";  anchors.centerIn:parent}
+                onClicked: { gamePauseDialog.close(); }
+                anchors.fill:parent
+            }
+            anchors{
+                top:jixu.bottom;    topMargin: parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
+        }
+
+        Rectangle{
+            id:tuichu;   height:parent.height*0.2;   width:parent.width*0.5;  radius:parent.height*0.1;
+            color:"lightgreen"
+            Button{
+                background: Rectangle{color:"transparent"}
+                Label{ text:"退出游戏";  color:"black";  anchors.centerIn:parent}
+                onClicked: {
+                    stackView.replace("Page_jiesuan.qml",{
+                        "distance":distance/16,
+                        "score":score,
+                        "coins_num":coin_num,
+                    })
+                    gamePauseDialog.close();
+                }
+                anchors.fill:parent
+            }
+            anchors{
+                top:regame.bottom;    topMargin: parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
         }
     }
 

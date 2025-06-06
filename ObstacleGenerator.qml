@@ -2,6 +2,8 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Controls
 
+//障碍物页面
+
 Item {
     id: obstacleGenerator
 
@@ -130,7 +132,7 @@ Item {
 
         var wall_height=lastground.top-player_slide_height*1.2
         var panding=(wall_x+wall_width)<(lastground.x+lastground.width)
-        if(!lastground.hasGap && lastground.is_longGround && panding){
+        if(!lastground.hasGap && lastground.is_longGround && panding && lastground.spawn_obstacle){
             active_obstacles.append({
             "x":wall_x,
             "y":0,
@@ -158,7 +160,7 @@ Item {
 
         var guaiwu_y=lastground.top-guaiwu_height
         var panding=(guaiwu_x+guaiwu_width)<(lastground.x+lastground.width)
-        if(!lastground.hasGap && lastground.is_longGround && panding){
+        if(!lastground.hasGap && lastground.is_longGround && panding && lastground.spawn_obstacle){
             active_obstacles.append({
             "x":guaiwu_x,
             "y":guaiwu_y,
@@ -186,7 +188,7 @@ Item {
 
         var dici_y=lastground.top-dici_height
         var panding=(dici_x+dici_width)<(lastground.x+lastground.width)
-        if(!lastground.hasGap && lastground.is_longGround && panding){
+        if(!lastground.hasGap && lastground.is_longGround && panding && lastground.spawn_obstacle){
             active_obstacles.append({
             "x":dici_x,
             "y":dici_y,
@@ -334,7 +336,12 @@ Item {
                 var current_obstacle=active_obstacles.get(i)
                 if(current_obstacle.type==="wall"){
                     if(player_x<current_obstacle.x && player_x+player_width>=current_obstacle.x){
-                       if(player_y<current_obstacle.height){
+                        if(gameScreen.isEnlarged){
+                            // 角色处于变大状态，消除墙体
+                            active_obstacles.remove(i);
+                            i--; // 调整索引，因为列表已更改
+                        }
+                        else if(player_y<current_obstacle.height){
                            obstacleGenerator.sliding_wall=current_obstacle
                            obstacleGenerator.movePlayer(-speed)
                            obstacleGenerator.mustSlide()
@@ -345,8 +352,11 @@ Item {
                     if(player_x+player_width>current_obstacle.x*1.1 && player_x<current_obstacle.x+current_obstacle.width*0.9 &&
                     player_y<current_obstacle.y+current_obstacle.height  &&
                     player_y+player_height>current_obstacle.y*1.1){
-                        console.log("小怪物被触碰")
-                        obstacleGenerator.playerDead()
+                        if(gameScreen.isShielded || gameScreen.isEnlarged){
+                            active_obstacles.remove(i);
+                            i--;
+                        }
+                        else obstacleGenerator.playerDead()
                     }
                 }
 
@@ -354,8 +364,11 @@ Item {
                     if(player_x+player_width>current_obstacle.x*1.1 && player_x<current_obstacle.x+current_obstacle.width*0.9 &&
                     player_y<current_obstacle.y+current_obstacle.height  &&
                     player_y+player_height>current_obstacle.y*1.1){
-                        console.log("碰到地刺")
-                        obstacleGenerator.playerDead()
+                        if(gameScreen.isShielded || gameScreen.isEnlarged){
+                            active_obstacles.remove(i);
+                            i--;
+                        }
+                        else obstacleGenerator.playerDead()
                     }
                 }
             }
