@@ -34,7 +34,7 @@ Item {
     property int daoju_height:Screen.height*0.07
     property int daoju_width:Screen.height*0.07
 
-    // 屏幕比例属性
+    //屏幕比例属性
     property int sc_x: Screen.width / 200
     property int sc_y: Screen.height / 100
 

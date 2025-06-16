@@ -7,6 +7,7 @@ ApplicationWindow {
     width: Screen.width
     height: Screen.height
     visible: true
+    flags:Qt.Window | Qt.MaximizeUsingFullscreenGeometryHint
     visibility: Window.FullScreen
 
     title: "天天跑酷"

@@ -530,7 +530,7 @@ Page{
         width:Screen.width*3/5
         title: "游戏暂停"
         modal:true
-        dim:true             //添加半透明黑色遮罩
+        dim:true                            //添加半透明黑色遮罩
         closePolicy:Popup.NoAutoClose       //禁止点击外部关闭
         anchors.centerIn: parent
 

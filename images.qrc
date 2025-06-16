@@ -55,5 +55,12 @@
     <qresource prefix="/boss_level">
         <file>Images/boss_level/地砖.png</file>
         <file>Images/boss_level/手里剑.png</file>
+        <file>Images/boss_level/墙体.png</file>
+        <file>Images/boss_level/生命.png</file>
+        <file>Images/boss_level/boss.png</file>
+        <file>Images/boss_level/攻击.png</file>
+        <file>Images/boss_level/boss血量.png</file>
+        <file>Images/boss_level/闪电.png</file>
+        <file>Images/boss_level/分身.png</file>
     </qresource>
 </RCC>
