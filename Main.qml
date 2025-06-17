@@ -10,7 +10,7 @@ ApplicationWindow {
     flags:Qt.Window | Qt.MaximizeUsingFullscreenGeometryHint
     visibility: Window.FullScreen
 
-    title: "天天跑酷"
+    title: "元气之战：跑酷地牢(联机版)"
 
     StackView {
         id: stackView

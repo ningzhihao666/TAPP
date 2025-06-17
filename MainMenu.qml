@@ -7,7 +7,7 @@ Rectangle {
     color: "#f0f0f0"
 
     Image{
-        source:"qrc:/BackGround/Images/BackGround/天天酷跑.jpg"
+        source:"qrc:/page_begin/Images/page_begin/主页图.png"
         anchors.fill:parent
     }
 
@@ -16,7 +16,7 @@ Rectangle {
         spacing: 20
 
         Text {
-            text: "天天跑酷"
+            text: "元气之战：跑酷地牢(联机版)"
             font.pixelSize: 36
             font.family: "Arial"
             anchors.horizontalCenter: parent.horizontalCenter
@@ -43,6 +43,4 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
         }
     }
-
-
 }

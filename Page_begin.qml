@@ -25,6 +25,8 @@ Page{
     property var history_Scores: historyScores.split(',').map(Number)
     property var history_Distances: historyDistance.split(',').map(Number)
 
+    property bool model_dialog:false                             //模式弹窗
+    property var choseModel:["跑酷模式","BOSS挑战","双人互联"]
 
     //设置存储
     Settings{
@@ -232,31 +234,92 @@ Page{
         }
     }
 
+    //模式切换按钮
+    Rectangle{
+        id:model;   height:Screen.height*0.16;  width:height
+        radius:height/4;  color:"yellow"
+        property bool click_l:false              //案件点击
+        anchors{
+            top:juese.bottom;    topMargin: parent.height*0.05
+            left:mianban.right;   leftMargin: parent.width*0.05
+        }
+        Image{source:"qrc:/page_begin/Images/page_begin/切换.png"
+            anchors.fill:parent}
+        Label{ text:"模式选择"; anchors{bottom:parent.bottom
+            horizontalCenter: parent.horizontalCenter}
+            color:"black"}
+        Button{
+            anchors.fill:parent;
+            background: Rectangle{color:"transparent"}
+            onClicked: {
+                if(!model.click_l){
+                    model_dialog=true;  model.click_l=true
+                }
+                else {
+                    model_dialog=false;  model.click_l=false
+                }
+            }
+        }
+    }
+    //模式弹窗选择矩形
+    Rectangle{
+        id:model_cs;   height:Screen.height*0.08;  width:Screen.width*0.35
+        border.width:1;   color:"yellow";  visible:model_dialog
+        property string name:""           //模式名称
+        Button{
+            height:parent.height;   width:parent.width/3
+            background: Rectangle{ color:"transparent"; border.width: 1}
+            anchors{left:parent.left;  top:parent.top}
+            Label{text:"跑酷模式"; color:"black"; anchors.centerIn:parent}
+            onClicked: { model_cs.name="跑酷模式" }
+        }
+        Button{
+            height:parent.height;   width:parent.width/3;
+            background: Rectangle{ color:"transparent";  border.width: 1}
+            anchors{horizontalCenter: parent.horizontalCenter;  top:parent.top}
+            Label{text:"BOSS挑战"; color:"black"; anchors.centerIn:parent}
+            onClicked: { model_cs.name="BOSS挑战" }
+        }
+        Button{
+            height:parent.height;   width:parent.width/3
+            background: Rectangle{ color:"transparent"; border.width: 1}
+            anchors{right:parent.right;  top:parent.top}
+            Label{text:"双人互联"; color:"black"; anchors.centerIn:parent}
+            onClicked: { model_cs.name="双人互联" }
+        }
+        anchors{
+            bottom: model.top;  bottomMargin: Screen.height*0.01
+            left:model.left;
+        }
+    }
+
     //开始按钮
     Rectangle{
         id:fanhui
-        height:Screen.height*0.2
-        width:Screen.width*0.3
-        radius:10
-        color:"transparent"
+        height:Screen.height*0.16;    width:Screen.width*0.25
+        radius:height/6;      color:"transparent"
 
         anchors{
-            top:juese.bottom
-            topMargin: parent.height*0.05
-            left:mianban.right
-            leftMargin: parent.width*0.05
+            top:juese.bottom;   topMargin: parent.height*0.05
+            left:model.right;   leftMargin: parent.width*0.02
         }
 
         Button{
-            height:parent.height*0.8
-            width:parent.width*0.8
+            height:parent.height
+            width:parent.width
             anchors.centerIn: parent
-            background: Rectangle{color:"yellow"; border.width:1; radius:5}
-            Label{text:"开始游戏"; color:"black"; anchors.centerIn: parent}
+            background: Rectangle{color:"yellow"; border.width:1; radius:height/6}
+            Label{text: model_cs.name? model_cs.name:"跑酷模式"; color:"black"; anchors.centerIn: parent}
             onClicked: {
-                stackView.replace("GameScreen.qml",{
+                if(model_cs.name==="跑酷模式"){
+                    stackView.replace("GameScreen.qml",{
                                   "gameRunning":true
                                   })
+                }
+                if(model_cs.name==="BOSS挑战"){
+                }
+                if(model_cs.name==="双人互联"){
+                }
             }
         }
     }

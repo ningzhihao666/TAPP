@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Window
+import QtQuick.Particles    //粒子特效
 
 //BOSS关卡页面
 
@@ -52,6 +53,8 @@ Page{
     property int  bullet_height:Screen.height*0.05        //子弹高度
     property int  bos_bltHeight:Screen.height*0.05        //boss子弹高度
     property int  bos_bltWidth:bos_bltHeight              //boss子弹宽度
+    property real knockBackAngle:0                        //受击移动角度
+    property bool isKnockback:false                       //是否被攻击后退
 
     //boss属性
     property int  boss_width:boss_height                  //boss宽度
@@ -172,7 +175,47 @@ Page{
                    bullet.mapY<player.worldY+player.height/2){
                     boss_bullet.remove(i)
                     player.life-=10
+                    screenShake.start()           //受击振动
+                    isKnockback=true              //被击退
+                    player.worldX+=Math.cos(bullet.angle*Math.PI/180)*sc_y
+                    player.worldY+=Math.sin(bullet.angle*Math.PI/180)*sc_y
+                    updatePlayerPosition()
+                    knockbacktimer.start()
                 }
+            }
+        }
+    }
+
+    Timer{
+        id:knockbacktimer
+        interval:200
+        onTriggered:  isKnockback=false
+    }
+
+    //人物受击屏幕振动动画
+    SequentialAnimation{
+        id:screenShake
+        loops:2      //指定动画序列重复次数
+        //晃动
+        ParallelAnimation {
+            NumberAnimation{
+                target:boss_level;    property:"mapOffsetX"
+                to:boss_level.mapOffsetX+sc_y*0.6;    duration:50
+            }
+            NumberAnimation{
+                target:boss_level;    property:"mapOffsetY"
+                to:boss_level.mapOffsetY+sc_y*0.6;    duration:50
+            }
+        }
+        //恢复
+        ParallelAnimation {
+            NumberAnimation{
+                target:boss_level;    property:"mapOffsetX"
+                to:boss_level.mapOffsetX-sc_y*0.6;    duration:50
+            }
+            NumberAnimation{
+                target:boss_level;    property:"mapOffsetY"
+                to:boss_level.mapOffsetY-sc_y*0.6;    duration:50
             }
         }
     }
@@ -183,16 +226,18 @@ Page{
         height:boss_level.boss_height
         width:boss_level.boss_width
         border.width:1
+        visible:!boss.isDead
 
         x:boss_mapX-mapOffsetX      //考虑地图偏移
         y:boss_mapY-mapOffsetY
 
         property int  boss_mapX:(mapWidth-boss.width)/2     //boss在地图上的x坐标
         property int  boss_mapY:(mapHeight-boss.height)/2   //boss在地图上的y坐标
-        property int  boss_life:1000                        //boss的血量
+        property int  boss_life:10                          //boss的血量
         property var  current_target:Qt.point(0,0)          //boss移动目标点
         property bool isMoving:false                        //boss是否正在移动
         property int  moveSpeed:Screen.height*0.01          //boss移动速度
+        property bool isDead:false                          //boss是否死亡
 
         //boss攻击状态
         property var attackPattens:[
@@ -215,7 +260,7 @@ Page{
         Timer{
             id:bossMove
             interval:2000    //每2s重新选择一次目标
-            running:true
+            running:!boss.isDead
             repeat:true
             onTriggered: {
                 var newMapX=Math.random()*(mapWidth-boss.boss_mapX)
@@ -248,6 +293,7 @@ Page{
 
                 boss.boss_mapX+=(dx/distance)*boss.moveSpeed
                 boss.boss_mapY+=(dy/distance)*boss.moveSpeed
+                if(boss.boss_life<=0) boss.isDead=true
             }
         }
     }
@@ -256,6 +302,7 @@ Page{
     Rectangle{
         height:Screen.height*0.05;    width:Screen.width*0.5;
         color:"transparent";    z:10
+        visible:!boss.isDead
         anchors{
             top:parent.top
             topMargin: Screen.height*0.15
@@ -291,6 +338,27 @@ Page{
                 border.width:1;     radius:height/2
                 color:"red"
                 anchors.left:parent.left; anchors.top:parent.top
+            }
+        }
+    }
+
+    //boss死亡产生黑洞
+    Rectangle{
+        id:blackHole
+        height:Screen.height*0.3;    width:height;  color:"transparent"
+        property int mapX:(mapWidth-blackHole.width)/2
+        property int mapY:(mapHeight-blackHole.height)/2
+        visible:boss.isDead
+        x:mapX-mapOffsetX
+        y:mapY-mapOffsetY
+        Image{
+            source:"qrc:/boss_level/Images/boss_level/黑洞.png"
+            anchors.fill:parent
+            rotation:0    //设置图片初始旋转角度
+            //持续旋转效果
+            RotationAnimation on rotation{
+                from:0;   to:360;  duration:1000
+                loops:Animation.Infinite
             }
         }
     }
@@ -373,7 +441,7 @@ Page{
     Timer{
         id:bos_atcTimer
         interval:2000    //2s一次攻击
-        running:true
+        running:!boss.isDead
         repeat:true
         onTriggered: {
             var patten=boss.attackPattens[Math.floor(Math.random()*boss.attackPattens.length)]
@@ -803,6 +871,12 @@ Page{
             mapOffsetX = player.worldX - viewportWidth / 2
             mapOffsetY = player.worldY - viewportHeight / 2
         }
+        if(isKnockback){
+            mapOffsetX = player.worldX - viewportWidth / 2
+            mapOffsetY = player.worldY - viewportHeight / 2
+            return
+        }
+        //当被攻击击退时不会更新玩家位置
 
         if (Math.abs(joystick_Knob.directionX) > 0.1 ||
             Math.abs(joystick_Knob.directionY) > 0.1) {
