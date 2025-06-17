@@ -1,0 +1,548 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "libnetwork_module.so"
+		}
+	],
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"_qt_internal_add_library",
+			"qt6_add_library",
+			"qt6_add_qml_module",
+			"qt_add_qml_module",
+			"target_link_libraries",
+			"set_target_properties",
+			"include",
+			"find_package",
+			"find_dependency",
+			"_qt_internal_find_qt_dependencies",
+			"target_include_directories",
+			"_qt_internal_qml_type_registration",
+			"target_sources",
+			"qt6_extract_metatypes",
+			"__qt_propagate_generated_resource",
+			"_qt_internal_process_resource",
+			"qt6_add_resources",
+			"_qt_internal_expose_deferred_files_to_ide",
+			"qt6_finalize_target"
+		],
+		"files" : 
+		[
+			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"CMakeLists.txt",
+			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlTargets.cmake",
+			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlConfig.cmake",
+			"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake",
+			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake",
+			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6/Qt6Config.cmake",
+			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:787:EVAL"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 1252,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 591,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 2692,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2779,
+				"parent" : 4
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 596,
+				"parent" : 2
+			},
+			{
+				"command" : 8,
+				"file" : 2,
+				"line" : 5,
+				"parent" : 0
+			},
+			{
+				"file" : 9,
+				"parent" : 7
+			},
+			{
+				"command" : 8,
+				"file" : 9,
+				"line" : 218,
+				"parent" : 8
+			},
+			{
+				"file" : 8,
+				"parent" : 9
+			},
+			{
+				"command" : 7,
+				"file" : 8,
+				"line" : 43,
+				"parent" : 10
+			},
+			{
+				"file" : 7,
+				"parent" : 11
+			},
+			{
+				"command" : 10,
+				"file" : 7,
+				"line" : 45,
+				"parent" : 12
+			},
+			{
+				"command" : 9,
+				"file" : 6,
+				"line" : 137,
+				"parent" : 13
+			},
+			{
+				"command" : 8,
+				"file" : 5,
+				"line" : 76,
+				"parent" : 14
+			},
+			{
+				"file" : 4,
+				"parent" : 15
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 58,
+				"parent" : 16
+			},
+			{
+				"file" : 3,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 61,
+				"parent" : 18
+			},
+			{
+				"command" : 12,
+				"file" : 1,
+				"line" : 796,
+				"parent" : 2
+			},
+			{
+				"command" : 11,
+				"file" : 1,
+				"line" : 3879,
+				"parent" : 20
+			},
+			{
+				"command" : 11,
+				"file" : 1,
+				"line" : 3904,
+				"parent" : 20
+			},
+			{
+				"command" : 14,
+				"file" : 1,
+				"line" : 3704,
+				"parent" : 20
+			},
+			{
+				"command" : 13,
+				"file" : 0,
+				"line" : 1486,
+				"parent" : 23
+			},
+			{
+				"command" : 13,
+				"file" : 1,
+				"line" : 3870,
+				"parent" : 20
+			},
+			{
+				"command" : 17,
+				"file" : 1,
+				"line" : 850,
+				"parent" : 2
+			},
+			{
+				"command" : 16,
+				"file" : 0,
+				"line" : 401,
+				"parent" : 26
+			},
+			{
+				"command" : 15,
+				"file" : 0,
+				"line" : 2528,
+				"parent" : 27
+			},
+			{
+				"command" : 13,
+				"file" : 0,
+				"line" : 2072,
+				"parent" : 28
+			},
+			{
+				"command" : 13,
+				"file" : 1,
+				"line" : 897,
+				"parent" : 2
+			},
+			{
+				"file" : 2,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 19,
+				"file" : 10,
+				"line" : 1,
+				"parent" : 31
+			},
+			{
+				"command" : 18,
+				"file" : 0,
+				"line" : 812,
+				"parent" : 32
+			},
+			{
+				"command" : 13,
+				"file" : 0,
+				"line" : 2197,
+				"parent" : 33
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-DQT_QML_DEBUG -g -fPIC -fcolor-diagnostics"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 6,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QMLINTEGRATION_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QML_LIB"
+				},
+				{
+					"define" : "network_module_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 21,
+					"path" : "/root/2023051604097Heyujie/111/tiantiankupao"
+				},
+				{
+					"backtrace" : 22,
+					"path" : "/opt/Qt/6.9.1/gcc_64/include/QtQml/6.9.1"
+				},
+				{
+					"backtrace" : 22,
+					"path" : "/opt/Qt/6.9.1/gcc_64/include/QtQml/6.9.1/QtQml"
+				},
+				{
+					"backtrace" : 22,
+					"path" : "/opt/Qt/6.9.1/gcc_64/include/QtCore/6.9.1"
+				},
+				{
+					"backtrace" : 22,
+					"path" : "/opt/Qt/6.9.1/gcc_64/include/QtCore/6.9.1/QtCore"
+				},
+				{
+					"backtrace" : 22,
+					"isSystem" : true,
+					"path" : "/opt/Qt/6.9.1/gcc_64/include/QtCore"
+				},
+				{
+					"backtrace" : 22,
+					"isSystem" : true,
+					"path" : "/opt/Qt/6.9.1/gcc_64/include"
+				},
+				{
+					"backtrace" : 22,
+					"isSystem" : true,
+					"path" : "/opt/Qt/6.9.1/gcc_64/mkspecs/linux-g++"
+				},
+				{
+					"backtrace" : 22,
+					"isSystem" : true,
+					"path" : "/opt/Qt/6.9.1/gcc_64/include/QtQml"
+				},
+				{
+					"backtrace" : 22,
+					"isSystem" : true,
+					"path" : "/opt/Qt/6.9.1/gcc_64/include/QtQmlIntegration"
+				},
+				{
+					"backtrace" : 22,
+					"isSystem" : true,
+					"path" : "/opt/Qt/6.9.1/gcc_64/include/QtNetwork"
+				},
+				{
+					"backtrace" : 0,
+					"isSystem" : true,
+					"path" : "/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/network_module_autogen/include"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0,
+				2,
+				3,
+				4
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "network_module_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "network_module_autogen::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "network_module::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/opt/Qt/6.9.1/gcc_64/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/opt/Qt/6.9.1/gcc_64/lib/libQt6Qml.so.6.9.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 19,
+				"fragment" : "/opt/Qt/6.9.1/gcc_64/lib/libQt6Network.so.6.9.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 19,
+				"fragment" : "/opt/Qt/6.9.1/gcc_64/lib/libQt6Core.so.6.9.1",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "network_module",
+	"nameOnDisk" : "libnetwork_module.so",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files\\Generated",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				6,
+				7,
+				8,
+				14,
+				15,
+				16
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				4
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				5
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				9,
+				10,
+				11,
+				12,
+				13
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/network_module_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 24,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/meta_types/qt6network_module_debug_metatypes.json.gen",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/network_module_qmltyperegistrations.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 29,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/.qt/rcc/qrc_qmake_NetworkManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 30,
+			"compileGroupIndex" : 0,
+			"path" : "NetworkManager.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 30,
+			"path" : "NetworkManager.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 34,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/.qt/rcc/qmake_NetworkManager.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 34,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/qmldir",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/network_module_autogen/timestamp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/meta_types/qt6network_module_debug_metatypes.json.gen.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/network_module_qmltyperegistrations.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/.qt/rcc/qrc_qmake_NetworkManager.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/network_module_autogen/timestamp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/meta_types/network_module_json_file_list.txt.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/opt/Qt/6.9.1/gcc_64/metatypes/qt6qml_relwithdebinfo_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/opt/Qt/6.9.1/gcc_64/metatypes/qt6core_relwithdebinfo_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/opt/Qt/6.9.1/gcc_64/metatypes/qt6network_relwithdebinfo_metatypes.json",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

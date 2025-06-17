@@ -1,0 +1,71 @@
+<RCC>
+    <qresource prefix="/player">
+        <file>Images/player/哥玛兽.png</file>
+        <file>Images/player/跳跃.png</file>
+        <file>Images/player/滑铲.png</file>
+        <file>Images/player/金枪小帅.png</file>
+        <file>Images/player/跳跃2.png</file>
+        <file>Images/player/跑动1.png</file>
+        <file>Images/player/跑动2.png</file>
+        <file>Images/player/跑动3.png</file>
+        <file>Images/player/跑动4.png</file>
+        <file>Images/player/跑动5.png</file>
+        <file>Images/player/跳跃1.png</file>
+        <file>Images/player/页面图.png</file>
+        <file>Images/player/滑铲1.png</file>
+    </qresource>
+    <qresource prefix="/BackGround">
+        <file>Images/BackGround/金币.png</file>
+        <file>Images/BackGround/地面块1.png</file>
+        <file>Images/BackGround/天天酷跑.jpg</file>
+        <file>Images/BackGround/封面图.jpg</file>
+        <file>Images/BackGround/结算背景.jpg</file>
+        <file>Images/BackGround/结算面板.png</file>
+        <file>Images/BackGround/历史排行榜.png</file>
+        <file>Images/BackGround/背景2.jpg</file>
+        <file>Images/BackGround/砖石.png</file>
+        <file>Images/BackGround/游戏主页面背景.jpg</file>
+        <file>Images/BackGround/积分.png</file>
+        <file>Images/BackGround/距离.png</file>
+        <file>Images/BackGround/暂停.png</file>
+        <file>Images/BackGround/暂停面板背景.jpg</file>
+    </qresource>
+    <qresource prefix="/musics">
+        <file>musics/两难.mp3</file>
+        <file>musics/跳楼机.mp3</file>
+    </qresource>
+    <qresource prefix="/obstacle">
+        <file>Images/obstacle/墙.png</file>
+        <file>Images/obstacle/小怪物.png</file>
+        <file>Images/obstacle/地刺.png</file>
+        <file>Images/obstacle/弹簧.png</file>
+    </qresource>
+    <qresource prefix="/bonus_level">
+        <file>Images/bonus_level/地面图层1.png</file>
+        <file>Images/bonus_level/地面图层2.png</file>
+        <file>Images/bonus_level/地面图层4.png</file>
+        <file>Images/bonus_level/奖励关卡背景图.jpg</file>
+    </qresource>
+    <qresource prefix="/daoju">
+        <file>Images/daoju/变大.png</file>
+        <file>Images/daoju/磁铁.png</file>
+        <file>Images/daoju/箱子.png</file>
+        <file>Images/daoju/X2.png</file>
+    </qresource>
+    <qresource prefix="/boss_level">
+        <file>Images/boss_level/地砖.png</file>
+        <file>Images/boss_level/手里剑.png</file>
+        <file>Images/boss_level/墙体.png</file>
+        <file>Images/boss_level/生命.png</file>
+        <file>Images/boss_level/boss.png</file>
+        <file>Images/boss_level/攻击.png</file>
+        <file>Images/boss_level/boss血量.png</file>
+        <file>Images/boss_level/闪电.png</file>
+        <file>Images/boss_level/分身.png</file>
+        <file>Images/boss_level/黑洞.png</file>
+    </qresource>
+    <qresource prefix="/page_begin">
+        <file>Images/page_begin/切换.png</file>
+        <file>Images/page_begin/主页图.png</file>
+    </qresource>
+</RCC>

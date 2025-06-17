@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/NetworkManager">
+    <file alias="qmldir">/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/qmldir</file>
+  </qresource>
+</RCC>
+

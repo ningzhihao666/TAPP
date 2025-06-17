@@ -1,0 +1,10 @@
+-I
+/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug
+-I
+/opt/Qt/6.9.1/gcc_64/qml
+--resource
+/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.qt/rcc/qmake_tiantiankupao.qrc
+--resource
+/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.qt/rcc/apptiantiankupao_raw_qml_0.qrc
+--module
+tiantiankupao

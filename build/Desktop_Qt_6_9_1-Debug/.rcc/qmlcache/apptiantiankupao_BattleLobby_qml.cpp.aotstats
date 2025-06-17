@@ -1,0 +1,124 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 83,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 11
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 16
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 77,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 49
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "Cannot access value for name discoveredPeers",
+                        "functionName": "onTriggered",
+                        "line": 55
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot access value for name discoveredPeers",
+                        "functionName": "model",
+                        "line": 65
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"width\".",
+                        "functionName": "width",
+                        "line": 67
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"text\".",
+                        "functionName": "text",
+                        "line": 68
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 69
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 80
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 85
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "onConnectionError",
+                        "line": 87
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "onServerStarted",
+                        "line": 93
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "onServerStartFailed",
+                        "line": 99
+                    }
+                ],
+                "filePath": "/root/2023051604097Heyujie/111/tiantiankupao/BattleLobby.qml"
+            }
+        ],
+        "moduleId": "tiantiankupao(apptiantiankupao)"
+    }
+]

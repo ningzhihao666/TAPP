@@ -1,0 +1,84 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 215,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 11
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 28
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 39,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"horizontalCenter\".",
+                        "functionName": "horizontalCenter",
+                        "line": 29
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 39,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"horizontalCenter\".",
+                        "functionName": "horizontalCenter",
+                        "line": 36
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 42
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 39,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"horizontalCenter\".",
+                        "functionName": "horizontalCenter",
+                        "line": 43
+                    }
+                ],
+                "filePath": "/root/2023051604097Heyujie/111/tiantiankupao/MainMenu.qml"
+            }
+        ],
+        "moduleId": "tiantiankupao(apptiantiankupao)"
+    }
+]

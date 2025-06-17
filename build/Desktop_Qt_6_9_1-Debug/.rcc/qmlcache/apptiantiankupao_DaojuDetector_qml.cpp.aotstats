@@ -1,0 +1,52 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
+                        "functionName": "obstacles",
+                        "line": 7
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 90,
+                        "errorMessage": "",
+                        "functionName": "minObstacleSpacing",
+                        "line": 21
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 14367,
+                        "errorMessage": "Cannot load property y from (component in /root/2023051604097Heyujie/111/tiantiankupao/DaojuDetector.qml)::player with type QVariant.",
+                        "functionName": "checkCollisions",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 4,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "collides",
+                        "line": 85
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "method checkCollisions cannot be resolved.",
+                        "functionName": "onTriggered",
+                        "line": 27
+                    }
+                ],
+                "filePath": "/root/2023051604097Heyujie/111/tiantiankupao/DaojuDetector.qml"
+            }
+        ],
+        "moduleId": "tiantiankupao(apptiantiankupao)"
+    }
+]

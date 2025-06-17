@@ -1,0 +1,19 @@
+module tiantiankupao
+typeinfo apptiantiankupao.qmltypes
+depends network_module
+prefer :/qt/qml/tiantiankupao/
+Main 1.0 Main.qml
+MainMenu 1.0 MainMenu.qml
+GameScreen 1.0 GameScreen.qml
+Player 1.0 Player.qml
+GameControlPanel 1.0 GameControlPanel.qml
+DaojuGenerator 1.0 DaojuGenerator.qml
+DaojuDetector 1.0 DaojuDetector.qml
+Page_jiesuan 1.0 Page_jiesuan.qml
+Page_begin 1.0 Page_begin.qml
+ObstacleGenerator 1.0 ObstacleGenerator.qml
+Bonus_level 1.0 Bonus_level.qml
+Boss_level 1.0 Boss_level.qml
+BattleLobby 1.0 BattleLobby.qml
+BattlePage 1.0 BattlePage.qml
+

@@ -8,6 +8,12 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(apptiantiankupao)
 
+# 网络模块
+ qt_add_qml_module(network_module
+    URI NetworkManager
+    VERSION 1.0
+    SOURCES  NetworkManager.cpp NetworkManager.h
+)
 qt_add_qml_module(apptiantiankupao
     URI tiantiankupao
     VERSION 1.0
@@ -28,6 +34,13 @@ qt_add_qml_module(apptiantiankupao
     QML_FILES ObstacleGenerator.qml
     QML_FILES Bonus_level.qml
     QML_FILES Boss_level.qml
+
+    SOURCES NetworkManager.h
+    SOURCES NetworkManager.cpp
+    DEPENDENCIES
+            network_module
+            QML_FILES BattleLobby.qml
+            QML_FILES BattlePage.qml
 
 )
 

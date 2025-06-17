@@ -1,0 +1,828 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 123,
+                        "errorMessage": "",
+                        "functionName": "speed",
+                        "line": 7
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 88,
+                        "errorMessage": "",
+                        "functionName": "typeCount",
+                        "line": 19
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 212,
+                        "errorMessage": "",
+                        "functionName": "validParent",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "",
+                        "functionName": "boxwidth",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 76,
+                        "errorMessage": "",
+                        "functionName": "boxheight",
+                        "line": 31
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "",
+                        "functionName": "daoju_height",
+                        "line": 34
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "daoju_width",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 62,
+                        "errorMessage": "",
+                        "functionName": "sc_x",
+                        "line": 38
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "sc_y",
+                        "line": 39
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "spawnReward",
+                        "line": 60
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 17092,
+                        "errorMessage": "Cannot use shadowable base type for further lookups: call to method get, returning QJSValue",
+                        "functionName": "spawndaoju",
+                        "line": 111
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "removeDaoju",
+                        "line": 201
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 153,
+                        "errorMessage": "",
+                        "functionName": "running",
+                        "line": 44
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 381,
+                        "errorMessage": "method spawndaoju cannot be resolved.",
+                        "functionName": "onTriggered",
+                        "line": 46
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "",
+                        "functionName": "onTriggered",
+                        "line": 198
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 224
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 62,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 225
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 54,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 222
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 230
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot access value for name daojugenerator",
+                        "functionName": "running",
+                        "line": 235
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 134,
+                        "errorMessage": "Cannot load property x from (component in /root/2023051604097Heyujie/111/tiantiankupao/DaojuGenerator.qml)::parent with type QObject.",
+                        "functionName": "onTriggered",
+                        "line": 237
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name daoju_width",
+                        "functionName": "width",
+                        "line": 253
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "Cannot access value for name daoju_height",
+                        "functionName": "height",
+                        "line": 254
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 255
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 223,
+                        "errorMessage": "Cannot access value for name gameScreen",
+                        "functionName": "targetX",
+                        "line": 260
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 162,
+                        "errorMessage": "Cannot access value for name gameScreen",
+                        "functionName": "targetY",
+                        "line": 261
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "originalY",
+                        "line": 262
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "Cannot access value for name sc_y",
+                        "functionName": "amplitude",
+                        "line": 264
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 81,
+                        "errorMessage": "",
+                        "functionName": "rotationSpeed",
+                        "line": 266
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 113,
+                        "errorMessage": "",
+                        "functionName": "waveOffset",
+                        "line": 267
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 271
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "Cannot find name movingToCenter",
+                        "functionName": "onFinished",
+                        "line": 295
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 280
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "to",
+                        "line": 282
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 284
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 288
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "",
+                        "functionName": "to",
+                        "line": 290
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 292
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 207,
+                        "errorMessage": "Cannot access value for name daojugenerator",
+                        "functionName": "onTriggered",
+                        "line": 307
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 89,
+                        "errorMessage": "",
+                        "functionName": "onCompleted",
+                        "line": 326
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 332
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot access value for name sc_y",
+                        "functionName": "pixelSize",
+                        "line": 335
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "loops",
+                        "line": 341
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "loops",
+                        "line": 345
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 72,
+                        "durationMicroseconds": 51,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 346
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 72,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 347
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot access value for name daoju_width",
+                        "functionName": "width",
+                        "line": 357
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "Cannot access value for name daoju_height",
+                        "functionName": "height",
+                        "line": 358
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "Cannot access value for name sc_x",
+                        "functionName": "radius",
+                        "line": 359
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 233,
+                        "errorMessage": "Cannot access value for name gameScreen",
+                        "functionName": "targetX",
+                        "line": 364
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 117,
+                        "errorMessage": "Cannot access value for name gameScreen",
+                        "functionName": "targetY",
+                        "line": 365
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "",
+                        "functionName": "originalY",
+                        "line": 366
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "Cannot access value for name sc_y",
+                        "functionName": "amplitude",
+                        "line": 368
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "rotationSpeed",
+                        "line": 370
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 106,
+                        "errorMessage": "",
+                        "functionName": "waveOffset",
+                        "line": 371
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 376
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "Cannot find name movingToCenter",
+                        "functionName": "onFinished",
+                        "line": 399
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 384
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "",
+                        "functionName": "to",
+                        "line": 386
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 388
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 392
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "",
+                        "functionName": "to",
+                        "line": 394
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 396
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 1198,
+                        "errorMessage": "Cannot access value for name daojugenerator",
+                        "functionName": "onTriggered",
+                        "line": 411
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 296,
+                        "errorMessage": "",
+                        "functionName": "onCompleted",
+                        "line": 430
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 129,
+                        "errorMessage": "Cannot access value for name daoju_width",
+                        "functionName": "width",
+                        "line": 441
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "Cannot access value for name daoju_height",
+                        "functionName": "height",
+                        "line": 442
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 274,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 443
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 745,
+                        "errorMessage": "Cannot access value for name gameScreen",
+                        "functionName": "targetX",
+                        "line": 448
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 173,
+                        "errorMessage": "Cannot access value for name gameScreen",
+                        "functionName": "targetY",
+                        "line": 449
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 81,
+                        "errorMessage": "",
+                        "functionName": "originalY",
+                        "line": 450
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "Cannot access value for name sc_y",
+                        "functionName": "amplitude",
+                        "line": 452
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 209,
+                        "errorMessage": "",
+                        "functionName": "rotationSpeed",
+                        "line": 454
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 381,
+                        "errorMessage": "",
+                        "functionName": "waveOffset",
+                        "line": 455
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 251,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 459
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 490,
+                        "errorMessage": "",
+                        "functionName": "onFinished",
+                        "line": 483
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 101,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 468
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 114,
+                        "errorMessage": "",
+                        "functionName": "to",
+                        "line": 470
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 329,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 472
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 362,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 476
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 144,
+                        "errorMessage": "",
+                        "functionName": "to",
+                        "line": 478
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 230,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 480
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 901,
+                        "errorMessage": "Cannot access value for name daojugenerator",
+                        "functionName": "onTriggered",
+                        "line": 495
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 368,
+                        "errorMessage": "",
+                        "functionName": "onCompleted",
+                        "line": 514
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "Cannot access value for name daoju_width",
+                        "functionName": "width",
+                        "line": 524
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 11,
+                        "errorMessage": "Cannot access value for name daoju_height",
+                        "functionName": "height",
+                        "line": 525
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "Cannot access value for name sc_x",
+                        "functionName": "radius",
+                        "line": 526
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 194,
+                        "errorMessage": "Cannot access value for name gameScreen",
+                        "functionName": "targetX",
+                        "line": 531
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 132,
+                        "errorMessage": "Cannot access value for name gameScreen",
+                        "functionName": "targetY",
+                        "line": 532
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "originalY",
+                        "line": 533
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "Cannot access value for name sc_y",
+                        "functionName": "amplitude",
+                        "line": 535
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 83,
+                        "errorMessage": "",
+                        "functionName": "rotationSpeed",
+                        "line": 537
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 112,
+                        "errorMessage": "",
+                        "functionName": "waveOffset",
+                        "line": 538
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "Cannot find name movingToCenter",
+                        "functionName": "onFinished",
+                        "line": 562
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 547
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "",
+                        "functionName": "to",
+                        "line": 549
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 551
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 555
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "",
+                        "functionName": "to",
+                        "line": 557
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 559
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 196,
+                        "errorMessage": "Cannot access value for name daojugenerator",
+                        "functionName": "onTriggered",
+                        "line": 574
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 73,
+                        "errorMessage": "",
+                        "functionName": "onCompleted",
+                        "line": 593
+                    }
+                ],
+                "filePath": "/root/2023051604097Heyujie/111/tiantiankupao/DaojuGenerator.qml"
+            }
+        ],
+        "moduleId": "tiantiankupao(apptiantiankupao)"
+    }
+]

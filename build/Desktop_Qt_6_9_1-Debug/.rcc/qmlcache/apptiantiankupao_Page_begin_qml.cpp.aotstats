@@ -1,0 +1,1308 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 183,
+                        "errorMessage": "",
+                        "functionName": "sc_x",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "sc_y",
+                        "line": 13
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 125,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "history_Scores",
+                        "line": 25
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 95,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "history_Distances",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
+                        "functionName": "choseModel",
+                        "line": 29
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "saveRecord",
+                        "line": 48
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 121,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "onCompleted",
+                        "line": 41
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 70
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 15,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "",
+                        "functionName": "loops",
+                        "line": 76
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "",
+                        "functionName": "onCompleted",
+                        "line": 77
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 76,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 83
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 15,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 84
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 89
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "topMargin",
+                        "line": 90
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 91
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 92
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 97
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 102
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 102
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 104
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 47,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "Cannot access value for name sc_y",
+                        "functionName": "topMargin",
+                        "line": 104
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 105
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 108
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 108
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 109
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 72,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 109
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"text\".",
+                        "functionName": "text",
+                        "line": 110
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 65,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 110
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 113
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 113
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 114
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 114
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"text\".",
+                        "functionName": "text",
+                        "line": 115
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 68,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 115
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 120
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 120
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 122
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot access value for name sc_y",
+                        "functionName": "topMargin",
+                        "line": 122
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 123
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 126
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 86,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 126
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 127
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 72,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 127
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"text\".",
+                        "functionName": "text",
+                        "line": 128
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 65,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 128
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 131
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 131
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 132
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 132
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"text\".",
+                        "functionName": "text",
+                        "line": 133
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 68,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 133
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 138
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 138
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 140
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "Cannot access value for name sc_y",
+                        "functionName": "topMargin",
+                        "line": 140
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 141
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 144
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 144
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 145
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 72,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 145
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"text\".",
+                        "functionName": "text",
+                        "line": 146
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 65,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 146
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 149
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 149
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 150
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 150
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"text\".",
+                        "functionName": "text",
+                        "line": 151
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 68,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 151
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 159
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 45,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 159
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 161
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 163
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 163
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 164
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 44,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "topMargin",
+                        "line": 164
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 169
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 169
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 171
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 88,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 171
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 33,
+                        "durationMicroseconds": 64,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 172
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 19,
+                        "durationMicroseconds": 78,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 178
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 44,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 178
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 180
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 49,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 180
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 33,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 181
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"text\".",
+                        "functionName": "text",
+                        "line": 183
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 68,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 183
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 82,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 189
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 45,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 189
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 191
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 51,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 193
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 48,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 193
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 194
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 44,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "",
+                        "functionName": "topMargin",
+                        "line": 194
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 89,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 199
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 199
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 54,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 201
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 201
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 33,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 202
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 19,
+                        "durationMicroseconds": 105,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 208
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 44,
+                        "durationMicroseconds": 74,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 208
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 85,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 210
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 53,
+                        "durationMicroseconds": 84,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 210
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 33,
+                        "durationMicroseconds": 50,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 211
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"text\".",
+                        "functionName": "text",
+                        "line": 213
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 68,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 213
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 99,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 220
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 15,
+                        "durationMicroseconds": 90,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 221
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 226
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 227
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 76,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 228
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 233
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 89,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 239
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 55,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 239
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 240
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 61,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 243
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 45,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "topMargin",
+                        "line": 243
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 244
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 82,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 244
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 247
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"bottom\".",
+                        "functionName": "bottom",
+                        "line": 248
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"horizontalCenter\".",
+                        "functionName": "horizontalCenter",
+                        "line": 249
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 254
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"fill\".",
+                        "functionName": "fill",
+                        "line": 252
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 146,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 266
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 58,
+                        "durationMicroseconds": 87,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 266
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 52,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "Cannot access value for name model_dialog",
+                        "functionName": "visible",
+                        "line": 267
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"height\".",
+                        "functionName": "height",
+                        "line": 270
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"width\".",
+                        "functionName": "width",
+                        "line": 270
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 274
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"left\".",
+                        "functionName": "left",
+                        "line": 272
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"top\".",
+                        "functionName": "top",
+                        "line": 272
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 64,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 273
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"height\".",
+                        "functionName": "height",
+                        "line": 277
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"width\".",
+                        "functionName": "width",
+                        "line": 277
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 281
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 39,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"horizontalCenter\".",
+                        "functionName": "horizontalCenter",
+                        "line": 279
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 69,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"top\".",
+                        "functionName": "top",
+                        "line": 279
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 66,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 280
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"height\".",
+                        "functionName": "height",
+                        "line": 284
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"width\".",
+                        "functionName": "width",
+                        "line": 284
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 288
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"right\".",
+                        "functionName": "right",
+                        "line": 286
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"top\".",
+                        "functionName": "top",
+                        "line": 286
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 64,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 287
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 125,
+                        "errorMessage": "",
+                        "functionName": "bottom",
+                        "line": 291
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 105,
+                        "errorMessage": "",
+                        "functionName": "bottomMargin",
+                        "line": 291
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 65,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 292
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 110,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 299
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 45,
+                        "durationMicroseconds": 94,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 299
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 69,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 300
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 81,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 303
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 44,
+                        "durationMicroseconds": 85,
+                        "errorMessage": "",
+                        "functionName": "topMargin",
+                        "line": 303
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 62,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 304
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 45,
+                        "durationMicroseconds": 84,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 304
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"height\".",
+                        "functionName": "height",
+                        "line": 308
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"width\".",
+                        "functionName": "width",
+                        "line": 309
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 313
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 310
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 74,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot access value for name height",
+                        "functionName": "radius",
+                        "line": 311
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 25,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"text\".",
+                        "functionName": "text",
+                        "line": 312
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 95,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 312
+                    }
+                ],
+                "filePath": "/root/2023051604097Heyujie/111/tiantiankupao/Page_begin.qml"
+            }
+        ],
+        "moduleId": "tiantiankupao(apptiantiankupao)"
+    }
+]
