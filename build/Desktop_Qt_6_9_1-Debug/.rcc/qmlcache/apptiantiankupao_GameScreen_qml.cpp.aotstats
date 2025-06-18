@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 147,
+                        "durationMicroseconds": 130,
                         "errorMessage": "",
                         "functionName": "sc_x",
                         "line": 17
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 64,
                         "errorMessage": "",
                         "functionName": "sc_y",
                         "line": 18
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "speed",
                         "line": 19
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 45,
                         "errorMessage": "",
                         "functionName": "max_speed",
                         "line": 20
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 76,
                         "errorMessage": "",
                         "functionName": "groundheight",
                         "line": 23
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 75,
                         "errorMessage": "",
                         "functionName": "groundheight_top",
                         "line": 24
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "groundheight_buttom",
                         "line": 25
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "groundheight_next_top",
                         "line": 26
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 43,
                         "errorMessage": "",
                         "functionName": "ground_width",
                         "line": 27
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "longGround_width",
                         "line": 28
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 27,
                         "errorMessage": "",
                         "functionName": "tanhuang_ground",
                         "line": 31
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 45,
                         "errorMessage": "",
                         "functionName": "player_normal_x",
                         "line": 34
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "player_x",
                         "line": 36
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 111,
                         "errorMessage": "",
                         "functionName": "player_y",
                         "line": 37
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 49,
                         "errorMessage": "",
                         "functionName": "player_height",
                         "line": 38
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 64,
                         "errorMessage": "",
                         "functionName": "player_width",
                         "line": 39
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "player_normal_height",
                         "line": 40
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "player_normal_width",
                         "line": 41
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "player_slide_height",
                         "line": 44
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 84,
                         "errorMessage": "",
                         "functionName": "player_slide_width",
                         "line": 45
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "gravity",
                         "line": 56
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "jump_top",
                         "line": 57
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 141,
                         "errorMessage": "",
                         "functionName": "nextground_top",
                         "line": 61
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "coin_height",
                         "line": 67
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "coin_width",
                         "line": 68
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 115,
                         "errorMessage": "",
                         "functionName": "player_enlarge_slide_height",
                         "line": 85
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 108,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "player_enlarge_slide_width",
                         "line": 86
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 44,
                         "errorMessage": "",
                         "functionName": "gameState",
                         "line": 95
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 30,
                         "errorMessage": "",
                         "functionName": "opponentState",
                         "line": 97
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 807,
+                        "durationMicroseconds": 1260,
                         "errorMessage": "function without return type annotation returns call to method get, returning QJSValue. This may prevent proper compilation to Cpp.",
                         "functionName": "get_CurrentGround",
                         "line": 215
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 168,
                         "errorMessage": "",
                         "functionName": "jump",
                         "line": 231
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 145,
+                        "durationMicroseconds": 221,
                         "errorMessage": "",
                         "functionName": "begin_slide",
                         "line": 238
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 215,
+                        "durationMicroseconds": 306,
                         "errorMessage": "",
                         "functionName": "end_slide",
                         "line": 252
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 1073,
+                        "durationMicroseconds": 6157,
                         "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
                         "functionName": "generateCoin",
                         "line": 267
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 687,
+                        "durationMicroseconds": 2412,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "check_coin",
                         "line": 308
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 1528,
+                        "durationMicroseconds": 3361,
                         "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
                         "functionName": "check_big_gap",
                         "line": 324
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameOverDialog",
                         "functionName": "gameOver",
                         "line": 576
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 2388,
+                        "durationMicroseconds": 6026,
                         "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
                         "functionName": "attractCoins",
                         "line": 766
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 904,
                         "errorMessage": "Function expects 0 arguments, but 1 were provided",
                         "functionName": "syncGameState",
                         "line": 1103
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 198,
                         "errorMessage": "Cannot load property playerX from (component in /root/2023051604097Heyujie/111/tiantiankupao/GameScreen.qml)::gameState with type QVariant.",
                         "functionName": "onGameStateChanged",
                         "line": 1140
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 598,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "add_energy",
                         "line": 1184
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 202,
+                        "durationMicroseconds": 837,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "start_BonusLevel",
                         "line": 1200
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 86,
                         "errorMessage": "Cannot access value for name background_original_img",
                         "functionName": "source",
                         "line": 103
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 104
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 155,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 110
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 111
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 120
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 306,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "score",
                         "line": 128
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "distance",
                         "line": 129
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "speed",
                         "line": 130
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "coin_num",
                         "line": 131
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "gameRunning",
                         "line": 132
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 288,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "onShuxingChange",
                         "line": 133
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 458,
+                        "durationMicroseconds": 1362,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onCompleted",
                         "line": 141
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot access value for name gameRunning",
                         "functionName": "running",
                         "line": 341
@@ -518,7 +518,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 80,
                         "errorMessage": "Cannot access value for name speed",
                         "functionName": "onTriggered",
                         "line": 343
@@ -526,7 +526,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 142,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name gameRunning",
                         "functionName": "running",
                         "line": 354
@@ -534,7 +534,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 336,
+                        "durationMicroseconds": 54,
                         "errorMessage": "method check_big_gap cannot be resolved.",
                         "functionName": "onTriggered",
                         "line": 356
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 297,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot access value for name gameRunning",
                         "functionName": "running",
                         "line": 364
@@ -550,7 +550,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 22048,
+                        "durationMicroseconds": 15751,
                         "errorMessage": "Cannot access value for name distance",
                         "functionName": "onTriggered",
                         "line": 366
@@ -558,7 +558,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 459
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "x",
                         "line": 461
@@ -574,7 +574,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 51,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "y",
                         "line": 462
@@ -582,7 +582,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 132,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "width",
                         "line": 464
@@ -590,7 +590,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 65,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "height",
                         "line": 465
@@ -598,7 +598,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 673,
                         "errorMessage": "",
                         "functionName": "fillMode",
                         "line": 471
@@ -606,7 +606,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 328,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 470
@@ -614,7 +614,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 268,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 477
@@ -622,7 +622,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 270,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "x",
                         "line": 480
@@ -630,7 +630,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 90,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "y",
                         "line": 481
@@ -638,7 +638,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 71,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "width",
                         "line": 483
@@ -646,7 +646,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 48,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "height",
                         "line": 484
@@ -654,7 +654,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 413,
                         "errorMessage": "",
                         "functionName": "fillMode",
                         "line": 489
@@ -662,7 +662,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 305,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 488
@@ -670,7 +670,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 314,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 493
@@ -678,7 +678,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 296,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 497
@@ -686,7 +686,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 256,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "x",
                         "line": 507
@@ -694,7 +694,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "y",
                         "line": 508
@@ -702,7 +702,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 55,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "height",
                         "line": 509
@@ -710,7 +710,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "width",
                         "line": 510
@@ -718,7 +718,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 76,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "isSliding",
                         "line": 511
@@ -726,7 +726,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 60,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "isJumping",
                         "line": 512
@@ -734,7 +734,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "isDowning",
                         "line": 513
@@ -742,7 +742,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "gameRunning",
                         "line": 514
@@ -750,7 +750,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 1094,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 519
@@ -758,7 +758,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 214,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 519
@@ -766,7 +766,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 60,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 347,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 519
@@ -774,7 +774,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 49,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 176,
                         "errorMessage": "Cannot access value for name gameRunning",
                         "functionName": "visible",
                         "line": 520
@@ -782,7 +782,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 586,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 522
@@ -790,7 +790,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 55,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 150,
                         "errorMessage": "Cannot access value for name sc_y",
                         "functionName": "bottomMargin",
                         "line": 522
@@ -798,7 +798,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 352,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 523
@@ -830,7 +830,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 64,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "radius",
                         "line": 527
@@ -838,7 +838,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 529
@@ -846,7 +846,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 29,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 529
@@ -854,7 +854,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 53,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "fillMode",
                         "line": 531
@@ -862,7 +862,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 27,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 531
@@ -870,7 +870,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 539
@@ -886,7 +886,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 60,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 539
@@ -894,7 +894,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 49,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name gameRunning",
                         "functionName": "visible",
                         "line": 540
@@ -902,7 +902,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 542
@@ -910,7 +910,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 55,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot access value for name sc_y",
                         "functionName": "bottomMargin",
                         "line": 542
@@ -918,7 +918,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 35,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 543
@@ -934,7 +934,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 49,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "fillMode",
                         "line": 549
@@ -942,7 +942,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 25,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 547
@@ -950,7 +950,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 549
@@ -958,7 +958,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 189,
+                        "durationMicroseconds": 182,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onPressed",
                         "line": 554
@@ -966,7 +966,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 103,
+                        "durationMicroseconds": 102,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onReleased",
                         "line": 558
@@ -974,7 +974,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 24,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 553
@@ -982,7 +982,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "score",
                         "line": 567
@@ -998,7 +998,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 4,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "gameRunning",
                         "line": 569
@@ -1006,7 +1006,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onPauseGame",
                         "line": 570
@@ -1014,7 +1014,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onTriggered",
                         "line": 588
@@ -1022,7 +1022,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 231,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "gameRunning",
                         "line": 600
@@ -1030,7 +1030,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 447,
+                        "durationMicroseconds": 57,
                         "errorMessage": "",
                         "functionName": "activeGrounds",
                         "line": 601
@@ -1038,7 +1038,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "speed",
                         "line": 602
@@ -1046,7 +1046,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "ground_hasBigGap",
                         "line": 603
@@ -1054,7 +1054,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "tanhuang_ground",
                         "line": 604
@@ -1062,7 +1062,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "goto_bonusLevel",
                         "line": 605
@@ -1070,7 +1070,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "player_normal_x",
                         "line": 608
@@ -1078,7 +1078,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "player_y",
                         "line": 610
@@ -1086,7 +1086,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "player_x",
                         "line": 611
@@ -1094,7 +1094,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "player_height",
                         "line": 612
@@ -1102,7 +1102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "player_width",
                         "line": 613
@@ -1110,7 +1110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "player_slide_height",
                         "line": 614
@@ -1118,7 +1118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 53,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "isJumping",
                         "line": 615
@@ -1126,7 +1126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 369,
+                        "durationMicroseconds": 336,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onMovePlayer",
                         "line": 618
@@ -1134,7 +1134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 64,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onMustSlide",
                         "line": 619
@@ -1142,7 +1142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 1256,
+                        "durationMicroseconds": 1446,
                         "errorMessage": "method begin_slide cannot be resolved.",
                         "functionName": "onMustSlideKeep",
                         "line": 620
@@ -1150,7 +1150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 551,
+                        "durationMicroseconds": 740,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onMustSlideEnd",
                         "line": 621
@@ -1158,7 +1158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 198,
+                        "durationMicroseconds": 354,
                         "errorMessage": "method gameOver cannot be resolved.",
                         "functionName": "onPlayerDead",
                         "line": 625
@@ -1166,7 +1166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 337,
+                        "durationMicroseconds": 254,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onTanhuangJump",
                         "line": 626
@@ -1174,7 +1174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onReadyTanhuang",
                         "line": 633
@@ -1182,7 +1182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onAddEnergy",
                         "line": 634
@@ -1190,7 +1190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 251,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "speed",
                         "line": 641
@@ -1198,7 +1198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 61,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "running",
                         "line": 642
@@ -1206,7 +1206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 115,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "parent",
                         "line": 643
@@ -1214,7 +1214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 375,
+                        "durationMicroseconds": 543,
                         "errorMessage": "",
                         "functionName": "activeGrounds",
                         "line": 645
@@ -1222,7 +1222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 417,
+                        "durationMicroseconds": 326,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 644
@@ -1230,7 +1230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 372,
+                        "durationMicroseconds": 456,
                         "errorMessage": "",
                         "functionName": "player",
                         "line": 650
@@ -1238,7 +1238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 215,
+                        "durationMicroseconds": 288,
                         "errorMessage": "",
                         "functionName": "daojus",
                         "line": 651
@@ -1246,7 +1246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 192,
+                        "durationMicroseconds": 116,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onDaojuCollected",
                         "line": 652
@@ -1254,7 +1254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onAttractActivated",
                         "line": 653
@@ -1262,7 +1262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onEnlargeActivated",
                         "line": 654
@@ -1270,7 +1270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onShieldActivated",
                         "line": 655
@@ -1278,7 +1278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 837,
+                        "durationMicroseconds": 512,
                         "errorMessage": "method gameOver cannot be resolved.",
                         "functionName": "onObstacleHit",
                         "line": 656
@@ -1286,7 +1286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 62,
                         "errorMessage": "Cannot access value for name doublePointsRemaining",
                         "functionName": "onTriggered",
                         "line": 664
@@ -1326,7 +1326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot access value for name doublePointsActive",
                         "functionName": "running",
                         "line": 704
@@ -1334,7 +1334,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot access value for name Animation",
                         "functionName": "loops",
                         "line": 705
@@ -1342,7 +1342,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot access value for name isAttracting",
                         "functionName": "visible",
                         "line": 713
@@ -1350,7 +1350,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 143,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 714
@@ -1358,7 +1358,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 33,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 715
@@ -1366,7 +1366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 716
@@ -1374,7 +1374,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 56,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 720
@@ -1382,7 +1382,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot access value for name isAttracting",
                         "functionName": "running",
                         "line": 724
@@ -1390,7 +1390,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 725
@@ -1398,7 +1398,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 69,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 726
@@ -1406,7 +1406,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 69,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 49,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 727
@@ -1414,7 +1414,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot find name isAttracting",
                         "functionName": "onTriggered",
                         "line": 750
@@ -1422,7 +1422,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name isAttracting",
                         "functionName": "running",
                         "line": 760
@@ -1430,7 +1430,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 67,
                         "errorMessage": "method attractCoins cannot be resolved.",
                         "functionName": "onTriggered",
                         "line": 762
@@ -1438,7 +1438,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot find name isAttracting",
                         "functionName": "onFinished",
                         "line": 807
@@ -1446,7 +1446,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "target",
                         "line": 799
@@ -1454,7 +1454,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "duration",
                         "line": 803
@@ -1462,7 +1462,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 33,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 804
@@ -1470,7 +1470,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "visible",
                         "line": 815
@@ -1478,7 +1478,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 34,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 816
@@ -1486,7 +1486,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "width",
                         "line": 822
@@ -1494,7 +1494,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 823
@@ -1502,7 +1502,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 824
@@ -1510,7 +1510,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 372,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "color",
                         "line": 826
@@ -1518,7 +1518,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 438,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 833
@@ -1526,7 +1526,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 165,
+                        "durationMicroseconds": 30,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 834
@@ -1534,7 +1534,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 309,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 841
@@ -1542,7 +1542,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 301,
+                        "durationMicroseconds": 28,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 842
@@ -1550,7 +1550,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 1304,
+                        "durationMicroseconds": 188,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onStopped",
                         "line": 886
@@ -1558,7 +1558,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 342,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 871
@@ -1566,7 +1566,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 204,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "from",
                         "line": 873
@@ -1574,7 +1574,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "to",
                         "line": 874
@@ -1582,7 +1582,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 157,
+                        "durationMicroseconds": 35,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 876
@@ -1590,7 +1590,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 399,
+                        "durationMicroseconds": 35,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 879
@@ -1598,7 +1598,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "from",
                         "line": 881
@@ -1606,7 +1606,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "to",
                         "line": 882
@@ -1622,7 +1622,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 86,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onTriggered",
                         "line": 902
@@ -1630,7 +1630,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 123,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onStopped",
                         "line": 931
@@ -1638,7 +1638,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "target",
                         "line": 918
@@ -1646,7 +1646,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "to",
                         "line": 920
@@ -1654,7 +1654,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 922
@@ -1662,7 +1662,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 68,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "target",
                         "line": 925
@@ -1670,7 +1670,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "to",
                         "line": 927
@@ -1678,7 +1678,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 34,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 929
@@ -1686,7 +1686,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "visible",
                         "line": 952
@@ -1694,7 +1694,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 953
@@ -1702,7 +1702,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 954
@@ -1710,7 +1710,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 45,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 955
@@ -1718,7 +1718,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 23,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 959
@@ -1726,7 +1726,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "running",
                         "line": 963
@@ -1734,7 +1734,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 964
@@ -1742,7 +1742,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 69,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 364,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 965
@@ -1750,7 +1750,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 69,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 293,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 966
@@ -1758,7 +1758,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 283,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gameScreen",
                         "functionName": "onTriggered",
                         "line": 982
@@ -1790,7 +1790,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 390,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 998
@@ -1806,7 +1806,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 111,
+                        "durationMicroseconds": 871,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1004
@@ -1814,7 +1814,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 329,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1004
@@ -1822,7 +1822,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 146,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 1005
@@ -1830,7 +1830,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 573,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 1007
@@ -1838,7 +1838,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 287,
                         "errorMessage": "",
                         "functionName": "bottomMargin",
                         "line": 1008
@@ -1846,7 +1846,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 1009
@@ -1926,7 +1926,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 35,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 1045
@@ -1934,7 +1934,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 60,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1049
@@ -1942,7 +1942,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 58,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1049
@@ -1950,7 +1950,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 86,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 1049
@@ -1982,7 +1982,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 47,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 1058
@@ -1990,7 +1990,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "topMargin",
                         "line": 1058
@@ -1998,7 +1998,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 30,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 1059
@@ -2006,7 +2006,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 54,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1064
@@ -2014,7 +2014,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 60,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1064
@@ -2022,7 +2022,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 87,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 1064
@@ -2054,7 +2054,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 50,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 1074
@@ -2062,7 +2062,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 48,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 47,
                         "errorMessage": "",
                         "functionName": "topMargin",
                         "line": 1074
@@ -2070,7 +2070,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 1075
@@ -2078,7 +2078,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 641,
+                        "durationMicroseconds": 53,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1080
@@ -2086,7 +2086,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 60,
-                        "durationMicroseconds": 145,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1080
@@ -2094,7 +2094,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 86,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 1080
@@ -2126,7 +2126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 672,
+                        "durationMicroseconds": 597,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 1096
@@ -2134,7 +2134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 50,
-                        "durationMicroseconds": 339,
+                        "durationMicroseconds": 420,
                         "errorMessage": "",
                         "functionName": "topMargin",
                         "line": 1096
@@ -2142,7 +2142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 125,
+                        "durationMicroseconds": 160,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 1097
@@ -2150,7 +2150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 339,
+                        "durationMicroseconds": 322,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 1123
@@ -2166,7 +2166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 304,
+                        "durationMicroseconds": 465,
                         "errorMessage": "Cannot access value for name gameRunning",
                         "functionName": "running",
                         "line": 1134
@@ -2174,7 +2174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 232,
+                        "durationMicroseconds": 346,
                         "errorMessage": "method syncGameState cannot be resolved.",
                         "functionName": "onTriggered",
                         "line": 1136
@@ -2182,7 +2182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 801,
+                        "durationMicroseconds": 557,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1155
@@ -2190,7 +2190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 231,
+                        "durationMicroseconds": 179,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 1156
@@ -2198,7 +2198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 131,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 1158
@@ -2206,7 +2206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 493,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 1161
@@ -2214,7 +2214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 255,
                         "errorMessage": "",
                         "functionName": "bottomMargin",
                         "line": 1162
@@ -2222,7 +2222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 1163
@@ -2230,7 +2230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 1169
@@ -2238,7 +2238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 1173
@@ -2262,7 +2262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot find name goto_bonusLevel",
                         "functionName": "onTriggered",
                         "line": 1217

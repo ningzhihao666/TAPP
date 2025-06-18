@@ -50,6 +50,7 @@ Module {
             name: "sendGameState"
             Parameter { name: "state"; type: "QVariantMap" }
         }
+        Method { name: "stopDiscovery" }
         Method {
             name: "startServer"
             type: "bool"

@@ -22,7 +22,7 @@
                             "type": "quint16"
                         }
                     ],
-                    "index": 13,
+                    "index": 14,
                     "name": "startServer",
                     "returnType": "bool"
                 },
@@ -38,7 +38,7 @@
                             "type": "quint16"
                         }
                     ],
-                    "index": 14,
+                    "index": 15,
                     "name": "connectToHost",
                     "returnType": "void"
                 },
@@ -50,31 +50,31 @@
                             "type": "QVariantMap"
                         }
                     ],
-                    "index": 15,
+                    "index": 16,
                     "name": "sendGameData",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 16,
+                    "index": 17,
                     "name": "startBroadcasting",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 17,
+                    "index": 18,
                     "name": "stopBroadcasting",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 18,
+                    "index": 19,
                     "name": "discoverPeers",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 19,
+                    "index": 20,
                     "name": "disconnectFromHost",
                     "returnType": "void"
                 }
@@ -206,6 +206,12 @@
                     ],
                     "index": 12,
                     "name": "sendGameState",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "index": 13,
+                    "name": "stopDiscovery",
                     "returnType": "void"
                 }
             ],

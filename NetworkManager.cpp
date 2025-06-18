@@ -7,9 +7,9 @@ NetworkManager *NetworkManager::m_instance = nullptr;
 NetworkManager::NetworkManager(QObject *parent) : QObject(parent)
 {
     m_server = new QTcpServer(this);
-    /// 移除 broadcastSocket 的初始化，改为按需创建
-    broadcastSocket = nullptr;
-    broadcastTimer = nullptr;
+    // 移除 broadcastSocket 的初始化，改为按需创建
+    m_broadcastSocket = nullptr;
+    m_broadcastTimer = nullptr;
 
     connect(m_server, &QTcpServer::newConnection, this, &NetworkManager::onNewConnection);
 }
@@ -118,10 +118,14 @@ void NetworkManager::startBroadcasting()
 {
     stopBroadcasting();
 
-    broadcastSocket = new QUdpSocket(this);
-    broadcastTimer = new QTimer(this);
+    m_broadcastSocket = new QUdpSocket(this);
+    // 绑定随机端口（发送不需要固定端口）
+    if (!m_broadcastSocket->bind(QHostAddress::AnyIPv4, 0)) {
+        qDebug() << "Broadcast bind failed:" << m_broadcastSocket->errorString();
+        return;
+    }
 
-    // 输出房间信息
+    // 获取本地 IP 和房间名
     QList<QHostAddress> localAddresses;
     foreach (const QHostAddress &address, QNetworkInterface::allAddresses()) {
         if (address.protocol() == QAbstractSocket::IPv4Protocol && address != QHostAddress::LocalHost) {
@@ -129,112 +133,79 @@ void NetworkManager::startBroadcasting()
         }
     }
 
-    qDebug() << "Room created with the following IP addresses:";
+    localAddresses.append(QHostAddress("127.255.255.255")); // 添加回环广播
+
+    QString roomInfo = "房间已创建:\n";
     foreach (const QHostAddress &address, localAddresses) {
-        qDebug() << "IP:" << address.toString() << "Port:" << 54321;
+        roomInfo += "IP: " + address.toString() + "\n";
     }
-
-    // 绑定 UDP 端口
-    if (!broadcastSocket->bind(45454, QUdpSocket::ShareAddress | QUdpSocket::ReuseAddressHint)) {
-        qDebug() << "Failed to bind UDP socket for broadcasting:" << broadcastSocket->errorString();
-        return;
-    }
-
-    // 获取广播地址
-    QList<QHostAddress> broadcastAddresses;
+    roomInfo += "端口: 54321";
+    emit serverStarted(54321); // 触发 UI 更新
+    qDebug() << roomInfo;
+    qDebug() << "可用网络接口：";
     foreach (const QNetworkInterface &interface, QNetworkInterface::allInterfaces()) {
+        qDebug() << "接口:" << interface.name() << "IP:";
         foreach (const QNetworkAddressEntry &entry, interface.addressEntries()) {
-            if (!entry.broadcast().isNull() && interface.flags().testFlag(QNetworkInterface::CanBroadcast)) {
-                broadcastAddresses.append(entry.broadcast());
-                qDebug() << "Broadcasting to:" << entry.broadcast().toString();
+            if (!entry.ip().isLoopback() && entry.ip().protocol() == QAbstractSocket::IPv4Protocol) {
+                qDebug() << "  " << entry.ip().toString() << "广播地址:" << entry.broadcast().toString();
             }
         }
     }
 
-    peerName = QHostInfo::localHostName();
-
-    connect(broadcastTimer, &QTimer::timeout, this, [this, broadcastAddresses]() {
-        QByteArray datagram = "TTKP:" + peerName.toUtf8();
-        foreach (const QHostAddress &address, broadcastAddresses) {
-            broadcastSocket->writeDatagram(datagram, address, 45454);
-        }
+    // 定时广播
+    m_broadcastTimer = new QTimer(this);
+    connect(m_broadcastTimer, &QTimer::timeout, this, [this]() {
+        QByteArray datagram = "TTKP:" + QHostInfo::localHostName().toUtf8();
+        m_broadcastSocket->writeDatagram(datagram, QHostAddress::Broadcast, 45454);
     });
-
-    broadcastTimer->start(1000);
-    qDebug() << "Broadcasting started...";
+    m_broadcastTimer->start(1000);
 }
 void NetworkManager::stopBroadcasting()
 {
-    if (broadcastTimer) {
-        broadcastTimer->stop();
-        broadcastTimer->deleteLater();
-        broadcastTimer = nullptr;
+    if (m_broadcastTimer) {
+        m_broadcastTimer->stop();
+        m_broadcastTimer->deleteLater();
+        m_broadcastTimer = nullptr;
     }
 
-    if (broadcastSocket) {
-        broadcastSocket->close();
-        broadcastSocket->deleteLater();
-        broadcastSocket = nullptr;
+    if (m_broadcastSocket) {
+        m_broadcastSocket->close();
+        m_broadcastSocket->deleteLater();
+        m_broadcastSocket = nullptr;
     }
 }
 
+void NetworkManager::stopDiscovery()
+{
+    if (m_discoverSocket) {
+        m_discoverSocket->close();
+        m_discoverSocket->deleteLater();
+        m_discoverSocket = nullptr;
+    }
+}
 void NetworkManager::discoverPeers()
 {
-    qDebug() << "discoverPeers called. broadcastSocket pointer:" << broadcastSocket;
-
-    if (!broadcastSocket) {
-        qDebug() << "Creating new UDP socket...";
-        broadcastSocket = new QUdpSocket(this);
-    } else {
-        qDebug() << "Socket already exists. State:" << broadcastSocket->state();
-    }
-    if (!broadcastSocket) {
-        broadcastSocket = new QUdpSocket(this);
-        // 先断开之前的连接
-        disconnect(broadcastSocket, &QUdpSocket::readyRead, this, &NetworkManager::readBroadcastDatagrams);
-        // 重新连接信号
-        connect(broadcastSocket, &QUdpSocket::readyRead, this, &NetworkManager::readBroadcastDatagrams);
-    }
-
-    // 先关闭之前的绑定
-    broadcastSocket->close();
-
-    if (!broadcastSocket->bind(45454, QUdpSocket::ShareAddress | QUdpSocket::ReuseAddressHint)) {
-        qDebug() << "Failed to bind UDP socket for discovery:" << broadcastSocket->errorString();
-        emit connectionError("绑定UDP端口失败: " + broadcastSocket->errorString());
-        // 添加错误处理，防止崩溃
-        broadcastSocket->deleteLater();
-        broadcastSocket = nullptr;
+    m_discoverSocket = new QUdpSocket(this);
+    if (!m_discoverSocket->bind(45454, QUdpSocket::ShareAddress)) {
+        emit connectionError("发现绑定失败: " + m_discoverSocket->errorString());
         return;
     }
-
-    qDebug() << "UDP socket bound successfully for discovery";
+    connect(m_discoverSocket, &QUdpSocket::readyRead, this, &NetworkManager::readBroadcastDatagrams);
 }
 void NetworkManager::readBroadcastDatagrams()
 {
-    if (!broadcastSocket || !broadcastSocket->hasPendingDatagrams()) return;
+    while (m_discoverSocket->hasPendingDatagrams()) {
+        QByteArray datagram;
+        datagram.resize(m_discoverSocket->pendingDatagramSize());
+        QHostAddress senderIp;
+        quint16 senderPort;
 
-    try {
-        while (broadcastSocket->hasPendingDatagrams()) {
-            QByteArray datagram;
-            datagram.resize(broadcastSocket->pendingDatagramSize());
-            QHostAddress senderIp;
-            quint16 senderPort;
+        m_discoverSocket->readDatagram(datagram.data(), datagram.size(), &senderIp, &senderPort);
 
-            qint64 bytesRead = broadcastSocket->readDatagram(datagram.data(), datagram.size(), &senderIp, &senderPort);
-
-            if (bytesRead == -1) {
-                qDebug() << "读取数据报失败:" << broadcastSocket->errorString();
-                continue;
-            }
-
-            if (datagram.startsWith("TTKP:")) {
-                QString peerName = QString::fromUtf8(datagram.mid(5));
-                if (senderIp != QHostAddress::LocalHost) { emit peerDiscovered(senderIp.toString(), peerName); }
-            }
+        if (datagram.startsWith("TTKP:")) {
+            QString roomName = QString::fromUtf8(datagram.mid(5));
+            emit peerDiscovered(senderIp.toString(), roomName);
         }
-    } catch (...) {
-        qCritical() << "处理UDP数据时发生异常";
     }
 }
 // NetworkManager.cpp 新增

@@ -67,6 +67,8 @@ Page {
                 width: parent.width
                 text: model.name + " (" + model.ip + ")"
                 onClicked: {
+                    console.log("原始IP_________________________:", model.ip);
+                    console.log("原始NAME_______________________:", model.name);
                     stackView.push("BattlePage.qml", {
                         "targetIp": model.ip,
                         "targetPort": 54321
@@ -101,5 +103,24 @@ Page {
             statusText.text = "创建房间失败: " + error;
             statusText.color = "red";
         }
-    }
+        function onPeerDiscovered(ip, name) {
+            if (ip.startsWith("::ffff:")) {
+                   ip = ip.substring(7); // 提取172.20.10.2部分
+               }
+            console.log("发现房间:", ip, name);
+            var exists = false;
+                    for (var i = 0; i < discoveredPeers.count; ++i) {
+                        if (discoveredPeers.get(i).ip === ip) {
+                            exists = true;
+                            break;
+                        }
+                    }
+                    // 如果是新房间则添加到列表
+                    if (!exists) {
+                        discoveredPeers.append({"ip": ip, "name": name});
+                        statusText.text = "发现新房间: " + name;
+                    }
+                }
+}
+
 }

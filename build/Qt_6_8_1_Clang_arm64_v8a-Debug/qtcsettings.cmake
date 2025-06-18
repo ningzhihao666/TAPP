@@ -1,0 +1,18 @@
+# This file is managed by Qt Creator, do not edit!
+
+set("QT_QMAKE_EXECUTABLE" "" CACHE "FILEPATH" "" FORCE)
+set("ANDROID_ABI" "arm64-v8a" CACHE "STRING" "" FORCE)
+set("CMAKE_GENERATOR" "Ninja" CACHE "STRING" "" FORCE)
+set("ANDROID_PLATFORM" "" CACHE "STRING" "" FORCE)
+set("ANDROID_SDK" "/opt/android-sdk" CACHE "PATH" "" FORCE)
+set("ANDROID_USE_LEGACY_TOOLCHAIN_FILE" "OFF" CACHE "BOOL" "" FORCE)
+set("CMAKE_FIND_ROOT_PATH" "" CACHE "PATH" "" FORCE)
+set("CMAKE_C_COMPILER" "/usr/bin/clang" CACHE "FILEPATH" "" FORCE)
+set("CMAKE_COLOR_DIAGNOSTICS" "ON" CACHE "BOOL" "" FORCE)
+set("CMAKE_TOOLCHAIN_FILE" "build/cmake/android.toolchain.cmake" CACHE "FILEPATH" "" FORCE)
+set("ANDROID_NDK" "" CACHE "PATH" "" FORCE)
+set("ANDROID_STL" "c++_shared" CACHE "STRING" "" FORCE)
+set("CMAKE_CXX_COMPILER" "/usr/bin/clang++" CACHE "FILEPATH" "" FORCE)
+set("CMAKE_PROJECT_INCLUDE_BEFORE" "/root/2023051604097Heyujie/111/tiantiankupao/build/Qt_6_8_1_Clang_arm64_v8a-Debug/.qtc/package-manager/auto-setup.cmake" CACHE "FILEPATH" "" FORCE)
+set("CMAKE_PREFIX_PATH" "" CACHE "PATH" "" FORCE)
+set("CMAKE_BUILD_TYPE" "Debug" CACHE "STRING" "" FORCE)

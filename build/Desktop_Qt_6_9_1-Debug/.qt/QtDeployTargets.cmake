@@ -1,6 +1,2 @@
 set(__QT_DEPLOY_TARGET_apptiantiankupao_FILE /root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/apptiantiankupao)
 set(__QT_DEPLOY_TARGET_apptiantiankupao_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_network_module_FILE /root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/libnetwork_module.so)
-set(__QT_DEPLOY_TARGET_network_module_TYPE SHARED_LIBRARY)
-set(__QT_DEPLOY_TARGET_network_moduleplugin_FILE /root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/libnetwork_moduleplugin.so)
-set(__QT_DEPLOY_TARGET_network_moduleplugin_TYPE MODULE_LIBRARY)

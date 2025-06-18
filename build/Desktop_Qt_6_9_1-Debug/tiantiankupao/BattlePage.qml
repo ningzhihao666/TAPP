@@ -4,8 +4,8 @@ import NetworkManager 1.0
 
 Page {
     id: battlePage
-    property string targetIp: ""
-    property int targetPort: 54321
+    property string targetIp
+    property int targetPort
 
     GameScreen {
         id: gameScreen
@@ -36,8 +36,20 @@ Page {
     }
 
     Component.onCompleted: {
+        console.log("原始IP:", targetIp);
+        console.log("原始import:", targetPort);
         if (targetIp) {
-            NetworkManager.connectToHost(targetIp, targetPort);
+            var realIp = targetIp.startsWith("::ffff:") ? targetIp.substring(7) : targetIp;
+
+            // 输出连接参数信息
+            console.log("正在尝试连接...");
+            console.log("原始IP:", targetIp);
+            console.log("处理后IP:", realIp);
+            console.log("目标端口:", targetPort);
+
+            NetworkManager.connectToHost(realIp, targetPort);
+        } else {
+            console.warn("targetIp为空，无法建立连接");
         }
     }
 }

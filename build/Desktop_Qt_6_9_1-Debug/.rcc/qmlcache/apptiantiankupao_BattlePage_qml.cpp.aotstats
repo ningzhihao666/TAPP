@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 101,
                         "errorMessage": "Cannot load property socketState from NetworkManager.",
                         "functionName": "color",
                         "line": 22
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 151,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 18
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 19
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot load property socketState from NetworkManager.",
                         "functionName": "text",
                         "line": 26
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 25
@@ -60,10 +60,10 @@
                         "line": 32
                     },
                     {
-                        "codegenSuccessful": true,
+                        "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 143,
-                        "errorMessage": "",
+                        "durationMicroseconds": 984,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onCompleted",
                         "line": 38
                     }

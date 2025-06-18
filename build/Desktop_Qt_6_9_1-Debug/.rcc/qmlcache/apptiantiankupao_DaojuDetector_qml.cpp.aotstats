@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 910,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "obstacles",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 5737,
                         "errorMessage": "",
                         "functionName": "minObstacleSpacing",
                         "line": 21
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 14367,
+                        "durationMicroseconds": 5507,
                         "errorMessage": "Cannot load property y from (component in /root/2023051604097Heyujie/111/tiantiankupao/DaojuDetector.qml)::player with type QVariant.",
                         "functionName": "checkCollisions",
                         "line": 30
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 64,
                         "errorMessage": "method checkCollisions cannot be resolved.",
                         "functionName": "onTriggered",
                         "line": 27

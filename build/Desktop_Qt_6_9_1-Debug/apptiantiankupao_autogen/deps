@@ -964,7 +964,6 @@ apptiantiankupao_autogen/timestamp: \
 	/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlFindQmlscInternal.cmake \
 	/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake \
 	/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in \
-	/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlPluginTemplate.cpp.in \
 	/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlPlugins.cmake \
 	/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlPublicCMakeHelpers.cmake \
 	/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlTargets-relwithdebinfo.cmake \
@@ -1091,7 +1090,6 @@ apptiantiankupao_autogen/timestamp: \
 	/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/CMakeFiles/3.31.2/CMakeCXXCompiler.cmake \
 	/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/CMakeFiles/3.31.2/CMakeSystem.cmake \
 	/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/apptiantiankupao_autogen/moc_predefs.h \
-	/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/network_moduleplugin_NetworkManagerPlugin_in.cpp \
 	/root/2023051604097Heyujie/111/tiantiankupao/images.qrc \
 	/root/2023051604097Heyujie/111/tiantiankupao/main.cpp \
 	/usr/include/alloca.h \
