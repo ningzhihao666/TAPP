@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Window
 import QtMultimedia
 import Qt.labs.settings
+import QtQuick.Dialogs
 
 //游戏进入开始页面
 
@@ -210,7 +211,7 @@ Page{
                 left:zhuanshi_l.right;  leftMargin: parent.width*0.04
                 verticalCenter: parent.verticalCenter
             }
-            Label{text:coin_num;  color:"black";  anchors.centerIn:parent  }
+            Label{text:masonry_num;  color:"black";  anchors.centerIn:parent  }
         }
     }
 
@@ -263,33 +264,35 @@ Page{
     }
     //模式弹窗选择矩形
     Rectangle{
-        id:model_cs;   height:Screen.height*0.08;  width:Screen.width*0.35
-        border.width:1;   color:"yellow";  visible:model_dialog
+        id:model_cs;
+        height:Screen.height*0.08;  width:Screen.width*0.35;
+        border.width:1;   color:"yellow";   visible:model_dialog
         property string name:""           //模式名称
+        anchors{
+            left:model.left;
+            bottom:model.top;      bottomMargin: Screen.height*0.02
+        }
+
         Button{
             height:parent.height;   width:parent.width/3
-            background: Rectangle{ color:"transparent"; border.width: 1}
+            background: Rectangle{ color:"transparent";}
             anchors{left:parent.left;  top:parent.top}
             Label{text:"跑酷模式"; color:"black"; anchors.centerIn:parent}
             onClicked: { model_cs.name="跑酷模式" }
         }
         Button{
             height:parent.height;   width:parent.width/3;
-            background: Rectangle{ color:"transparent";  border.width: 1}
+            background: Rectangle{ color:"transparent";}
             anchors{horizontalCenter: parent.horizontalCenter;  top:parent.top}
             Label{text:"BOSS挑战"; color:"black"; anchors.centerIn:parent}
             onClicked: { model_cs.name="BOSS挑战" }
         }
         Button{
             height:parent.height;   width:parent.width/3
-            background: Rectangle{ color:"transparent"; border.width: 1}
+            background: Rectangle{ color:"transparent";}
             anchors{right:parent.right;  top:parent.top}
             Label{text:"双人互联"; color:"black"; anchors.centerIn:parent}
             onClicked: { model_cs.name="双人互联" }
-        }
-        anchors{
-            bottom: model.top;  bottomMargin: Screen.height*0.01
-            left:model.left;
         }
     }
 
@@ -317,11 +320,16 @@ Page{
                                   })
                 }
                 if(model_cs.name==="BOSS挑战"){
+                    stackView.push("Boss_level.qml",{
+                                  "gameBegin":true
+                                  })
                 }
                 if(model_cs.name==="双人互联"){
                     stackView.replace("BattleLobby.qml")
+                    model_diag.close()
                 }
             }
         }
     }
 }
+

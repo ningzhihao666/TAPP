@@ -1,7 +1,0 @@
-module NetworkManager
-linktarget network_moduleplugin
-optional plugin network_moduleplugin
-classname NetworkManagerPlugin
-typeinfo network_module.qmltypes
-prefer :/qt/qml/NetworkManager/
-
