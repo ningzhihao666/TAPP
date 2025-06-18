@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 615,
                         "errorMessage": "",
                         "functionName": "speed",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 401,
                         "errorMessage": "",
                         "functionName": "typeCount",
                         "line": 19
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 212,
+                        "durationMicroseconds": 1247,
                         "errorMessage": "",
                         "functionName": "validParent",
                         "line": 24
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "boxwidth",
                         "line": 30
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 318,
                         "errorMessage": "",
                         "functionName": "boxheight",
                         "line": 31
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 247,
                         "errorMessage": "",
                         "functionName": "daoju_height",
                         "line": 34
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 215,
                         "errorMessage": "",
                         "functionName": "daoju_width",
                         "line": 35
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 286,
                         "errorMessage": "",
                         "functionName": "sc_x",
                         "line": 38
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 248,
                         "errorMessage": "",
                         "functionName": "sc_y",
                         "line": 39
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 17092,
+                        "durationMicroseconds": 12597,
                         "errorMessage": "Cannot use shadowable base type for further lookups: call to method get, returning QJSValue",
                         "functionName": "spawndaoju",
                         "line": 111
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 153,
+                        "durationMicroseconds": 949,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 44
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 381,
+                        "durationMicroseconds": 1359,
                         "errorMessage": "method spawndaoju cannot be resolved.",
                         "functionName": "onTriggered",
                         "line": 46
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 302,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 198
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 287,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 224
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 330,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 225
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 342,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 222
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 252,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 230
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 166,
                         "errorMessage": "Cannot access value for name daojugenerator",
                         "functionName": "running",
                         "line": 235
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 134,
+                        "durationMicroseconds": 481,
                         "errorMessage": "Cannot load property x from (component in /root/2023051604097Heyujie/111/tiantiankupao/DaojuGenerator.qml)::parent with type QObject.",
                         "functionName": "onTriggered",
                         "line": 237
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot access value for name daoju_width",
                         "functionName": "width",
                         "line": 253
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name daoju_height",
                         "functionName": "height",
                         "line": 254
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 255
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 223,
+                        "durationMicroseconds": 209,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "targetX",
                         "line": 260
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 162,
+                        "durationMicroseconds": 163,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "targetY",
                         "line": 261
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "originalY",
                         "line": 262
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot access value for name sc_y",
                         "functionName": "amplitude",
                         "line": 264
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 87,
                         "errorMessage": "",
                         "functionName": "rotationSpeed",
                         "line": 266
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 109,
                         "errorMessage": "",
                         "functionName": "waveOffset",
                         "line": 267
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 271
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot find name movingToCenter",
                         "functionName": "onFinished",
                         "line": 295
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 280
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "to",
                         "line": 282
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 50,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 284
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 288
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "to",
                         "line": 290
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 43,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 292
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 207,
+                        "durationMicroseconds": 186,
                         "errorMessage": "Cannot access value for name daojugenerator",
                         "functionName": "onTriggered",
                         "line": 307
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 79,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 326
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 332
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name sc_y",
                         "functionName": "pixelSize",
                         "line": 335
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 53,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 341
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 44,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 345
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 72,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 346
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 72,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 347
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name daoju_width",
                         "functionName": "width",
                         "line": 357
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name daoju_height",
                         "functionName": "height",
                         "line": 358
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name sc_x",
                         "functionName": "radius",
                         "line": 359
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 233,
+                        "durationMicroseconds": 212,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "targetX",
                         "line": 364
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 142,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "targetY",
                         "line": 365
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "originalY",
                         "line": 366
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name sc_y",
                         "functionName": "amplitude",
                         "line": 368
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 130,
                         "errorMessage": "",
                         "functionName": "rotationSpeed",
                         "line": 370
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "waveOffset",
                         "line": 371
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 376
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot find name movingToCenter",
                         "functionName": "onFinished",
                         "line": 399
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 384
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "to",
                         "line": 386
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 47,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 388
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 35,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 392
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "to",
                         "line": 394
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 396
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 1198,
+                        "durationMicroseconds": 193,
                         "errorMessage": "Cannot access value for name daojugenerator",
                         "functionName": "onTriggered",
                         "line": 411
@@ -518,7 +518,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 296,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 430
@@ -526,7 +526,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 129,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name daoju_width",
                         "functionName": "width",
                         "line": 441
@@ -534,7 +534,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot access value for name daoju_height",
                         "functionName": "height",
                         "line": 442
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 274,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 443
@@ -550,7 +550,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 745,
+                        "durationMicroseconds": 215,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "targetX",
                         "line": 448
@@ -558,7 +558,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 173,
+                        "durationMicroseconds": 152,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "targetY",
                         "line": 449
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 34,
                         "errorMessage": "",
                         "functionName": "originalY",
                         "line": 450
@@ -574,7 +574,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot access value for name sc_y",
                         "functionName": "amplitude",
                         "line": 452
@@ -582,7 +582,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 209,
+                        "durationMicroseconds": 84,
                         "errorMessage": "",
                         "functionName": "rotationSpeed",
                         "line": 454
@@ -590,7 +590,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 381,
+                        "durationMicroseconds": 111,
                         "errorMessage": "",
                         "functionName": "waveOffset",
                         "line": 455
@@ -598,7 +598,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 251,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 459
@@ -606,7 +606,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 490,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "onFinished",
                         "line": 483
@@ -614,7 +614,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 34,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 468
@@ -622,7 +622,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 114,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "to",
                         "line": 470
@@ -630,7 +630,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 329,
+                        "durationMicroseconds": 47,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 472
@@ -638,7 +638,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 362,
+                        "durationMicroseconds": 221,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 476
@@ -646,7 +646,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 144,
+                        "durationMicroseconds": 45,
                         "errorMessage": "",
                         "functionName": "to",
                         "line": 478
@@ -654,7 +654,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 230,
+                        "durationMicroseconds": 45,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 480
@@ -662,7 +662,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 901,
+                        "durationMicroseconds": 233,
                         "errorMessage": "Cannot access value for name daojugenerator",
                         "functionName": "onTriggered",
                         "line": 495
@@ -670,7 +670,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 368,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 514
@@ -678,7 +678,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot access value for name daoju_width",
                         "functionName": "width",
                         "line": 524
@@ -686,7 +686,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name daoju_height",
                         "functionName": "height",
                         "line": 525
@@ -694,7 +694,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name sc_x",
                         "functionName": "radius",
                         "line": 526
@@ -702,7 +702,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 194,
+                        "durationMicroseconds": 238,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "targetX",
                         "line": 531
@@ -710,7 +710,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 132,
+                        "durationMicroseconds": 163,
                         "errorMessage": "Cannot access value for name gameScreen",
                         "functionName": "targetY",
                         "line": 532
@@ -718,7 +718,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 47,
                         "errorMessage": "",
                         "functionName": "originalY",
                         "line": 533
@@ -726,7 +726,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name sc_y",
                         "functionName": "amplitude",
                         "line": 535
@@ -734,7 +734,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 108,
                         "errorMessage": "",
                         "functionName": "rotationSpeed",
                         "line": 537
@@ -742,7 +742,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 112,
+                        "durationMicroseconds": 130,
                         "errorMessage": "",
                         "functionName": "waveOffset",
                         "line": 538
@@ -750,7 +750,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot find name movingToCenter",
                         "functionName": "onFinished",
                         "line": 562
@@ -758,7 +758,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 57,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 547
@@ -766,7 +766,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 49,
                         "errorMessage": "",
                         "functionName": "to",
                         "line": 549
@@ -774,7 +774,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 56,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 551
@@ -782,7 +782,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 44,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 555
@@ -790,7 +790,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "to",
                         "line": 557
@@ -798,7 +798,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 64,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 559
@@ -806,7 +806,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 196,
+                        "durationMicroseconds": 233,
                         "errorMessage": "Cannot access value for name daojugenerator",
                         "functionName": "onTriggered",
                         "line": 574
@@ -814,7 +814,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 97,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 593

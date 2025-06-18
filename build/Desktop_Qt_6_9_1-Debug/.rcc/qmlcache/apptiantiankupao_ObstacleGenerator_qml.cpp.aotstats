@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 681,
                         "errorMessage": "",
                         "functionName": "tanhuang_ground",
                         "line": 15
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 543,
                         "errorMessage": "",
                         "functionName": "minObstacleSpacing",
                         "line": 29
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 203,
                         "errorMessage": "",
                         "functionName": "wall_width",
                         "line": 39
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 53,
                         "errorMessage": "",
                         "functionName": "sliding_wall",
                         "line": 40
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 304,
                         "errorMessage": "",
                         "functionName": "guaiwu_height",
                         "line": 43
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
                         "functionName": "guaiwu_width",
                         "line": 44
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 218,
                         "errorMessage": "",
                         "functionName": "dici_height",
                         "line": 47
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 190,
                         "errorMessage": "",
                         "functionName": "dici_width",
                         "line": 48
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 258,
+                        "durationMicroseconds": 1469,
                         "errorMessage": "Cannot access value for name screen",
                         "functionName": "tanhuang_width",
                         "line": 51
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 131,
                         "errorMessage": "",
                         "functionName": "tanhuang_height",
                         "line": 52
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 203,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "obstacles_type",
                         "line": 64
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 169,
+                        "durationMicroseconds": 126,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "obstacles_img",
                         "line": 65
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 715,
+                        "durationMicroseconds": 284,
                         "errorMessage": "Cannot load property length from (component in /root/2023051604097Heyujie/111/tiantiankupao/ObstacleGenerator.qml)::obstacles_type with type QVariant.",
                         "functionName": "generateObstacle",
                         "line": 75
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 1292,
+                        "durationMicroseconds": 530,
                         "errorMessage": "method getHighestGroundTop cannot be resolved.",
                         "functionName": "spawnMissile",
                         "line": 105
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 7063,
+                        "durationMicroseconds": 1471,
                         "errorMessage": "Cannot load property x from (component in /root/2023051604097Heyujie/111/tiantiankupao/ObstacleGenerator.qml)::tanhuang_ground with type QVariant.",
                         "functionName": "generator_tanhuang",
                         "line": 204
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 9617,
+                        "durationMicroseconds": 5033,
                         "errorMessage": "Cannot generate efficient code for lookup in QJSValue",
                         "functionName": "collision",
                         "line": 239
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 1534,
+                        "durationMicroseconds": 907,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "destory_obstacle",
                         "line": 265
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 310,
+                        "durationMicroseconds": 526,
                         "errorMessage": "Cannot access value for name goto_bonusLevel",
                         "functionName": "running",
                         "line": 96
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 266,
+                        "durationMicroseconds": 410,
                         "errorMessage": "method generateObstacle cannot be resolved.",
                         "functionName": "onTriggered",
                         "line": 98
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 1430,
+                        "durationMicroseconds": 515,
                         "errorMessage": "",
                         "functionName": "fillMode",
                         "line": 283
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 205,
+                        "durationMicroseconds": 80,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 281
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 241,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 291
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 341,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "x",
                         "line": 293
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "y",
                         "line": 294
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "width",
                         "line": 296
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 48,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "height",
                         "line": 297
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "source",
                         "line": 301
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 130,
+                        "durationMicroseconds": 304,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 300
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 478,
+                        "durationMicroseconds": 345,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 307
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 201,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "x",
                         "line": 309
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 103,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "y",
                         "line": 310
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 69,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "width",
                         "line": 312
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 56,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "height",
                         "line": 313
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 316
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 292,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 326
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 53607,
+                        "durationMicroseconds": 52301,
                         "errorMessage": "Cannot access value for name speed",
                         "functionName": "onTriggered",
                         "line": 328

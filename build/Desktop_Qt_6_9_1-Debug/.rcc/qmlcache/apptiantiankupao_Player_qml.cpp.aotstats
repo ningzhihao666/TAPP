@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 5120,
+                        "durationMicroseconds": 199,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "run_images",
                         "line": 10
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 12,
-                        "durationMicroseconds": 120,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 30
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 12,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 31
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "fillMode",
                         "line": 37
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 36
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot access value for name gameRunning",
                         "functionName": "running",
                         "line": 43
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 284,
+                        "durationMicroseconds": 283,
                         "errorMessage": "Cannot access value for name isSliding",
                         "functionName": "onTriggered",
                         "line": 44

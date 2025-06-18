@@ -48,13 +48,15 @@ private slots:
     void onClientDisconnected();
     void onDataReceived();
     void sendGameState(const QVariantMap &state);
+    void stopDiscovery(); // 声明发现资源清理方法
 
 private:
     explicit NetworkManager(QObject *parent = nullptr);
 
-    QUdpSocket *broadcastSocket;
-    QTimer *broadcastTimer;
-    QString peerName;
+    QUdpSocket *m_broadcastSocket;
+    QUdpSocket *m_discoverSocket;
+    QTimer *m_broadcastTimer;
+    QString m_peerName;
     QTcpServer *m_server;
     QTcpSocket *m_socket;
 

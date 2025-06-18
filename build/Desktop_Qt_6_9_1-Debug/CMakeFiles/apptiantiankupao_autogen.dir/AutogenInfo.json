@@ -1280,17 +1280,12 @@
 		"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Quick/Qt6QuickVersionlessAliasTargets.cmake",
 		"/usr/share/cmake/Modules/GNUInstallDirs.cmake",
 		"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
-		"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlPluginTemplate.cpp.in",
-		"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in",
-		"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
 		"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in",
 		"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
 		"/usr/share/cmake/Modules/GNUInstallDirs.cmake",
 		"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
-		"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.qt/qml_imports/apptiantiankupao_conf.cmake",
-		"/root/2023051604097Heyujie/111/tiantiankupao/images.qrc",
-		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/network_moduleplugin_NetworkManagerPlugin_in.cpp"
+		"/root/2023051604097Heyujie/111/tiantiankupao/images.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/root/2023051604097Heyujie/111/tiantiankupao",
 	"CROSS_CONFIG" : false,
@@ -1379,7 +1374,6 @@
 	"MOC_SKIP" : 
 	[
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.qt/rcc/qrc_apptiantiankupao_raw_qml_0.cpp",
-		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.qt/rcc/qrc_qmake_NetworkManager.cpp",
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.qt/rcc/qrc_qmake_tiantiankupao.cpp",
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.rcc/qmlcache/apptiantiankupao_BattleLobby_qml.cpp",
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.rcc/qmlcache/apptiantiankupao_BattlePage_qml.cpp",
@@ -1396,8 +1390,7 @@
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.rcc/qmlcache/apptiantiankupao_Page_jiesuan_qml.cpp",
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.rcc/qmlcache/apptiantiankupao_Player_qml.cpp",
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.rcc/qmlcache/apptiantiankupao_qmlcache_loader.cpp",
-		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/apptiantiankupao_qmltyperegistrations.cpp",
-		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/network_module_qmltyperegistrations.cpp"
+		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/apptiantiankupao_qmltyperegistrations.cpp"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 8,
@@ -1421,7 +1414,6 @@
 	"UIC_SKIP" : 
 	[
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.qt/rcc/qrc_apptiantiankupao_raw_qml_0.cpp",
-		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.qt/rcc/qrc_qmake_NetworkManager.cpp",
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.qt/rcc/qrc_qmake_tiantiankupao.cpp",
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.rcc/qmlcache/apptiantiankupao_BattleLobby_qml.cpp",
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.rcc/qmlcache/apptiantiankupao_BattlePage_qml.cpp",
@@ -1438,8 +1430,7 @@
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.rcc/qmlcache/apptiantiankupao_Page_jiesuan_qml.cpp",
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.rcc/qmlcache/apptiantiankupao_Player_qml.cpp",
 		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/.rcc/qmlcache/apptiantiankupao_qmlcache_loader.cpp",
-		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/apptiantiankupao_qmltyperegistrations.cpp",
-		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/network_module_qmltyperegistrations.cpp"
+		"/root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/apptiantiankupao_qmltyperegistrations.cpp"
 	],
 	"UIC_UI_FILES" : [],
 	"USE_BETTER_GRAPH" : true,

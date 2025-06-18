@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 195,
+                        "durationMicroseconds": 140,
                         "errorMessage": "",
                         "functionName": "sc_x",
                         "line": 14
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "tileSize",
                         "line": 18
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 146,
+                        "durationMicroseconds": 129,
                         "errorMessage": "Cannot generate efficient code for LoadElement with non-list base type (component in /root/2023051604097Heyujie/111/tiantiankupao/Boss_level.qml)::dungeonMap with type QVariant (adjusted to QJSValue, stored as QJSValue)",
                         "functionName": "mapWidth",
                         "line": 19
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 155,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot load property length from (component in /root/2023051604097Heyujie/111/tiantiankupao/Boss_level.qml)::dungeonMap with type QVariant.",
                         "functionName": "mapHeight",
                         "line": 20
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 490,
+                        "durationMicroseconds": 47,
                         "errorMessage": "",
                         "functionName": "viewportWidth",
                         "line": 21
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 441,
+                        "durationMicroseconds": 43,
                         "errorMessage": "",
                         "functionName": "viewportHeight",
                         "line": 22
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 27001,
+                        "durationMicroseconds": 26619,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "dungeonMap",
                         "line": 27
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 519,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "speed",
                         "line": 49
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 25,
                         "errorMessage": "",
                         "functionName": "bullet_width",
                         "line": 52
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "bullet_height",
                         "line": 53
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "bos_bltHeight",
                         "line": 54
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "bos_bltWidth",
                         "line": 55
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "boss_width",
                         "line": 60
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "boss_height",
                         "line": 61
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "avatar_height",
                         "line": 64
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "avatar_width",
                         "line": 65
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 37,
                         "errorMessage": "function without return type annotation returns double. This may prevent proper compilation to Cpp.",
                         "functionName": "angleToPlayer",
                         "line": 435
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 536,
+                        "durationMicroseconds": 328,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "generateAvatar",
                         "line": 668
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 1753,
+                        "durationMicroseconds": 857,
                         "errorMessage": "Cannot load property bullet_mapX from call to method itemAt, returning QQuickItem.",
                         "functionName": "attackOnBoss",
                         "line": 836
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 13587,
+                        "durationMicroseconds": 12734,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "updatePlayerPosition",
                         "line": 868
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name mapWidth",
                         "functionName": "width",
                         "line": 75
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot access value for name mapHeight",
                         "functionName": "height",
                         "line": 76
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 11,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot access value for name mapOffsetX",
                         "functionName": "x",
                         "line": 77
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 11,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name mapOffsetY",
                         "functionName": "y",
                         "line": 78
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name dungeonMap",
                         "functionName": "model",
                         "line": 82
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "y",
                         "line": 84
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 155,
+                        "durationMicroseconds": 101,
                         "errorMessage": "Cannot access value for name dungeonMap",
                         "functionName": "model",
                         "line": 86
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name tileSize",
                         "functionName": "width",
                         "line": 88
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name tileSize",
                         "functionName": "height",
                         "line": 89
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 1106,
+                        "durationMicroseconds": 154,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "source",
                         "line": 92
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 93
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 108,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 105
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 43,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 106
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 11,
-                        "durationMicroseconds": 172,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "x",
                         "line": 107
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 11,
-                        "durationMicroseconds": 129,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "y",
                         "line": 108
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name mapWidth",
                         "functionName": "worldX",
                         "line": 117
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name mapHeight",
                         "functionName": "worldY",
                         "line": 118
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 25,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 113
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 125
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 45,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 125
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 128
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "leftMargin",
                         "line": 128
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 129
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "topMargin",
                         "line": 129
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 26,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 133
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 56,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 133
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 33,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 134
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 29,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 135
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 138
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 26,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 143
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 85,
+                        "durationMicroseconds": 49,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 143
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 144
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 146
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 179,
                         "errorMessage": "",
                         "functionName": "leftMargin",
                         "line": 147
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 158,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 148
@@ -534,7 +534,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 330,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 156
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 142,
+                        "durationMicroseconds": 579,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 156
@@ -550,7 +550,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 157
@@ -558,7 +558,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 223,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 159
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 267,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 159
@@ -574,7 +574,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 11555,
+                        "durationMicroseconds": 9588,
                         "errorMessage": "Cannot load property mapX from call to method itemAt, returning QQuickItem.",
                         "functionName": "onTriggered",
                         "line": 169
@@ -582,7 +582,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 226,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot find name isKnockback",
                         "functionName": "onTriggered",
                         "line": 192
@@ -590,7 +590,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot retrieve a non-object type by ID: boss_level",
                         "functionName": "target",
                         "line": 202
@@ -598,7 +598,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot retrieve a non-object type by ID: boss_level",
                         "functionName": "to",
                         "line": 203
@@ -606,7 +606,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot retrieve a non-object type by ID: boss_level",
                         "functionName": "target",
                         "line": 206
@@ -614,7 +614,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot retrieve a non-object type by ID: boss_level",
                         "functionName": "to",
                         "line": 207
@@ -622,7 +622,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot retrieve a non-object type by ID: boss_level",
                         "functionName": "target",
                         "line": 213
@@ -630,7 +630,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: boss_level",
                         "functionName": "to",
                         "line": 214
@@ -638,7 +638,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 15,
                         "errorMessage": "Cannot retrieve a non-object type by ID: boss_level",
                         "functionName": "target",
                         "line": 217
@@ -646,7 +646,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot retrieve a non-object type by ID: boss_level",
                         "functionName": "to",
                         "line": 218
@@ -654,7 +654,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot retrieve a non-object type by ID: boss_level",
                         "functionName": "height",
                         "line": 226
@@ -662,7 +662,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot retrieve a non-object type by ID: boss_level",
                         "functionName": "width",
                         "line": 227
@@ -670,7 +670,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 57,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 229
@@ -678,7 +678,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 11,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name mapOffsetX",
                         "functionName": "x",
                         "line": 231
@@ -686,7 +686,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 11,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 11,
                         "errorMessage": "Cannot access value for name mapOffsetY",
                         "functionName": "y",
                         "line": 232
@@ -694,7 +694,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot access value for name mapWidth",
                         "functionName": "boss_mapX",
                         "line": 234
@@ -702,7 +702,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name mapHeight",
                         "functionName": "boss_mapY",
                         "line": 235
@@ -710,7 +710,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 143,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "current_target",
                         "line": 237
@@ -718,7 +718,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "moveSpeed",
                         "line": 239
@@ -726,7 +726,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 206,
+                        "durationMicroseconds": 134,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "attackPattens",
                         "line": 243
@@ -734,7 +734,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 30,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 256
@@ -742,7 +742,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 74,
+                        "durationMicroseconds": 50,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 263
@@ -750,7 +750,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 61,
                         "errorMessage": "Cannot access value for name mapWidth",
                         "functionName": "onTriggered",
                         "line": 265
@@ -758,7 +758,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "duration",
                         "line": 274
@@ -766,7 +766,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 33,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 275
@@ -774,7 +774,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 32,
                         "errorMessage": "",
                         "functionName": "duration",
                         "line": 280
@@ -782,7 +782,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 26,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 281
@@ -790,7 +790,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 35,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 287
@@ -798,7 +798,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 157,
+                        "durationMicroseconds": 99,
                         "errorMessage": "Cannot load property x from (component in /root/2023051604097Heyujie/111/tiantiankupao/Boss_level.qml)::current_target with type QVariant.",
                         "functionName": "onTriggered",
                         "line": 289
@@ -806,7 +806,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 115,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 303
@@ -814,7 +814,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 45,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 54,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 303
@@ -822,7 +822,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 32,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 305
@@ -830,7 +830,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 846,
+                        "durationMicroseconds": 64,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 307
@@ -838,7 +838,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 718,
+                        "durationMicroseconds": 82,
                         "errorMessage": "",
                         "functionName": "topMargin",
                         "line": 308
@@ -846,7 +846,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 150,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 309
@@ -854,7 +854,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 157,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 313
@@ -862,7 +862,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 63,
-                        "durationMicroseconds": 132,
+                        "durationMicroseconds": 22,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 313
@@ -870,7 +870,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 260,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 314
@@ -878,7 +878,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 139,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 315
@@ -886,7 +886,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 158,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 319
@@ -894,7 +894,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 161,
+                        "durationMicroseconds": 34,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 324
@@ -902,7 +902,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 190,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 324
@@ -910,7 +910,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 108,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 325
@@ -918,7 +918,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 572,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 327
@@ -926,7 +926,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 2318,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "leftMargin",
                         "line": 328
@@ -934,7 +934,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 216,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 329
@@ -958,7 +958,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 363,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 337
@@ -966,7 +966,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 455,
+                        "durationMicroseconds": 340,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 337
@@ -974,7 +974,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 102,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 338
@@ -982,7 +982,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 281,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 340
@@ -990,7 +990,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 131,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 340
@@ -998,7 +998,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 133,
+                        "durationMicroseconds": 536,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 348
@@ -1006,7 +1006,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 146,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 348
@@ -1014,7 +1014,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 267,
                         "errorMessage": "Cannot access value for name mapWidth",
                         "functionName": "mapX",
                         "line": 349
@@ -1022,7 +1022,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 122,
                         "errorMessage": "Cannot access value for name mapHeight",
                         "functionName": "mapY",
                         "line": 350
@@ -1030,7 +1030,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 312,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 351
@@ -1038,7 +1038,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 11,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 75,
                         "errorMessage": "Cannot access value for name mapOffsetX",
                         "functionName": "x",
                         "line": 352
@@ -1046,7 +1046,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 11,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name mapOffsetY",
                         "functionName": "y",
                         "line": 353
@@ -1054,7 +1054,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 346,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 356
@@ -1062,7 +1062,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 222,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 361
@@ -1070,7 +1070,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 297,
                         "errorMessage": "Cannot access value for name bos_bltWidth",
                         "functionName": "width",
                         "line": 372
@@ -1078,7 +1078,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name bos_bltHeight",
                         "functionName": "height",
                         "line": 373
@@ -1086,7 +1086,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 107,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "mapX",
                         "line": 374
@@ -1094,7 +1094,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "mapY",
                         "line": 375
@@ -1102,7 +1102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot access value for name mapOffsetX",
                         "functionName": "x",
                         "line": 376
@@ -1110,7 +1110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot access value for name mapOffsetY",
                         "functionName": "y",
                         "line": 377
@@ -1118,7 +1118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 266,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 378
@@ -1126,7 +1126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 85,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "angle",
                         "line": 382
@@ -1134,7 +1134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 630,
+                        "durationMicroseconds": 1931,
                         "errorMessage": "Cannot access value for name mapWidth",
                         "functionName": "onTriggered",
                         "line": 390
@@ -1142,7 +1142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 363,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 444
@@ -1150,7 +1150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 248,
                         "errorMessage": "Cannot load property length from (component in /root/2023051604097Heyujie/111/tiantiankupao/Boss_level.qml)::attackPattens with type QVariant.",
                         "functionName": "onTriggered",
                         "line": 446
@@ -1158,7 +1158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 1173,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 458
@@ -1166,7 +1166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 166,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 459
@@ -1174,7 +1174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 353,
+                        "durationMicroseconds": 49,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 461
@@ -1182,7 +1182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 365,
+                        "durationMicroseconds": 49,
                         "errorMessage": "",
                         "functionName": "bottomMargin",
                         "line": 461
@@ -1190,7 +1190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 142,
+                        "durationMicroseconds": 30,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 462
@@ -1198,7 +1198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 217,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "leftMargin",
                         "line": 462
@@ -1206,7 +1206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 172,
+                        "durationMicroseconds": 27,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 468
@@ -1214,7 +1214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 122,
+                        "durationMicroseconds": 27,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 469
@@ -1222,7 +1222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 471
@@ -1230,7 +1230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 278,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 478
@@ -1238,7 +1238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 153,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 479
@@ -1246,7 +1246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 138,
+                        "durationMicroseconds": 33,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 481
@@ -1254,7 +1254,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 487,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "x",
                         "line": 482
@@ -1262,7 +1262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 709,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "y",
                         "line": 483
@@ -1270,7 +1270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 133,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "maxDistance",
                         "line": 485
@@ -1278,7 +1278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 171,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 492
@@ -1286,7 +1286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 1830,
+                        "durationMicroseconds": 462,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onPressedChanged",
                         "line": 499
@@ -1294,7 +1294,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 166,
+                        "durationMicroseconds": 94,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onXChanged",
                         "line": 510
@@ -1302,7 +1302,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 149,
+                        "durationMicroseconds": 74,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onYChanged",
                         "line": 511
@@ -1318,7 +1318,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 165,
+                        "durationMicroseconds": 58,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 549
@@ -1326,7 +1326,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 550
@@ -1334,7 +1334,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "maxDistance",
                         "line": 557
@@ -1342,7 +1342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 173,
+                        "durationMicroseconds": 377,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 552
@@ -1350,7 +1350,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 279,
                         "errorMessage": "",
                         "functionName": "bottomMargin",
                         "line": 552
@@ -1358,7 +1358,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 159,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 553
@@ -1366,7 +1366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 141,
                         "errorMessage": "",
                         "functionName": "rightMargin",
                         "line": 553
@@ -1374,7 +1374,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 296,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 564
@@ -1382,7 +1382,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 143,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 563
@@ -1390,7 +1390,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 288,
+                        "durationMicroseconds": 718,
                         "errorMessage": "",
                         "functionName": "x",
                         "line": 571
@@ -1398,7 +1398,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 171,
+                        "durationMicroseconds": 532,
                         "errorMessage": "",
                         "functionName": "y",
                         "line": 572
@@ -1406,7 +1406,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 135,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 573
@@ -1414,7 +1414,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 140,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 574
@@ -1422,7 +1422,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 307,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 579
@@ -1430,7 +1430,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 129,
+                        "durationMicroseconds": 481,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onPressed",
                         "line": 586
@@ -1438,7 +1438,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 254,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onPositionChanged",
                         "line": 589
@@ -1446,7 +1446,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 518,
+                        "durationMicroseconds": 1091,
                         "errorMessage": "",
                         "functionName": "onReleased",
                         "line": 592
@@ -1462,7 +1462,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 319,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 584
@@ -1470,7 +1470,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 267,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 623
@@ -1478,7 +1478,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 45,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 56,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 623
@@ -1486,7 +1486,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 627
@@ -1494,7 +1494,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 49,
                         "errorMessage": "",
                         "functionName": "bottomMargin",
                         "line": 627
@@ -1502,7 +1502,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 34,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 628
@@ -1510,7 +1510,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 53,
-                        "durationMicroseconds": 491,
+                        "durationMicroseconds": 45,
                         "errorMessage": "",
                         "functionName": "rightMargin",
                         "line": 628
@@ -1518,7 +1518,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 116,
+                        "durationMicroseconds": 32,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 631
@@ -1526,7 +1526,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 26,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 631
@@ -1534,7 +1534,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 62,
-                        "durationMicroseconds": 211,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 632
@@ -1542,7 +1542,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 22,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 636
@@ -1582,7 +1582,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 280,
+                        "durationMicroseconds": 58,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 659
@@ -1590,7 +1590,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 971,
+                        "durationMicroseconds": 406,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 660
@@ -1598,7 +1598,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 258,
+                        "durationMicroseconds": 45,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 693
@@ -1606,7 +1606,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 240,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name avatar_width",
                         "functionName": "width",
                         "line": 696
@@ -1614,7 +1614,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot access value for name avatar_height",
                         "functionName": "height",
                         "line": 697
@@ -1622,7 +1622,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "mapX",
                         "line": 698
@@ -1630,7 +1630,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "mapY",
                         "line": 699
@@ -1638,7 +1638,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name avatar_width",
                         "functionName": "x",
                         "line": 700
@@ -1646,7 +1646,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name avatar_height",
                         "functionName": "y",
                         "line": 701
@@ -1654,7 +1654,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name sc_y",
                         "functionName": "speed",
                         "line": 707
@@ -1662,7 +1662,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 153,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "fillMode",
                         "line": 712
@@ -1670,7 +1670,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 130,
+                        "durationMicroseconds": 24,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 711
@@ -1678,7 +1678,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 6936,
+                        "durationMicroseconds": 12928,
                         "errorMessage": "method angleToBoss cannot be resolved.",
                         "functionName": "onTriggered",
                         "line": 719
@@ -1686,7 +1686,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name boss",
                         "functionName": "onTriggered",
                         "line": 756
@@ -1694,7 +1694,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot access value for name bullet_width",
                         "functionName": "width",
                         "line": 770
@@ -1702,7 +1702,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name bullet_height",
                         "functionName": "height",
                         "line": 771
@@ -1710,7 +1710,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot access value for name mapOffsetX",
                         "functionName": "x",
                         "line": 773
@@ -1718,7 +1718,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name mapOffsetY",
                         "functionName": "y",
                         "line": 774
@@ -1726,7 +1726,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "bullet_mapX",
                         "line": 776
@@ -1734,7 +1734,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "bullet_mapY",
                         "line": 777
@@ -1742,7 +1742,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "angle",
                         "line": 779
@@ -1750,7 +1750,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 591,
+                        "durationMicroseconds": 53,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 783
@@ -1758,7 +1758,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 2714,
+                        "durationMicroseconds": 306,
                         "errorMessage": "Cannot access value for name mapWidth",
                         "functionName": "onTriggered",
                         "line": 791
@@ -1766,7 +1766,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 148,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 814
@@ -1774,7 +1774,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 2190,
+                        "durationMicroseconds": 1063,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onTriggered",
                         "line": 815
@@ -1782,7 +1782,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 341,
+                        "durationMicroseconds": 641,
                         "errorMessage": "method updatePlayerPosition cannot be resolved.",
                         "functionName": "onTriggered",
                         "line": 856

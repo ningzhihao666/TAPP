@@ -1,6 +1,5 @@
 module tiantiankupao
 typeinfo apptiantiankupao.qmltypes
-depends network_module
 prefer :/qt/qml/tiantiankupao/
 Main 1.0 Main.qml
 MainMenu 1.0 MainMenu.qml

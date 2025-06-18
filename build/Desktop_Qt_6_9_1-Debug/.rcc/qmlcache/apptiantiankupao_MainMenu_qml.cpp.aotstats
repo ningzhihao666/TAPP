@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 215,
+                        "durationMicroseconds": 648,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 11
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 204,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 15
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 287,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 22
