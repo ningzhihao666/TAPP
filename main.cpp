@@ -27,28 +27,10 @@ int main(int argc, char *argv[])
     // 调试输出导入路径
     qDebug() << "Import paths:" << engine.importPathList();
 
-    // 加载主QML文件
-    const QUrl url(QStringLiteral("tiantiankupao/Main.qml"));
-    qDebug() << "Loading QML from:" << url;
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
+                     &app, []() { QCoreApplication::exit(-1); }, Qt::QueuedConnection);
 
-    QObject::connect(
-        &engine,
-        &QQmlApplicationEngine::objectCreated,
-        &app,
-        [url](QObject *obj, const QUrl &objUrl) {
-            if (!obj && url == objUrl) {
-                qCritical() << "Failed to load QML object from" << url;
-                QCoreApplication::exit(-1);
-            }
-        },
-        Qt::QueuedConnection);
-
-    engine.load(url);
-
-    if (engine.rootObjects().isEmpty()) {
-        qCritical() << "No root objects loaded!";
-        return -1;
-    }
+    engine.loadFromModule("tiantiankupao", "Main");
 
     return app.exec();
 }

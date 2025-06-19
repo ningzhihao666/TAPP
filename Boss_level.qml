@@ -13,6 +13,7 @@ Page{
     //系统属性：
     property int  sc_x:Screen.width/200
     property int  sc_y:Screen.height/100
+    property bool gameBegin:false                         //游戏开始控制
 
     //地图属性
     property int  tileSize:Screen.height*0.1              //每个格子的大小
@@ -98,6 +99,98 @@ Page{
             }
         }
     }
+    //——————————————————————————————界面控制————————————————————————————
+    //控制
+    Rectangle{
+        id:kongzhi;     color:"transparent"
+        height:Screen.height*0.1;    width:Screen.width*0.15;   radius:5;
+        anchors{
+            top:parent.top
+            topMargin: Screen.height*0.02
+            right: parent.right
+            rightMargin: Screen.width*0.05
+        }
+
+        Image{
+            id:img_3;    height:parent.height;   width:height;
+            anchors.centerIn: parent
+            source:"qrc:/BackGround/Images/BackGround/暂停.png"
+
+            Button {
+                background: Rectangle{color:"transparent"}
+                anchors.fill:parent
+                onClicked: {
+                    gameBegin=false
+                    gamePauseDialog.open()
+                }
+            }
+        }
+    }
+
+    Dialog {
+        id: gamePauseDialog
+        height:Screen.height*3/5
+        width:Screen.width*3/5
+        modal:true
+        closePolicy:Popup.NoAutoClose       //禁止点击外部关闭
+        anchors.centerIn: parent
+        Image{
+            source:"qrc:/BackGround/Images/BackGround/暂停面板背景.jpg"
+            anchors.fill:parent
+        }
+
+        Rectangle{
+            id:jixu;   height:parent.height*0.2;   width:parent.width*0.5;    radius:parent.height*0.1;
+            color:"lightgreen"
+            Button{
+                background: Rectangle{color:"transparent"; }
+                Label{ text:"继续游戏";  color:"black";  anchors.centerIn:parent}
+                onClicked: { gamePauseDialog.close(); gameBegin=true }
+                anchors.fill:parent
+            }
+            anchors{
+                top:parent.top;    topMargin: parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
+        }
+
+        Rectangle{
+            id:regame;   height:parent.height*0.2;   width:parent.width*0.5;   radius:parent.height*0.1;
+            color:"lightgreen"
+            Button{
+                z:2
+                background: Rectangle{color:"transparent"}
+                Label{ text:"重新开始";  color:"black";  anchors.centerIn:parent}
+                onClicked: { gamePauseDialog.close();
+                    stackView.replace("Boss_level.qml",{
+                                      "gameBegin":true
+                                      }) }
+                anchors.fill:parent
+            }
+            anchors{
+                top:jixu.bottom;    topMargin: parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
+        }
+
+        Rectangle{
+            id:tuichu;   height:parent.height*0.2;   width:parent.width*0.5;  radius:parent.height*0.1;
+            color:"lightgreen"
+            Button{
+                background: Rectangle{color:"transparent"}
+                Label{ text:"退出游戏";  color:"black";  anchors.centerIn:parent}
+                onClicked: {
+                    stackView.replace("Page_begin.qml")
+                    gamePauseDialog.close();
+                }
+                anchors.fill:parent
+            }
+            anchors{
+                top:regame.bottom;    topMargin: parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
+        }
+    }
 
     //——————————————————————————————定义角色————————————————————————————
     Rectangle{
@@ -163,7 +256,7 @@ Page{
 
     //人物受击碰撞检测
     Timer{
-        running:true
+        running:gameBegin
         repeat:true
         interval:16
         onTriggered: {
@@ -182,6 +275,16 @@ Page{
                     updatePlayerPosition()
                     knockbacktimer.start()
                 }
+            }
+            //人物死亡
+            if( player.life<=0) deadDialog.open()
+            //人物通关
+            if(player.worldX>blackHole.mapX-blackHole.width/2 &&
+               player.worldX<blackHole.mapX+blackHole.width/2 &&
+               player.worldY>blackHole.mapY-blackHole.height/2 &&
+               player.worldY<blackHole.mapY+blackHole.height/2 &&
+               boss.isDead){
+                deadDialog.open()
             }
         }
     }
@@ -220,6 +323,46 @@ Page{
         }
     }
 
+    Dialog{
+        id:deadDialog
+        height:Screen.height*3/5;   width:Screen.width*3/5
+        title: "游戏结束"
+        modal:true
+        closePolicy:Popup.NoAutoClose       //禁止点击外部关闭
+        Image{
+            source:"qrc:/BackGround/Images/BackGround/暂停面板背景.jpg"
+            anchors.fill:parent
+        }
+
+        anchors.centerIn: parent
+
+        Rectangle{
+            height:parent.height*0.3;  width:parent.width*0.3;  color:"lightgreen"
+            border.width:1;   radius:parent.height*0.15
+            anchors{
+                bottom:parent.bottom
+                bottomMargin:parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
+
+            Button{
+                background: Rectangle{color:"transparent"}
+                anchors.fill:parent
+                Label{text:"返回大厅"; color:"black"; anchors.centerIn: parent}
+                onClicked: {
+                    stackView.pop("Page_begin.qml")
+                    deadDialog.close()
+                }
+            }
+        }
+
+        Label {
+            text: "你的得分: " + score
+            color:"black"
+            anchors.centerIn: parent
+        }
+    }
+
     //——————————————————————————————BOSS定义———————————————————————————
     Rectangle{
         id:boss
@@ -233,7 +376,7 @@ Page{
 
         property int  boss_mapX:(mapWidth-boss.width)/2     //boss在地图上的x坐标
         property int  boss_mapY:(mapHeight-boss.height)/2   //boss在地图上的y坐标
-        property int  boss_life:10                          //boss的血量
+        property int  boss_life:1000                        //boss的血量
         property var  current_target:Qt.point(0,0)          //boss移动目标点
         property bool isMoving:false                        //boss是否正在移动
         property int  moveSpeed:Screen.height*0.01          //boss移动速度
@@ -293,7 +436,9 @@ Page{
 
                 boss.boss_mapX+=(dx/distance)*boss.moveSpeed
                 boss.boss_mapY+=(dy/distance)*boss.moveSpeed
-                if(boss.boss_life<=0) boss.isDead=true
+                if(boss.boss_life<=0) {
+                    boss.isDead=true
+                }
             }
         }
     }
@@ -441,7 +586,7 @@ Page{
     Timer{
         id:bos_atcTimer
         interval:2000    //2s一次攻击
-        running:!boss.isDead
+        running:!boss.isDead && gameBegin
         repeat:true
         onTriggered: {
             var patten=boss.attackPattens[Math.floor(Math.random()*boss.attackPattens.length)]
@@ -614,7 +759,7 @@ Page{
 
                 attackControl.move_attackAngle=Math.atan2(dy,dx)*180/Math.PI
             }
-        }  
+        }
     }
 
     //——————————————————————————————技能按钮————————————————————————————
@@ -656,7 +801,7 @@ Page{
         Timer{
             interval:1000       //1s
             repeat:true
-            running:!skill.can_use
+            running:!skill.can_use && gameBegin
             onTriggered: {
                 if(skill.skill_coolDown>0) skill.skill_coolDown--
                 if(skill.skill_coolDown===0) skill.can_use=true
@@ -714,7 +859,7 @@ Page{
 
             Timer{
                 interval:16
-                running:true
+                running:gameBegin
                 repeat:true
                 onTriggered: {
                     var angle=angleToBoss(avatar.mapX,avatar.mapY)

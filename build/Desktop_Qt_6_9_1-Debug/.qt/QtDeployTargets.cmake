@@ -1,2 +1,0 @@
-set(__QT_DEPLOY_TARGET_apptiantiankupao_FILE /root/2023051604097Heyujie/111/tiantiankupao/build/Desktop_Qt_6_9_1-Debug/apptiantiankupao)
-set(__QT_DEPLOY_TARGET_apptiantiankupao_TYPE EXECUTABLE)
