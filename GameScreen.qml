@@ -1032,73 +1032,80 @@ Page {
         }
     }
 
+
     //游戏暂停弹窗
     Dialog {
-        id: gamePauseDialog
-        height:Screen.height*3/5
-        width:Screen.width*3/5
-        modal:true
-        closePolicy:Popup.NoAutoClose       //禁止点击外部关闭
-        anchors.centerIn: parent
+    id: gamePauseDialog
+    height:Screen.height*3/5
+    width:Screen.width*3/5
+    modal:true
+    closePolicy:Popup.NoAutoClose       //禁止点击外部关闭
+    anchors.centerIn: parent
 
-        Image{
-            source:"qrc:/BackGround/Images/BackGround/暂停面板背景.jpg"
+    Image{
+        source:"qrc:/BackGround/Images/BackGround/暂停面板背景.jpg"
+        anchors.fill:parent
+    }
+
+    Rectangle{
+        id:jixu;   height:parent.height*0.2;   width:parent.width*0.5;    radius:parent.height*0.1;
+        color:"lightgreen"
+        Button{
+            background: Rectangle{color:"transparent"; }
+            Label{ text:"继续游戏";  color:"black";  anchors.centerIn:parent}
+            onClicked: { gamePauseDialog.close(); gameScreen.gameRunning=true }
             anchors.fill:parent
         }
-
-        Rectangle{
-            id:jixu;   height:parent.height*0.2;   width:parent.width*0.5;    radius:parent.height*0.1;
-            color:"lightgreen"
-            Button{
-                background: Rectangle{color:"transparent"; }
-                Label{ text:"继续游戏";  color:"black";  anchors.centerIn:parent}
-                onClicked: { gamePauseDialog.close(); gameScreen.gameRunning=true }
-                anchors.fill:parent
-            }
-            anchors{
-                top:parent.top;    topMargin: parent.height*0.1
-                horizontalCenter: parent.horizontalCenter
-            }
-        }
-
-        Rectangle{
-            id:regame;   height:parent.height*0.2;   width:parent.width*0.5;   radius:parent.height*0.1;
-            color:"lightgreen"
-            Button{
-                z:2
-                background: Rectangle{color:"transparent"}
-                Label{ text:"重新开始";  color:"black";  anchors.centerIn:parent}
-                onClicked: { gamePauseDialog.close(); }
-                anchors.fill:parent
-            }
-            anchors{
-                top:jixu.bottom;    topMargin: parent.height*0.1
-                horizontalCenter: parent.horizontalCenter
-            }
-        }
-
-        Rectangle{
-            id:tuichu;   height:parent.height*0.2;   width:parent.width*0.5;  radius:parent.height*0.1;
-            color:"lightgreen"
-            Button{
-                background: Rectangle{color:"transparent"}
-                Label{ text:"退出游戏";  color:"black";  anchors.centerIn:parent}
-                onClicked: {
-                    stackView.replace("Page_jiesuan.qml",{
-                        "distance":distance/16,
-                        "score":score,
-                        "coins_num":coin_num,
-                    })
-                    gamePauseDialog.close();
-                }
-                anchors.fill:parent
-            }
-            anchors{
-                top:regame.bottom;    topMargin: parent.height*0.1
-                horizontalCenter: parent.horizontalCenter
-            }
+        anchors{
+            top:parent.top;    topMargin: parent.height*0.1
+            horizontalCenter: parent.horizontalCenter
         }
     }
+
+    Rectangle{
+        id:regame;   height:parent.height*0.2;   width:parent.width*0.5;   radius:parent.height*0.1;
+        color:"lightgreen"
+        Button{
+            z:2
+            background: Rectangle{color:"transparent"}
+            Label{ text:"重新开始";  color:"black";  anchors.centerIn:parent}
+            onClicked: {
+                gamePauseDialog.close();
+                stackView.replace("GameScreen.qml",{
+                    "gameRunning":true
+                })
+            }
+            anchors.fill:parent
+        }
+        anchors{
+            top:jixu.bottom;    topMargin: parent.height*0.1
+            horizontalCenter: parent.horizontalCenter
+        }
+    }
+
+    Rectangle{
+        id:tuichu;   height:parent.height*0.2;   width:parent.width*0.5;  radius:parent.height*0.1;
+        color:"lightgreen"
+        Button{
+            background: Rectangle{color:"transparent"}
+            Label{ text:"退出游戏";  color:"black";  anchors.centerIn:parent}
+            onClicked: {
+                stackView.replace("Page_jiesuan.qml",{
+                    "distance":distance/16,
+                    "score":score,
+                    "coins_num":coin_num,
+                })
+                gamePauseDialog.close();
+            }
+            anchors.fill:parent
+        }
+        anchors{
+            top:regame.bottom;    topMargin: parent.height*0.1
+            horizontalCenter: parent.horizontalCenter
+        }
+    }
+}
+
     //————————————————————————————对战功能——————————————————————————————
     function startGame() {
          gameScreen.visible = true;

@@ -50,6 +50,9 @@ Item {
     //弹簧参数
     property int  tanhuang_width:screen.width*0.05
     property int  tanhuang_height:tanhuang_width
+    property real tanhuang_compress_ratio: 0.3 // 压缩比例
+    property real tanhuang_stretch_ratio: 1.8   // 拉伸变宽比例
+    property int compress_duration: 100  // 压缩动画持续时间(ms)
 
 
     signal movePlayer(int change_x)                           //修改角色x值
@@ -145,8 +148,7 @@ Item {
     }
 
     //生成小怪物
-    function spawnXiaoguaiwu (img)
-    {
+    function spawnXiaoguaiwu (img){
         var lastground=activeGrounds.get(activeGrounds.count-1)
         var guaiwu_x=lastground.x+minObstacleSpacing
 
@@ -167,12 +169,14 @@ Item {
             "height":guaiwu_height,
             "width":guaiwu_width,
             "img":img,              //保存资源图片
-            "type":"xiaoguaiwu"
+            "type":"xiaoguaiwu",
+            "isDangerous": true,     // 添加危险状态标识
+            "appearProgress": 0      // 添加出现进度属性
             })
         }
     }
 
-    //生成地磁
+   //生成地刺
     function spawnDici ( img )
     {
         var lastground=activeGrounds.get(activeGrounds.count-1)
@@ -200,59 +204,94 @@ Item {
         }
     }
 
-    //生成弹簧
-    function generator_tanhuang()
-    {
-        var is_chufa=false         //弹簧是否被触发
-        if(tanhuang_ground)
-            var tanhuang_x=tanhuang_ground.x+tanhuang_ground.width-tanhuang_width
-        for(var i=0;i<active_tanhuang.count;i++){
-            var tanhuang=active_tanhuang.get(i)
-            if(Math.abs(tanhuang_x-tanhuang.x)<minObstacleSpacing){
-               return
-            }
-        }
+    function setTimeout(callback, delay) {
+        timer.setTimeout(callback, delay)
+    }
 
-        //检查所有障碍物,保证不会重叠
-        for(var j=0;j<active_obstacles.count;j++){
-            var obstacle=active_obstacles.get(j)
-            if(obstacle.type==="wall"){
-                if(Math.abs(tanhuang_x-obstacle.x)<minObstacleSpacing){
+    Timer {
+        id: timer
+        function setTimeout(cb, delay) {
+            timer.interval = delay;
+            timer.repeat = false;
+            timer.triggered.connect(cb);
+            timer.triggered.connect(function() {
+                timer.triggered.disconnect(cb);
+                timer.triggered.disconnect(arguments.callee);
+            });
+            timer.start();
+        }
+    }
+
+   //生成弹簧
+    function generator_tanhuang(){
+        var is_chufa=false
+        if(tanhuang_ground) {
+            var tanhuang_x = tanhuang_ground.x + tanhuang_ground.width - tanhuang_width
+            var tanhuang_y = tanhuang_ground.top - tanhuang_height
+
+            for(var i=0;i<active_tanhuang.count;i++){
+                var tanhuang=active_tanhuang.get(i)
+                if(Math.abs(tanhuang_x-tanhuang.x)<minObstacleSpacing){
                     return
                 }
             }
-        }
 
-        if(ground_hasBigGap && tanhuang_ground){
-            active_tanhuang.append({
-                "x":tanhuang_x,
-                "y":tanhuang_ground.top-tanhuang_height,
-                "width":tanhuang_width,
-                "height":tanhuang_height,
-                "is_chufa":is_chufa
-            })
-            obstacleGenerator.readyTanhuang()
+            for(var j=0;j<active_obstacles.count;j++){
+                var obstacle=active_obstacles.get(j)
+                if(obstacle.type==="wall"){
+                    if(Math.abs(tanhuang_x-obstacle.x)<minObstacleSpacing){
+                        return
+                    }
+                }
+            }
+
+            if(ground_hasBigGap && tanhuang_ground){
+                active_tanhuang.append({
+                    "x": tanhuang_x,
+                    "y": tanhuang_y,
+                    "width": tanhuang_width,
+                    "height": tanhuang_height,
+                    "is_chufa": is_chufa,
+                    "original_x": tanhuang_x,
+                    "original_y": tanhuang_y,
+                    "original_width": tanhuang_width,
+                    "original_height": tanhuang_height,
+                    "is_compressing": false,
+                    "is_stretching": false,
+                    "appearProgress": 0  // 添加出现进度属性
+                })
+                obstacleGenerator.readyTanhuang()
+            }
         }
     }
 
     //弹簧碰撞检测:
-    function collision()
-    {
+    function collision(){
         if(active_tanhuang){
-            for(var i=0;i<active_tanhuang.count;i++)
-            {
+            for(var i=0;i<active_tanhuang.count;i++) {
                 var tanhuang=active_tanhuang.get(i)
-                //人物被弹簧推走
-                if( player_x <tanhuang.x+tanhuang.width && player_x+player_width> tanhuang.x &&
-                        player_y+player_height>tanhuang.y){
+                //人物被弹簧推走 - 显示变宽效果
+                if(player_x < tanhuang.x+tanhuang.width &&
+                   player_x+player_width > tanhuang.x &&
+                   player_y+player_height > tanhuang.y){
                     obstacleGenerator.movePlayer(-speed)
                     console.log("进入弹簧判定————人物被推走")
+                    active_tanhuang.setProperty(i, "is_stretching", true)
+                    setTimeout(function() {
+                        active_tanhuang.setProperty(i, "is_stretching", false)
+                    }, compress_duration)
                 }
-                //弹簧弹走
-                if(player_x <tanhuang.x+tanhuang.width && player_x+player_width> tanhuang.x &&
-                   player_y+player_height < tanhuang.y && player_y+player_height > tanhuang.y*0.95 &&
-                   !tanhuang.is_chufa && !isJumping ){
-                    active_tanhuang.get(i).is_chufa=true    //弹簧已被触发
+                //弹簧弹走 - 显示压缩效果
+                if(player_x < tanhuang.x+tanhuang.width &&
+                   player_x+player_width > tanhuang.x &&
+                   player_y+player_height < tanhuang.y &&
+                   player_y+player_height > tanhuang.y*0.95 &&
+                   !tanhuang.is_chufa && !isJumping){
+                    active_tanhuang.setProperty(i, "is_chufa", true)
+                    active_tanhuang.setProperty(i, "is_compressing", true)
+                    setTimeout(function() {
+                        active_tanhuang.setProperty(i, "is_compressing", false)
+                    }, compress_duration)
                     obstacleGenerator.tanhuangJump()
                     console.log("进入弹簧判定2————人物被弹走")
                     break
@@ -261,19 +300,19 @@ Item {
         }
     }
 
-    //障碍物销毁，用于奖励关卡调用
-    function destory_obstacle(){
-        for(var i=0;i<active_obstacles.count;i++){  active_obstacles.remove(i)  }
-        for(var j=0;j<active_tanhuang.count;j++){   active_tanhuang.remove(j)  }
-    }
+        //障碍物销毁，用于奖励关卡调用
+        function destory_obstacle(){
+            for(var i=0;i<active_obstacles.count;i++){  active_obstacles.remove(i)  }
+            for(var j=0;j<active_tanhuang.count;j++){   active_tanhuang.remove(j)  }
+        }
 
-    Component {
-        id: missileComponent
-        Item {
-            id: missile
-            width: 80  // 根据图片实际尺寸调整
-            height: 40
-            property bool active: true
+        Component {
+            id: missileComponent
+            Item {
+                id: missile
+                width: 80  // 根据图片实际尺寸调整
+                height: 40
+                property bool active: true
 
             // 导弹主体图片
             Image {
@@ -285,121 +324,236 @@ Item {
         }
     }
 
-    Item{
-        id: obstacles
-        Repeater{
-            model:active_obstacles
-            delegate:Rectangle{
-                x:model.x
-                y:model.y
-                color:"transparent"
-                width:model.width
-                height:model.height
+    Repeater{
+        model:active_obstacles
+            delegate: Item {
+            x: model.x
+            y: model.type === "xiaoguaiwu" ? model.y :
+               (model.y + (1 - (model.appearProgress || 1)) * model.height)
+            width: model.width
+            height: model.height
+            opacity: model.type === "xiaoguaiwu" ? (model.appearProgress || 1) : 1
 
-                Image{
-                    anchors.fill:parent
-                    source:model.img
+            // 小怪物本体
+            Rectangle {
+                id: obstacleRect
+                anchors.fill: parent
+                color: "transparent"
+
+                Image {
+                    anchors.fill: parent
+                    source: model.img
+                    opacity: model.type === "xiaoguaiwu" ? (model.appearProgress || 1) : 1
+                }
+
+            // 危险边缘效果 - 红色边框
+                Rectangle {
+                    visible: model.type === "xiaoguaiwu" && model.isDangerous
+                    anchors.fill: parent
+                    color: "transparent"
+                    border.color: "red"
+                    border.width: 2
+                    radius: 2
+                    opacity: model.appearProgress || 1
                 }
             }
-        }
 
-        Repeater{
-            model:active_tanhuang
-            delegate:Rectangle{
-                x:model.x
-                y:model.y
-                color:"transparent"
-                width:model.width
-                height:model.height
+            // 危险闪光效果
+            Rectangle {
+                visible: model.type === "xiaoguaiwu" && model.isDangerous
+                anchors.centerIn: parent
+                width: parent.width * 1.5
+                height: parent.height * 1.5
+                color: "transparent"
+                border.color: "#FF4500"  // 橙红色
+                border.width: 3
+                radius: width/2
+                opacity: (model.appearProgress || 1) * 0.5
 
-                Image{
-                    anchors.fill:parent
-                    source:"qrc:/obstacle/Images/obstacle/弹簧.png"
+                SequentialAnimation on opacity {
+                    running: (model.appearProgress || 1) >= 1
+                    loops: Animation.Infinite
+                    NumberAnimation { to: 0.7; duration: 800 }
+                    NumberAnimation { to: 0; duration: 800 }
+                }
+
+                SequentialAnimation on scale {
+                    running: (model.appearProgress || 1) >= 1
+                    loops: Animation.Infinite
+                    NumberAnimation { to: 1.2; duration: 800 }
+                    NumberAnimation { to: 1.0; duration: 800 }
                 }
             }
         }
     }
 
-    //障碍物逻辑处理
-    Timer{
-        interval:16
-        running:obstacleGenerator.gameRunning
-        repeat:true
+    Repeater{
+        model: active_tanhuang
+            delegate: Item {
+            id: springItem
+            x: model.x
+            y: model.y + (1 - (model.appearProgress || 1)) * model.height
+            width: model.original_width
+            height: model.original_height
+
+                Rectangle {
+                    id: springRect
+                    anchors.bottom: parent.bottom
+                    width: parent.width
+                    height: parent.height
+                    color: "transparent"
+                    opacity: model.appearProgress || 1
+
+                    transform: [
+                        Scale {
+                        id: widthScale
+                        origin.x: springRect.width/2
+                        origin.y: springRect.height
+                        xScale: model.is_stretching ? tanhuang_stretch_ratio :
+                               (model.is_compressing ? 1 : 1)
+                        },
+                        Scale {
+                        id: heightScale
+                        origin.x: springRect.width/2
+                        origin.y: springRect.height
+                        yScale: model.is_compressing ? tanhuang_compress_ratio :
+                           (model.is_stretching ? 1 : 1)
+                    }
+                ]
+
+                Behavior on transform {
+                    enabled: (model.appearProgress || 1) >= 1
+                    ParallelAnimation {
+                        NumberAnimation {
+                            target: widthScale
+                            property: "xScale"
+                            duration: compress_duration
+                        }
+                        NumberAnimation {
+                            target: heightScale
+                            property: "yScale"
+                            duration: compress_duration
+                        }
+                    }
+                }
+
+                Image {
+                    anchors.fill: parent
+                    source: "qrc:/obstacle/Images/obstacle/弹簧.png"
+                }
+            }
+        }
+    }
+
+
+//障碍物逻辑处理
+    Timer {
+        interval: 16
+        running: obstacleGenerator.gameRunning
+        repeat: true
         onTriggered: {
             //————————————————————————————墙体障碍物——————————————————————————————
-            for(var i=0;i<active_obstacles.count;i++){
+            for(var i = 0; i < active_obstacles.count; i++) {
+                // 移动障碍物
+                active_obstacles.setProperty(i, "x", active_obstacles.get(i).x - speed)
 
+                // 碰撞检测
+                var current_obstacle = active_obstacles.get(i)
 
-                active_obstacles.setProperty(i,"x",active_obstacles.get(i).x-speed)
-
-                //碰撞检测
-                var current_obstacle=active_obstacles.get(i)
-                if(current_obstacle.type==="wall"){
-                    if(player_x<current_obstacle.x && player_x+player_width>=current_obstacle.x){
-                        if(gameScreen.isEnlarged){
+                // 墙体碰撞检测
+                if(current_obstacle.type === "wall") {
+                    if(player_x < current_obstacle.x && player_x + player_width >= current_obstacle.x) {
+                        if(gameScreen.isEnlarged) {
                             // 角色处于变大状态，消除墙体
                             active_obstacles.remove(i);
                             i--; // 调整索引，因为列表已更改
                         }
-                        else if(player_y<current_obstacle.height){
-                           obstacleGenerator.sliding_wall=current_obstacle
-                           obstacleGenerator.movePlayer(-speed)
-                           obstacleGenerator.mustSlide()
-                       }
-                    }
-                }
-                else if(current_obstacle.type==="xiaoguaiwu"){
-                    if(player_x+player_width>current_obstacle.x*1.1 && player_x<current_obstacle.x+current_obstacle.width*0.9 &&
-                    player_y<current_obstacle.y+current_obstacle.height  &&
-                    player_y+player_height>current_obstacle.y*1.1){
-                        if(gameScreen.isShielded || gameScreen.isEnlarged){
-                            active_obstacles.remove(i);
-                            i--;
+                        else if(player_y < current_obstacle.height) {
+                            obstacleGenerator.sliding_wall = current_obstacle
+                            obstacleGenerator.movePlayer(-speed)
+                            obstacleGenerator.mustSlide()
                         }
-                        else obstacleGenerator.playerDead()
                     }
                 }
+                // 小怪物碰撞检测（包含发光圆环）
+                else if(current_obstacle.type === "xiaoguaiwu") {
+                    // 计算小怪物中心位置
+                    var guaiwuCenterX = current_obstacle.x + current_obstacle.width/2
+                    var guaiwuCenterY = current_obstacle.y + current_obstacle.height/2
 
-                else if(current_obstacle.type==="dici"){
-                    if(player_x+player_width>current_obstacle.x*1.1 && player_x<current_obstacle.x+current_obstacle.width*0.9 &&
-                    player_y<current_obstacle.y+current_obstacle.height  &&
-                    player_y+player_height>current_obstacle.y*1.1){
-                        if(gameScreen.isShielded || gameScreen.isEnlarged){
+                    // 计算玩家中心位置
+                    var playerCenterX = player_x + player_width/2
+                    var playerCenterY = player_y + player_height/2
+
+                    // 计算两者距离
+                    var dx = playerCenterX - guaiwuCenterX
+                    var dy = playerCenterY - guaiwuCenterY
+                    var distance = Math.sqrt(dx*dx + dy*dy)
+
+                    // 发光圆的半径（比小怪物稍大）
+                    var dangerRadius = current_obstacle.width * 1.2
+
+                    // 两种碰撞情况都会导致死亡：
+                    // 1. 直接碰到小怪物本体
+                    // 2. 碰到发光圆环
+                    if((player_x + player_width > current_obstacle.x * 1.1 &&
+                        player_x < current_obstacle.x + current_obstacle.width * 0.9 &&
+                        player_y < current_obstacle.y + current_obstacle.height &&
+                        player_y + player_height > current_obstacle.y * 1.1) ||
+                       (distance < dangerRadius)) {
+                        if(gameScreen.isShielded || gameScreen.isEnlarged) {
                             active_obstacles.remove(i);
                             i--;
                         }
-                        else obstacleGenerator.playerDead()
+                        else {
+                            obstacleGenerator.playerDead()
+                        }
+                    }
+                }
+            // 地刺碰撞检测
+                else if(current_obstacle.type === "dici") {
+                    if(player_x + player_width > current_obstacle.x * 1.1 &&
+                       player_x < current_obstacle.x + current_obstacle.width * 0.9 &&
+                       player_y < current_obstacle.y + current_obstacle.height &&
+                       player_y + player_height > current_obstacle.y * 1.1) {
+                        if(gameScreen.isShielded || gameScreen.isEnlarged) {
+                            active_obstacles.remove(i);
+                            i--;
+                        }
+                        else {
+                            obstacleGenerator.playerDead()
+                        }
                     }
                 }
             }
 
-            //移动弹簧
-            for(var i=0;i<active_tanhuang.count;i++){
-                active_tanhuang.setProperty(i,"x",active_tanhuang.get(i).x-speed)
+            // 移动弹簧
+            for(var j = 0; j < active_tanhuang.count; j++) {
+                active_tanhuang.setProperty(j, "x", active_tanhuang.get(j).x - speed)
             }
 
-            //销毁弹簧（释放资源）
-            while(active_tanhuang.count>0 && active_tanhuang.get(0).x+minObstacleSpacing*4<0){
+        // 销毁弹簧（释放资源）
+            while(active_tanhuang.count > 0 && active_tanhuang.get(0).x + minObstacleSpacing * 4 < 0) {
                 active_tanhuang.remove(0)
                 obstacleGenerator.addEnergy()
             }
 
-            //弹簧碰撞检测
+        // 弹簧碰撞检测
             collision()
 
             //——————————————————————————墙体逻辑判定——————————————————————
-            //锁定滑铲
-            if(sliding_wall && player_x>sliding_wall.x &&player_x<=sliding_wall.x+wall_width){
+            // 锁定滑铲
+            if(sliding_wall && player_x > sliding_wall.x && player_x <= sliding_wall.x + wall_width) {
                 obstacleGenerator.mustSlideKeep()
             }
 
-            //恢复原始位置
-            if(sliding_wall && player_x>sliding_wall.x+wall_width){
+            // 恢复原始位置
+            if(sliding_wall && player_x > sliding_wall.x + wall_width) {
                 obstacleGenerator.mustSlideEnd()
             }
 
-            //移除超出屏幕障碍物
-            while(active_obstacles.count>0&&active_obstacles.get(0).x+minObstacleSpacing*4<0){
+            // 移除超出屏幕障碍物
+            while(active_obstacles.count > 0 && active_obstacles.get(0).x + minObstacleSpacing * 4 < 0) {
                 active_obstacles.remove(0)
                 obstacleGenerator.addEnergy()
             }
