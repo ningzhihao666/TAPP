@@ -31,8 +31,13 @@ public:
     Q_INVOKABLE void stopBroadcasting();
     Q_INVOKABLE void discoverPeers();
     Q_INVOKABLE void disconnectFromHost();
+    Q_PROPERTY(int socketState READ socketState NOTIFY socketStateChanged)
+    Q_INVOKABLE void sendCommand(const QString &command);
+    Q_INVOKABLE void sendGameState(const QVariantMap &state);
+    Q_INVOKABLE void sendRandomSeed(quint32 seed);
 
 signals:
+    void socketStateChanged();
     void peerDiscovered(const QString &ip, const QString &name);
     void gameStateReceived(const QVariantMap &state);
     void opponentConnected();
@@ -42,17 +47,23 @@ signals:
     void serverStarted(quint16 port);
     void serverStartFailed(const QString &error);
 
+    //游戏进行相关信号
+    void gameStarted(); // 游戏开始信号
+    void playerReady(); // 玩家准备信号
+
+    void randomSeedReceived(quint32 seed); //使用随机种子来同步确保随机生成的障碍物等等都是生成的一样的位置
+
 private slots:
     void readBroadcastDatagrams();
     void onNewConnection();
     void onClientDisconnected();
     void onDataReceived();
-    void sendGameState(const QVariantMap &state);
+
     void stopDiscovery(); // 声明发现资源清理方法
 
 private:
     explicit NetworkManager(QObject *parent = nullptr);
-
+    int socketState() const { return m_socket ? m_socket->state() : QAbstractSocket::UnconnectedState; }
     QUdpSocket *m_broadcastSocket;
     QUdpSocket *m_discoverSocket;
     QTimer *m_broadcastTimer;

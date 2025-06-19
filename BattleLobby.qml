@@ -6,6 +6,7 @@ import NetworkManager 1.0  // 确保导入路径与注册时一致
 Page {
     id: battleLobby
     property var discoveredPeers: ListModel {}
+    property bool isHost: false  // 默认为客户端模式，创建房间时设为 true
 
     Column {
         anchors.centerIn: parent
@@ -20,7 +21,10 @@ Page {
                         // 服务器启动成功后再开始广播
                         statusText.text = "房间创建成功...";
                         NetworkManager.startBroadcasting()
-                        stackView.push("BattlePage.qml")
+                        isHost=true
+                        stackView.push("BattlePage.qml", {
+                            "isHost":isHost
+                        })
                     } else {
                         console.error("服务器启动失败")
                     }
@@ -71,7 +75,8 @@ Page {
                     console.log("原始NAME_______________________:", model.name);
                     stackView.push("BattlePage.qml", {
                         "targetIp": model.ip,
-                        "targetPort": 54321
+                        "targetPort": 54321,
+                        "isHost":isHost
                     })
                 }
             }

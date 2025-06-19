@@ -96,6 +96,7 @@ Page {
     // 新增对战相关属性
     property var opponentState: ({})  // 对手状态
     property var lo
+    property int randomSeed: 0
 
     // 游戏背景
     Image {
@@ -1099,9 +1100,14 @@ Page {
         }
     }
     //————————————————————————————对战功能——————————————————————————————
+    function startGame() {
+         gameScreen.visible = true;
+        gameRunning = true;
+        console.log("游戏开始！多人模式:", isMultiplayer);
+    }
     // 新增游戏状态同步函数
     function syncGameState() {
-        if (!isMultiplayer || !isLocalPlayer) return
+        if (!isMultiplayer || !isLocalPlayer) return;
 
         var state = {
             score: score,
@@ -1109,15 +1115,41 @@ Page {
             playerX: player_x,
             playerY: player_y,
             isJumping: isJumping,
-            isSliding: isSliding,
-            // 其他需要同步的状态...
-        }
+            isSliding: isSliding
+        };
 
-        gameStateChanged(state)
-        NetworkManager.sendGameState(state)
+        // 确保NetworkManager对象已正确初始化
+        if (NetworkManager) {
+            NetworkManager.sendGameState(state);
+        } else {
+            console.error("NetworkManager is not available");
+        }
     }
 
-    //signal gameStateChanged(var state)
+    function setRandomSeed(seed) {
+        var m = 2147483647;
+            var a = 16807;
+            var s = seed % m;
+            Math.random = function() {
+                s = (a * s) % m;
+                return s / m;
+            };
+
+    }
+
+
+
+    // 在适当位置添加seedrandom函数
+    function seedrandom(seed) {
+        // 简单的伪随机数生成器实现
+        // 可以使用更复杂的算法如Mulberry32
+        return function() {
+            seed = (seed * 9301 + 49297) % 233280;
+            return seed / 233280;
+        };
+    }
+
+   // signal gameStateChanged(var state)
     // 处理接收到的对手状态
         Connections {
             target: NetworkManager
@@ -1135,6 +1167,12 @@ Page {
         repeat: true
         onTriggered: syncGameState()
     }
+    Connections {
+        target: NetworkManager
+        function onRandomSeedReceived(seed) {
+            setRandomSeed(seed);
+        }
+    }
 
     // 处理远程玩家状态更新
     onGameStateChanged: {
@@ -1145,7 +1183,22 @@ Page {
             isSliding = gameState.isSliding
             // 更新其他状态...
         }
+
     }
+    // 对手角色
+    Player {
+        id: opponentPlayer
+        x: opponentState.playerX || 0
+        y: opponentState.playerY || 0
+        height: player_height
+        width: player_width
+        isSliding: opponentState.isSliding || false
+        isJumping: opponentState.isJumping || false
+        isDowning: false // 对手的下落状态可能需要额外处理
+        gameRunning: gameRunning
+        z: player.z - 1 // 确保自己在对手前面
+    }
+
 
 
     //————————————————————————————奖励关卡——————————————————————————————

@@ -59,33 +59,61 @@ bool NetworkManager::startServer(quint16 port)
 
 void NetworkManager::connectToHost(const QString &ip, quint16 port)
 {
+    qDebug() << "=== 开始连接诊断 ===";
+    qDebug() << "目标地址:" << ip << "端口:" << port;
+
+    // 打印本机所有网络接口
+    qDebug() << "可用网络接口:";
+    foreach (const QNetworkInterface &interface, QNetworkInterface::allInterfaces()) {
+        qDebug() << "接口:" << interface.name();
+        foreach (const QNetworkAddressEntry &entry, interface.addressEntries()) {
+            qDebug() << "  IP:" << entry.ip().toString() << "广播地址:" << entry.broadcast().toString();
+        }
+    }
+
+    // 清理旧连接（增强版）
     if (m_socket) {
-        m_socket->disconnectFromHost();
+        qDebug() << "清理现有连接...";
+        disconnect(m_socket, nullptr, this, nullptr);
+        m_socket->abort();
         m_socket->deleteLater();
         m_socket = nullptr;
     }
 
     m_socket = new QTcpSocket(this);
+    qDebug() << "Socket对象已创建:" << m_socket;
 
-    // 连接所有必要信号
-    connect(m_socket, &QTcpSocket::connected, this, &NetworkManager::opponentConnected);
-    connect(m_socket, &QTcpSocket::readyRead, this, &NetworkManager::onDataReceived);
-    connect(m_socket, &QTcpSocket::disconnected, this, &NetworkManager::onClientDisconnected);
+    // 连接状态信号（调试用）
+    connect(m_socket, &QTcpSocket::stateChanged, this, [this](QAbstractSocket::SocketState state) {
+        qDebug() << "[状态变更] ->" << state;
+        emit socketStateChanged(); // 新增这行
+    });
+
+    // 核心信号连接
+    connect(m_socket, &QTcpSocket::connected, this, [this]() {
+        qDebug() << "!!! 连接成功 !!! 对端地址:" << m_socket->peerAddress();
+        emit opponentConnected();
+    });
+
+    // 增强错误处理
     connect(m_socket,
             QOverload<QAbstractSocket::SocketError>::of(&QTcpSocket::errorOccurred),
             this,
             [this](QAbstractSocket::SocketError error) {
-                emit connectionError("连接错误: " + m_socket->errorString());
+                qDebug() << "[错误详情] 代码:" << error << "描述:" << m_socket->errorString();
+                emit connectionError(m_socket->errorString());
             });
 
-    qDebug() << "尝试连接到:" << ip << ":" << port;
+    // 开始连接
+    qDebug() << "尝试建立连接...";
     m_socket->connectToHost(QHostAddress(ip), port);
 
-    // 添加连接超时检测
+    // 超时检测（带状态记录）
     QTimer::singleShot(3000, this, [this, ip, port]() {
         if (m_socket && m_socket->state() == QAbstractSocket::ConnectingState) {
+            qDebug() << "超时中止！当前状态:" << m_socket->state();
             m_socket->abort();
-            emit connectionError("连接超时: " + ip + ":" + QString::number(port));
+            emit connectionError("连接超时");
         }
     });
 }
@@ -219,15 +247,53 @@ void NetworkManager::sendGameState(const QVariantMap &state)
     }
 }
 
-// 修改原有的onDataReceived处理
+//游戏进行相关信号
+// 在onDataReceived中添加处理逻辑
+void NetworkManager::sendCommand(const QString &command)
+{
+    if (m_socket && m_socket->state() == QAbstractSocket::ConnectedState) {
+        QVariantMap data;
+        data["command"] = command;
+        sendGameData(data);
+        qDebug() << "命令已发送:" << command; // 添加调试信息
+    }
+}
+
 void NetworkManager::onDataReceived()
 {
     QDataStream stream(m_socket);
     QVariantMap data;
     stream >> data;
-    if (data.contains("gameState")) {
+
+    qDebug() << "接收到数据:" << data;
+
+    if (data.contains("type") && data["type"].toString() == "seed") {
+        quint32 seed = data["seed"].toUInt();
+        emit randomSeedReceived(seed);
+    } else if (data.contains("gameState")) {
         emit gameStateReceived(data["gameState"].toMap());
+    } else if (data.contains("command")) {
+        QString command = data["command"].toString();
+        if (command == "ready") {
+            emit playerReady();
+        } else if (command == "start") {
+            qDebug() << "接收到开始游戏命令";
+            emit gameStarted();
+        }
     } else {
         emit gameDataReceived(data);
+    }
+}
+
+void NetworkManager::sendRandomSeed(quint32 seed)
+{
+    if (m_socket && m_socket->state() == QAbstractSocket::ConnectedState) {
+        QVariantMap data;
+        data["type"] = "seed";
+        data["seed"] = seed;
+        QByteArray buffer;
+        QDataStream stream(&buffer, QIODevice::WriteOnly);
+        stream << data;
+        m_socket->write(buffer);
     }
 }
