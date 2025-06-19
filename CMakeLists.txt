@@ -8,7 +8,6 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(apptiantiankupao)
 
-
 qt_add_qml_module(apptiantiankupao
     URI tiantiankupao
     VERSION 1.0
@@ -23,9 +22,6 @@ qt_add_qml_module(apptiantiankupao
     RESOURCES images.qrc
     QML_FILES Page_jiesuan.qml
     QML_FILES Page_begin.qml
-    RESOURCES android/gradle/wrapper/gradle-wrapper.jar android/gradle/wrapper/gradle-wrapper.properties
-    RESOURCES android/AndroidManifest.xml android/build.gradle android/gradle.properties android/gradlew android/gradlew.bat
-    RESOURCES android/res/values/libs.xml
     QML_FILES ObstacleGenerator.qml
     QML_FILES Bonus_level.qml
     QML_FILES Boss_level.qml
@@ -33,8 +29,6 @@ qt_add_qml_module(apptiantiankupao
     QML_FILES BattlePage.qml
     SOURCES NetworkManager.h
     SOURCES NetworkManager.cpp
-
-
 )
 
 target_compile_features(apptiantiankupao PRIVATE cxx_std_20)
@@ -69,14 +63,6 @@ set_target_properties(
     "${CMAKE_SOURCE_DIR}/android"    #构建时会从该目录下复制所有资源文件
                                             #放在最后生成的APK文件中，覆盖QT默认生成的Android配置
 )
-
-
-
-
-
-
-
-
 
 
 

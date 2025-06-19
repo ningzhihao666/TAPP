@@ -14,6 +14,7 @@ Page{
     property int  sc_x:Screen.width/200
     property int  sc_y:Screen.height/100
     property bool gameBegin:false                         //游戏开始控制
+    property int  ownCoins:0                              //金币数量
 
     //地图属性
     property int  tileSize:Screen.height*0.1              //每个格子的大小
@@ -56,6 +57,9 @@ Page{
     property int  bos_bltWidth:bos_bltHeight              //boss子弹宽度
     property real knockBackAngle:0                        //受击移动角度
     property bool isKnockback:false                       //是否被攻击后退
+
+    //金币属性
+    property int coin_size:Screen.height*0.05             //金币大小
 
     //boss属性
     property int  boss_width:boss_height                  //boss宽度
@@ -286,6 +290,17 @@ Page{
                boss.isDead){
                 deadDialog.open()
             }
+            //金币检测
+            for(var i=0;i<coinsModel.count;i++){
+                var coin=coins.itemAt(i)
+                if(coin.mapX>player.worldX-player.width &&
+                   coin.mapX<player.worldX+player.width &&
+                   coin.mapY>player.worldY-player.height &&
+                   coin.mapY<player.worldY+player.height){
+                    coinsModel.remove(i)
+                    ownCoins++
+                }
+            }
         }
     }
 
@@ -355,12 +370,6 @@ Page{
                 }
             }
         }
-
-        Label {
-            text: "你的得分: " + score
-            color:"black"
-            anchors.centerIn: parent
-        }
     }
 
     //——————————————————————————————BOSS定义———————————————————————————
@@ -376,7 +385,7 @@ Page{
 
         property int  boss_mapX:(mapWidth-boss.width)/2     //boss在地图上的x坐标
         property int  boss_mapY:(mapHeight-boss.height)/2   //boss在地图上的y坐标
-        property int  boss_life:1000                        //boss的血量
+        property int  boss_life:10                        //boss的血量
         property var  current_target:Qt.point(0,0)          //boss移动目标点
         property bool isMoving:false                        //boss是否正在移动
         property int  moveSpeed:Screen.height*0.01          //boss移动速度
@@ -427,7 +436,7 @@ Page{
 
         Timer{
             interval: 16
-            running:boss.isMoving
+            running:boss.isMoving && !boss.isDead
             repeat:true
             onTriggered: {
                 var dx=boss.current_target.x-boss.boss_mapX
@@ -438,6 +447,7 @@ Page{
                 boss.boss_mapY+=(dy/distance)*boss.moveSpeed
                 if(boss.boss_life<=0) {
                     boss.isDead=true
+                    genCoins(5)
                 }
             }
         }
@@ -504,6 +514,40 @@ Page{
             RotationAnimation on rotation{
                 from:0;   to:360;  duration:1000
                 loops:Animation.Infinite
+            }
+        }
+    }
+
+    //死亡爆金币
+    function genCoins(coinNum){
+        for(var i=0;i<coinNum;i++){
+            for(var j=0;j<coinNum;j++){
+                var mapX=boss.boss_mapX-boss.width/2+boss.width*i/coinNum
+                var mapY=boss.boss_mapY-boss.height/2+boss.height*j/coinNum
+                coinsModel.append({
+                    "mapX":mapX,
+                    "mapY":mapY
+                })
+            }
+        }
+    }
+
+    //金币
+    Repeater{
+        id:coins
+        model:ListModel{id:coinsModel}
+        delegate: Rectangle{
+            id:coin
+            width:coin_size
+            height:coin_size
+            property int mapX:model.mapX
+            property int mapY:model.mapY
+            x:mapX-mapOffsetX-coin_size/2
+            y:mapY-mapOffsetY-coin_size/2
+            color:"transparent"
+            Image{
+                source:"qrc:/BackGround/Images/BackGround/金币.png"
+                anchors.fill:parent
             }
         }
     }
