@@ -18,6 +18,7 @@ Rectangle {
         Text {
             text: "元气之战：跑酷地牢(联机版)"
             font.pixelSize: 36
+            color:"yellow"
             font.family: "Arial"
             anchors.horizontalCenter: parent.horizontalCenter
         }

@@ -57,6 +57,7 @@ Page{
     property int  bos_bltWidth:bos_bltHeight              //boss子弹宽度
     property real knockBackAngle:0                        //受击移动角度
     property bool isKnockback:false                       //是否被攻击后退
+    property int  xuelian_Size:Screen.height*0.2          //血镰的大小
 
     //金币属性
     property int coin_size:Screen.height*0.05             //金币大小
@@ -71,7 +72,7 @@ Page{
     ListModel{ id:avatars }   //影分身容器
 
     //图片资源
-    property string dizhuan:"qrc:/boss_level/Images/boss_level/地砖.png"
+    property string dizhuan:"qrc:/boss_level/Images/boss_level/地砖.jpg"
     property string qiangti:"qrc:/boss_level/Images/boss_level/墙体.png"
 
     //地图容器
@@ -104,6 +105,37 @@ Page{
         }
     }
     //——————————————————————————————界面控制————————————————————————————
+    //金币容器
+    Rectangle{
+        id:coin_list
+        height:Screen.height*0.05;    width:Screen.width*0.13
+        border.width:1;     color:"lightblue"
+        radius:Screen.height*0.02
+        anchors{
+            horizontalCenter: parent.horizontalCenter
+            top:parent.top;      topMargin:parent.height*0.05
+        }
+
+        Image{
+            id:coin_l
+            height:parent.height*0.8;  width:height
+            anchors{
+                left:parent.left;  leftMargin:parent.width*0.05
+                verticalCenter: parent.verticalCenter
+            }
+            source:"qrc:/BackGround/Images/BackGround/金币.png"
+        }
+
+        Rectangle{
+            width:parent.width*0.6; height:parent.height*0.8; border.width:1
+            anchors{
+                left:coin_l.right;  leftMargin: parent.width*0.04
+                verticalCenter: parent.verticalCenter
+            }
+            Label{text:ownCoins;  color:"black";  anchors.centerIn:parent  }
+        }
+    }
+
     //控制
     Rectangle{
         id:kongzhi;     color:"transparent"
@@ -211,10 +243,14 @@ Page{
         }
 
         //玩家在地图上的实际位置(人物中心点位置)
-        property real worldX:(mapWidth-player.width)/2                              //人物所在地图X坐标
+        property real worldX:(mapWidth-player.width)/2               //人物所在地图X坐标
         property real worldY:mapHeight-tileSize-player.height/2      //人物所在地图Y坐标
         property real player_attackAngle:0                           //攻击方向
         property int  life:100                                       //人物生命值
+        property bool isMove:false                                   //人物正在移动
+        property int  preWorldX:(mapWidth-player.width)/2            //先前的X坐标
+        property int  preWorldY:mapHeight-tileSize-player.height/2   //先前的Y坐标
+        property bool canAttacked:true                               //能被攻击间隙
     }
 
     //人物血条
@@ -264,6 +300,7 @@ Page{
         repeat:true
         interval:16
         onTriggered: {
+            //受到boss的子弹攻击
             for(var i=0;i<boss_bullet.count;i++){
                 var bullet=gauiwu_bullet.itemAt(i)
                 if(bullet.mapX>player.worldX-player.width/2 &&
@@ -280,15 +317,31 @@ Page{
                     knockbacktimer.start()
                 }
             }
+            //受到boss血镰攻击
+            for(var j=0;j<xuelianModel.count;j++){
+                var xuelian=xuelians.itemAt(j)
+                if(player.worldX>xuelian.mapX &&
+                   player.worldX<xuelian.mapX + xuelian.width &&
+                   player.worldY>xuelian.mapY &&
+                   player.worldY<xuelian.mapY + xuelian.height &&
+                   player.canAttacked){
+                    player.life-=20
+                    player.canAttacked=false
+                    screenShake.start()
+                    xuel_atc_timer.start()
+                }
+            }
+
             //人物死亡
             if( player.life<=0) deadDialog.open()
             //人物通关
-            if(player.worldX>blackHole.mapX-blackHole.width/2 &&
-               player.worldX<blackHole.mapX+blackHole.width/2 &&
-               player.worldY>blackHole.mapY-blackHole.height/2 &&
-               player.worldY<blackHole.mapY+blackHole.height/2 &&
+            if(player.worldX>blackHole.mapX-blackHole.width &&
+               player.worldX<blackHole.mapX+blackHole.width &&
+               player.worldY>blackHole.mapY-blackHole.height &&
+               player.worldY<blackHole.mapY+blackHole.height &&
                boss.isDead){
-                deadDialog.open()
+                console.log("player.isMove",player.isMove)
+                if(!player.isMove)deadDialog.open()
             }
             //金币检测
             for(var i=0;i<coinsModel.count;i++){
@@ -301,6 +354,15 @@ Page{
                     ownCoins++
                 }
             }
+        }
+    }
+    Timer{
+        id:xuel_atc_timer
+        running:false
+        repeat:false
+        interval: 1000
+        onTriggered: {
+            player.canAttacked=true
         }
     }
 
@@ -377,7 +439,7 @@ Page{
         id:boss
         height:boss_level.boss_height
         width:boss_level.boss_width
-        border.width:1
+        color:"transparent"
         visible:!boss.isDead
 
         x:boss_mapX-mapOffsetX      //考虑地图偏移
@@ -385,7 +447,7 @@ Page{
 
         property int  boss_mapX:(mapWidth-boss.width)/2     //boss在地图上的x坐标
         property int  boss_mapY:(mapHeight-boss.height)/2   //boss在地图上的y坐标
-        property int  boss_life:10                        //boss的血量
+        property int  boss_life:1000                        //boss的血量
         property var  current_target:Qt.point(0,0)          //boss移动目标点
         property bool isMoving:false                        //boss是否正在移动
         property int  moveSpeed:Screen.height*0.01          //boss移动速度
@@ -400,6 +462,10 @@ Page{
             {
                 name:"circle",cooldown:2000,
                 execute:function(){ circleShoot(20) }
+            },
+            {
+                name:"xuelian",cooldown:3000,
+                execute:function(){ shoot_xuelian(5) }
             }
         ]
 
@@ -617,6 +683,68 @@ Page{
         for(var i=0;i<count;i++){
             var angle_l=i*(360/count)
             createBullet(angle_l)
+        }
+    }
+
+    //发射血色镰刀攻击
+    function shoot_xuelian(count){
+        for(var i=0;i<count;i++){
+            var angle_xuelian=i*(130/count)
+            xuelianModel.append({
+                "mapX":boss.boss_mapX,
+                "mapY":boss.boss_mapY,
+                "angle":angle_xuelian
+            })
+        }
+    }
+
+    //血镰容器
+    Repeater{
+        id:xuelians
+        model:ListModel{id:xuelianModel}
+        delegate: Rectangle{
+            id:xuelian
+            width:xuelian_Size;    height:xuelian_Size
+            property int mapX:model.mapX
+            property int mapY:model.mapY
+            x:mapX-mapOffsetX;     y:mapY-mapOffsetY
+            color:"transparent"
+            Image{
+                source:"qrc:/boss_level/Images/boss_level/血镰.png"
+                anchors.fill:parent
+                fillMode: Image.PreserveAspectFit
+                rotation:0    //设置图片初始旋转角度
+                //持续旋转效果
+                RotationAnimation on rotation{
+                    from:0;   to:360;  duration:300
+                    loops:Animation.Infinite
+                }
+            }
+
+            property real speed:5
+            property real angle:model.angle          //偏移角度
+            property int  damage:20                  //伤害
+
+            //子弹移动
+            Timer{
+                interval:16
+                running:true
+                repeat:true
+                onTriggered: {
+                    xuelian.mapX+=Math.cos(xuelian.angle*Math.PI/180)*xuelian.speed
+                    xuelian.mapY+=Math.sin(xuelian.angle*Math.PI/180)*xuelian.speed
+
+                    //超出边界后损坏
+                    if(xuelian.mapX<0 || xuelian.mapX>mapWidth-tileSize ||
+                       xuelian.mapY<0 || xuelian.mapY>mapHeight-tileSize){
+                        xuelianModel.remove(index)
+                    }
+                    //撞墙毁坏
+                    if(!isWalkable(xuelian.mapX,xuelian.mapY)){
+                        xuelianModel.remove(index)
+                    }
+                }
+            }
         }
     }
 
@@ -1039,7 +1167,7 @@ Page{
     //游戏主计时器
     Timer{
         id:updata_player
-        interval:8
+        interval:16
         running:true
         repeat:true
         onTriggered: {
@@ -1047,14 +1175,23 @@ Page{
             updatePlayerPosition()
             //子弹与boss碰撞检测
             attackOnBoss()
-            if(player.life===0){
-
+            //人物移动停止检测
+            var player_nowX=Math.floor(player.worldX)
+            var player_nowY=Math.floor(player.worldY)
+            if(player.preWorldX===player_nowX &&
+               player.preWorldY===player_nowY){
+                player.isMove=false
             }
         }
     }
 
     // 更新玩家位置
     function updatePlayerPosition() {
+        //设置状态
+        player.isMove=true
+        player.preWorldX=player.worldX
+        player.preWorldY=player.worldY
+
         if(init_player){
             //初始化人物位置
             mapOffsetX = player.worldX - viewportWidth / 2
@@ -1089,12 +1226,6 @@ Page{
                     player.worldY=newWorldY
                 }
             }
-
-            //限制人物在围墙内
-            if(player.worldX-player.width/2<tileSize) player.worldX=tileSize+player.width/2
-            if(player.worldX+player.width/2>mapWidth-tileSize) player.worldX=mapWidth-tileSize-player.width/2
-            if(player.worldY-player.height/2<tileSize) player.worldY=tileSize+player.height/2
-            if(player.worldY+player.height/2>mapHeight-tileSize) player.worldY=mapHeight-tileSize-player.height/2
 
             // 计算地图偏移，使玩家保持在屏幕中心
             mapOffsetX = player.worldX - viewportWidth / 2

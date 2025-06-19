@@ -1,9 +1,7 @@
 <RCC>
     <qresource prefix="/player">
-        <file>Images/player/哥玛兽.png</file>
         <file>Images/player/跳跃.png</file>
         <file>Images/player/滑铲.png</file>
-        <file>Images/player/金枪小帅.png</file>
         <file>Images/player/跳跃2.png</file>
         <file>Images/player/跑动1.png</file>
         <file>Images/player/跑动2.png</file>
@@ -53,7 +51,6 @@
         <file>Images/daoju/X2.png</file>
     </qresource>
     <qresource prefix="/boss_level">
-        <file>Images/boss_level/地砖.png</file>
         <file>Images/boss_level/手里剑.png</file>
         <file>Images/boss_level/墙体.png</file>
         <file>Images/boss_level/生命.png</file>
@@ -63,6 +60,8 @@
         <file>Images/boss_level/闪电.png</file>
         <file>Images/boss_level/分身.png</file>
         <file>Images/boss_level/黑洞.png</file>
+        <file>Images/boss_level/地砖.jpg</file>
+        <file>Images/boss_level/血镰.png</file>
     </qresource>
     <qresource prefix="/page_begin">
         <file>Images/page_begin/切换.png</file>
