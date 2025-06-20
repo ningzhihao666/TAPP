@@ -312,19 +312,19 @@ Page{
             width:parent.width
             anchors.centerIn: parent
             background: Rectangle{color:"yellow"; border.width:1; radius:height/6}
-            Label{text: model_cs.name? model_cs.name:"跑酷模式"; color:"black"; anchors.centerIn: parent}
+            Label{id:model_csl; text: model_cs.name? model_cs.name:"跑酷模式"; color:"black"; anchors.centerIn: parent}
             onClicked: {
-                if(model_cs.name==="跑酷模式"){
+                if(model_csl.text==="跑酷模式"){
                     stackView.replace("GameScreen.qml",{
                                   "gameRunning":true
                                   })
                 }
-                if(model_cs.name==="BOSS挑战"){
+                if(model_csl.text==="BOSS挑战"){
                     stackView.push("Boss_level.qml",{
                                   "gameBegin":true
                                   })
                 }
-                if(model_cs.name==="双人互联"){
+                if(model_csl.text==="双人互联"){
                     stackView.replace("BattleLobby.qml")
                     model_diag.close()
                 }

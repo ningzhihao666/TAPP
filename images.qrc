@@ -62,6 +62,7 @@
         <file>Images/boss_level/黑洞.png</file>
         <file>Images/boss_level/地砖.jpg</file>
         <file>Images/boss_level/血镰.png</file>
+        <file>Images/boss_level/死神之眼.png</file>
     </qresource>
     <qresource prefix="/page_begin">
         <file>Images/page_begin/切换.png</file>

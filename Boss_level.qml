@@ -53,11 +53,12 @@ Page{
     //子弹属性
     property int  bullet_width:bullet_height              //子弹宽度
     property int  bullet_height:Screen.height*0.05        //子弹高度
-    property int  bos_bltHeight:Screen.height*0.05        //boss子弹高度
     property int  bos_bltWidth:bos_bltHeight              //boss子弹宽度
+    property int  bos_bltHeight:Screen.height*0.05        //boss子弹高度
     property real knockBackAngle:0                        //受击移动角度
     property bool isKnockback:false                       //是否被攻击后退
     property int  xuelian_Size:Screen.height*0.2          //血镰的大小
+    property int  deathEye_size:Screen.height*0.25         //死神之眼的大小
 
     //金币属性
     property int coin_size:Screen.height*0.05             //金币大小
@@ -70,6 +71,15 @@ Page{
     property int  avatar_height:Screen.height*0.2         //分身高度
     property int  avatar_width:Screen.width*0.1           //分身宽度
     ListModel{ id:avatars }   //影分身容器
+
+    //游戏难度控制属性
+    property int boss_xueliang:1000                       //boss的血量上限
+    property int boss_life:1000                           //boss当前生命值
+    property int boss_attack:10                           //boss攻击力
+    property int attack_speed:sc_y                        //子弹攻击速度
+    property int xuelian_attack:20                        //血镰伤害
+    property int deathEye_attack:20                       //死神之眼的伤害
+    property int deathEye_count:8                         //死神之眼个数
 
     //图片资源
     property string dizhuan:"qrc:/boss_level/Images/boss_level/地砖.jpg"
@@ -85,6 +95,7 @@ Page{
 
         //绘制地牢地图
         Repeater{
+            id:repeat_map
             model:dungeonMap
             delegate:Row{
                 y:index*tileSize
@@ -308,7 +319,7 @@ Page{
                    bullet.mapY>player.worldY-player.height/2 &&
                    bullet.mapY<player.worldY+player.height/2){
                     boss_bullet.remove(i)
-                    player.life-=10
+                    player.life-=boss_attack
                     screenShake.start()           //受击振动
                     isKnockback=true              //被击退
                     player.worldX+=Math.cos(bullet.angle*Math.PI/180)*sc_y
@@ -325,7 +336,7 @@ Page{
                    player.worldY>xuelian.mapY &&
                    player.worldY<xuelian.mapY + xuelian.height &&
                    player.canAttacked){
-                    player.life-=20
+                    player.life-=xuelian_attack
                     player.canAttacked=false
                     screenShake.start()
                     xuel_atc_timer.start()
@@ -363,6 +374,9 @@ Page{
         interval: 1000
         onTriggered: {
             player.canAttacked=true
+            for(var i=0;i<avatars.count;i++){
+                avatar_rpt.itemAt(i).canAttacked=true
+            }
         }
     }
 
@@ -400,6 +414,7 @@ Page{
         }
     }
 
+    //游戏结束窗口
     Dialog{
         id:deadDialog
         height:Screen.height*3/5;   width:Screen.width*3/5
@@ -414,12 +429,28 @@ Page{
         anchors.centerIn: parent
 
         Rectangle{
+            id:chos_level;    radius:parent.height*0.15
+            height:parent.height*0.3; width:parent.width*0.3; border.width:1
+            anchors{ left:parent.left;    leftMargin: parent.width*0.1
+                     bottom:parent.bottom;  bottomMargin:parent.height*0.1 }
+            Button{
+                background: Rectangle{color:"transparent"}
+                anchors.fill:parent
+                Label{text:"继续挑战"; color:"black"; anchors.centerIn: parent}
+                onClicked: {
+                    gameBegin=false
+                    deadDialog.close()
+                    chos_le.open()
+                }
+            }
+        }
+
+        Rectangle{
             height:parent.height*0.3;  width:parent.width*0.3;  color:"lightgreen"
             border.width:1;   radius:parent.height*0.15
             anchors{
-                bottom:parent.bottom
-                bottomMargin:parent.height*0.1
-                horizontalCenter: parent.horizontalCenter
+                bottom:parent.bottom;  bottomMargin:parent.height*0.1
+                right:parent.right;    rightMargin: parent.width*0.1
             }
 
             Button{
@@ -427,9 +458,127 @@ Page{
                 anchors.fill:parent
                 Label{text:"返回大厅"; color:"black"; anchors.centerIn: parent}
                 onClicked: {
-                    stackView.pop("Page_begin.qml")
+                    gameBegin=false
+                    stackView.pop()
                     deadDialog.close()
                 }
+            }
+        }
+    }
+    //难度选择窗口
+    Dialog{
+        id:chos_le
+        height:Screen.height*3/5;   width:Screen.width*3/5
+        title: "难度选择"
+        modal:true
+        closePolicy:Popup.NoAutoClose       //禁止点击外部关闭
+        Image{
+            source:"qrc:/BackGround/Images/BackGround/暂停面板背景.jpg"
+            anchors.fill:parent
+        }
+        anchors.centerIn: parent
+
+        Rectangle{
+            id:chuji;   height:parent.height*0.1;   width:parent.width*0.5;    radius:parent.height*0.1;
+            color:"lightgreen"
+            Button{
+                background: Rectangle{color:"transparent"; }
+                Label{ text:"简单";  color:"black";  anchors.centerIn:parent}
+                onClicked: {
+                    stackView.replace("Boss_level.qml",({
+                                      "gameBegin":true,
+                                      "boss_xueliang":1000,
+                                      "boss_life":1000,
+                                      "boss_attack":15,
+                                      "xuelian_attack":25,
+                                      "attack_speed":sc_y,
+                                      "deathEye_count":8,
+                                      "deathEye_attack":20
+                                      }))
+                }
+                anchors.fill:parent
+            }
+            anchors{
+                top:parent.top;    topMargin: parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
+        }
+
+        Rectangle{
+            id:justso;   height:parent.height*0.1;   width:parent.width*0.5;   radius:parent.height*0.1;
+            color:"lightgreen"
+            Button{
+                z:2
+                background: Rectangle{color:"transparent"}
+                Label{ text:"一般";  color:"black";  anchors.centerIn:parent}
+                onClicked: {
+                    stackView.replace("Boss_level.qml",({
+                                      "gameBegin":true,
+                                      "boss_xueliang":2000,
+                                      "boss_life":2000,
+                                      "boss_attack":15,
+                                      "xuelian_attack":25,
+                                      "attack_speed":sc_y*1.5,
+                                      "deathEye_count":10,
+                                      "deathEye_attack":25
+                                      }))
+                }
+                anchors.fill:parent
+            }
+            anchors{
+                top:chuji.bottom;    topMargin: parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
+        }
+
+        Rectangle{
+            id:ltDif;   height:parent.height*0.1;   width:parent.width*0.5;  radius:parent.height*0.1;
+            color:"lightgreen"
+            Button{
+                background: Rectangle{color:"transparent"}
+                Label{ text:"有点难度";  color:"black";  anchors.centerIn:parent}
+                onClicked: {
+                    stackView.replace("Boss_level.qml",({
+                                      "gameBegin":true,
+                                      "boss_xueliang":5000,
+                                      "boss_life":5000,
+                                      "boss_attack":25,
+                                      "xuelian_attack":30,
+                                      "attack_speed":sc_y*2,
+                                      "deathEye_count":11,
+                                      "deathEye_attack":30
+                                      }))
+                }
+                anchors.fill:parent
+            }
+            anchors{
+                top:justso.bottom;    topMargin: parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
+        }
+        Rectangle{
+            id:difficult;   height:parent.height*0.1;   width:parent.width*0.5;  radius:parent.height*0.1;
+            color:"lightgreen"
+            Button{
+                background: Rectangle{color:"transparent"}
+                Label{ text:"困难";  color:"black";  anchors.centerIn:parent}
+                onClicked: {
+                    stackView.replace("Boss_level.qml",({
+                                      "gameBegin":true,
+                                      "boss_xueliang":10000,
+                                      "boss_life":10000,
+                                      "boss_attack":30,
+                                      "xuelian_attack":40,
+                                      "attack_speed":sc_y*2.5,
+                                      "deathEye_count":12,
+                                      "deathEye_attack":40
+                                      }))
+                }
+                anchors.fill:parent
+            }
+            anchors{
+                top:ltDif.bottom;    topMargin: parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
             }
         }
     }
@@ -447,7 +596,6 @@ Page{
 
         property int  boss_mapX:(mapWidth-boss.width)/2     //boss在地图上的x坐标
         property int  boss_mapY:(mapHeight-boss.height)/2   //boss在地图上的y坐标
-        property int  boss_life:1000                        //boss的血量
         property var  current_target:Qt.point(0,0)          //boss移动目标点
         property bool isMoving:false                        //boss是否正在移动
         property int  moveSpeed:Screen.height*0.01          //boss移动速度
@@ -466,7 +614,12 @@ Page{
             {
                 name:"xuelian",cooldown:3000,
                 execute:function(){ shoot_xuelian(5) }
+            },
+            {
+                name:"deathEye",cooldown:3000,
+                execute:function(){ shoot_deathEye(deathEye_count) }
             }
+
         ]
 
         Image{
@@ -511,7 +664,7 @@ Page{
 
                 boss.boss_mapX+=(dx/distance)*boss.moveSpeed
                 boss.boss_mapY+=(dy/distance)*boss.moveSpeed
-                if(boss.boss_life<=0) {
+                if(boss_life<=0) {
                     boss.isDead=true
                     genCoins(5)
                 }
@@ -531,7 +684,7 @@ Page{
         }
 
         Rectangle{
-            id:boss_xueliang;   height:parent.height;   width:height
+            id:xueliang_boss;   height:parent.height;   width:height
             anchors.left:parent.left;    color:"transparent"
             anchors.verticalCenter: parent.verticalCenter
 
@@ -545,17 +698,17 @@ Page{
             height:parent.height;    width:parent.width*0.8
             border.width:1;     radius:width/2
             color:"transparent"
-            anchors.left:boss_xueliang.right
+            anchors.left:xueliang_boss.right
             anchors.leftMargin: parent.width*0.03
             anchors.verticalCenter: parent.verticalCenter
 
             Label{
-                z:10;  text:"生命值:"+boss.boss_life;    color:"black"
+                z:10;  text:"生命值:"+boss_life;    color:"black"
                 anchors.centerIn: parent
             }
 
             Rectangle{
-                height:parent.height;   width:parent.width*boss.boss_life/1000
+                height:parent.height;   width:parent.width*boss_life/boss_xueliang
                 border.width:1;     radius:height/2
                 color:"red"
                 anchors.left:parent.left; anchors.top:parent.top
@@ -633,9 +786,9 @@ Page{
             radius:width/2
             color:"yellow"
 
-            property real speed:5
+            property real speed:attack_speed
             property real angle:model.angle          //偏移角度
-            property int  damage:10                  //伤害
+            property int  damage:boss_attack         //伤害
 
             //子弹移动
             Timer{
@@ -698,6 +851,40 @@ Page{
         }
     }
 
+    //生成死神之眼
+    function shoot_deathEye(count){
+        var validSpots=[]               //有效位置容器
+        var padding =deathEye_size/2    //确保不贴边
+
+        //收集所有有效位置
+        for(var y=0;y<dungeonMap.length;y++){
+            for(var x=0;x<dungeonMap[y].length;x++){
+                if(dungeonMap[y][x]===0){       //y是行，x是列
+                    var posX=x*tileSize+padding
+                    var posY=y*tileSize+padding
+
+                    if(posX>padding &&posX<mapWidth-padding &&
+                       posY>padding && posY<mapHeight-padding){
+                        validSpots.push({ x:posX,y:posY })
+                    }
+                }
+            }
+        }
+
+        //随机选择位置
+        for(var i=0;i<Math.min(count,validSpots.length);i++){
+            var index=Math.floor(Math.random()*validSpots.length)
+            var spot=validSpots[index]
+
+            deathEyesModel.append({
+                "mapX":spot.x,
+                "mapY":spot.y
+            })
+
+            validSpots.splice(index,1)  //避免重复
+        }
+    }
+
     //血镰容器
     Repeater{
         id:xuelians
@@ -721,9 +908,9 @@ Page{
                 }
             }
 
-            property real speed:5
+            property real speed:attack_speed
             property real angle:model.angle          //偏移角度
-            property int  damage:20                  //伤害
+            property int  damage:xuelian_attack      //伤害
 
             //子弹移动
             Timer{
@@ -743,6 +930,52 @@ Page{
                     if(!isWalkable(xuelian.mapX,xuelian.mapY)){
                         xuelianModel.remove(index)
                     }
+                }
+            }
+        }
+    }
+
+    //死神之眼
+    Repeater{
+        id:deatheyes
+        model:ListModel{id:deathEyesModel}
+        delegate: Rectangle{
+            id:deatheye
+            width:deathEye_size;    height:deathEye_size
+            property int mapX:model.mapX
+            property int mapY:model.mapY
+            x:mapX-mapOffsetX;     y:mapY-mapOffsetY
+            color:"transparent";     opacity:0
+            property bool isActive:false
+            property bool hasDamaged:false
+            Image{
+                source:"qrc:/boss_level/Images/boss_level/死神之眼.png"
+                anchors.fill:parent
+                fillMode: Image.PreserveAspectFit
+            }
+
+            //闪烁效果
+            SequentialAnimation on opacity{    //在透明度上的顺序动画序列
+                id:eyeAnim
+                running:true
+                NumberAnimation{ to:0.5; duration:500; easing.type:Easing.InOutQuad}
+                NumberAnimation{ to:0.2; duration:300; easing.type:Easing.InOutQuad}
+                NumberAnimation{ to:1; duration:700; easing.type:Easing.InOutQuad}
+                ScriptAction{ script:{ isActive=true; checkDamage() } }  //实现在眼睛完全显示时给出伤害
+                PauseAnimation{ duration:300 }   //动画序列暂停
+                NumberAnimation{ to:0; duration:500; easing.type:Easing.InOutQuad}
+                ScriptAction{ script:{ isActive=false; deathEyesModel.remove(index) } }
+            }
+
+            //伤害检测
+            function checkDamage(){
+                if(player.worldX>deatheye.mapX &&
+                   player.worldX<deatheye.mapX +deatheye.width &&
+                   player.worldY>deatheye.mapY &&
+                   player.worldY<deatheye.mapY +deatheye.height){
+                    console.log("触发死神之眼上海")
+                    player.life-=deathEye_attack
+                    screenShake.start()
                 }
             }
         }
@@ -1022,6 +1255,7 @@ Page{
             property int attack:3              //攻击力
             property bool moveToBoss:true      //向boss移动
             property int speed:sc_y            //移速
+            property bool canAttacked:true     //可被攻击
 
             Image{
                 source:"qrc:/boss_level/Images/boss_level/分身.png"
@@ -1061,6 +1295,20 @@ Page{
                             avatar.life-=10
                         }
                     }
+
+                    //受到boss血镰攻击
+                    for(var j=0;j<xuelianModel.count;j++){
+                        var xuelian=xuelians.itemAt(j)
+                        if(avatar.mapX>xuelian.mapX &&
+                           avatar.mapX<xuelian.mapX + xuelian.width &&
+                           avatar.mapY>xuelian.mapY &&
+                           avatar.mapY<xuelian.mapY + xuelian.height &&
+                           avatar.canAttacked){
+                            avatar.life-=xuelian_attack
+                            avatar.canAttacked=false
+                            xuel_atc_timer.start()
+                        }
+                    }
                     //死亡
                     if(avatar.life<=0)avatars.remove(index)
                 }
@@ -1071,7 +1319,7 @@ Page{
                 repeat:true
                 interval:500      //每0.5s攻击一次
                 onTriggered: {
-                    boss.boss_life-=3
+                    boss_life-=3
                 }
             }
         }
@@ -1158,7 +1406,7 @@ Page{
                current_blt.bullet_mapY >boss.boss_mapY &&
                current_blt.bullet_mapY <boss.boss_mapY+boss.height){
                 console.log("触发")
-                boss.boss_life--
+                boss_life--
                 bulletModel.remove(i)
             }
         }
@@ -1176,6 +1424,9 @@ Page{
             //子弹与boss碰撞检测
             attackOnBoss()
             //人物移动停止检测
+            console.log("player.worldX",player.worldX)
+            console.log("player.worldY",player.worldY)
+            console.log("tileSize",tileSize)
             var player_nowX=Math.floor(player.worldX)
             var player_nowY=Math.floor(player.worldY)
             if(player.preWorldX===player_nowX &&
