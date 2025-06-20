@@ -334,6 +334,9 @@ void NetworkManager::onDataReceived()
             } else if (cmd == "start") {
                 emit gameStarted();
             }
+        } // 处理游戏状态
+        else if (data.contains("playerX") && data.contains("playerY")) {
+            emit gameStateReceived(data);
         } else if (data.contains("type") && data["type"] == "seed") {
             quint32 seed = data["seed"].toUInt();
             emit randomSeedReceived(seed);

@@ -1122,8 +1122,11 @@ Page {
             playerX: player_x,
             playerY: player_y,
             isJumping: isJumping,
-            isSliding: isSliding
+            isSliding: isSliding,
+            currentGroundX: get_CurrentGround() ? get_CurrentGround().x : 0,
+            currentGroundTop: get_CurrentGround() ? get_CurrentGround().top : 0
         };
+
 
         // 确保NetworkManager对象已正确初始化
         if (NetworkManager) {
@@ -1195,15 +1198,68 @@ Page {
     // 对手角色
     Player {
         id: opponentPlayer
-        x: opponentState.playerX || 0
+        x: (opponentState.playerX || 0) - (gameScreen.distance - (opponentState.distance || 0)) * 0.5
         y: opponentState.playerY || 0
         height: player_height
         width: player_width
         isSliding: opponentState.isSliding || false
         isJumping: opponentState.isJumping || false
-        isDowning: false // 对手的下落状态可能需要额外处理
+        isDowning: false
         gameRunning: gameRunning
-        z: player.z - 1 // 确保自己在对手前面
+        z: player.z - 1
+        // 使用不同的外观区分对手
+        Image {source:"qrc:/player/Images/player/对手.png"}
+        visible: isMultiplayer && opponentState && opponentState.distance !== undefined
+
+    }
+    //比较距离
+    function getDistanceDifference() {
+        if (!opponentState || opponentState.distance === undefined) return 0;
+
+        // 将游戏内部单位转换为米 (假设16单位=1米，根据你的游戏调整)
+        var myDistanceMeters = Math.floor(distance / 16);
+        var opponentDistanceMeters = Math.floor(opponentState.distance / 16);
+
+        return myDistanceMeters - opponentDistanceMeters;
+    }
+
+    // 计算对手在屏幕上的x位置
+    function calculateOpponentX() {
+        if (!opponentState || opponentState.distance === undefined) return -100; // 屏幕外
+
+        // 计算距离差 (游戏单位)
+        var distanceDiff = distance - (opponentState.distance || 0);
+
+        // 转换为屏幕位置 (根据你的游戏调整系数)
+        var screenPos = player_normal_x + (distanceDiff * 0.2);
+
+        // 限制在合理范围内
+        return Math.max(-100, Math.min(Screen.width + 100, screenPos));
+    }
+
+    // 显示距离差异的UI组件
+    Text {
+        id: distanceComparison
+        text: {
+            var diff = getDistanceDifference();
+            if (diff > 10) return "领先 " + Math.abs(diff) + " 米";
+            else if (diff < -10) return "落后 " + Math.abs(diff) + " 米";
+            else if (Math.abs(diff) > 3) return diff > 0 ? "略微领先" : "略微落后";
+            else return "并驾齐驱";
+        }
+        color: {
+            var diff = getDistanceDifference();
+            if (diff > 10) return "green";
+            else if (diff < -10) return "red";
+            else return "yellow";
+        }
+        font.pixelSize: 24
+        anchors {
+            top: parent.top
+            right: parent.right
+            margins: 20
+        }
+        visible: isMultiplayer && opponentState && opponentState.distance !== undefined
     }
 
 
