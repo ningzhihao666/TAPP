@@ -71,8 +71,6 @@ Page {
                 width: parent.width
                 text: model.name + " (" + model.ip + ")"
                 onClicked: {
-                    console.log("原始IP_________________________:", model.ip);
-                    console.log("原始NAME_______________________:", model.name);
                     stackView.push("BattlePage.qml", {
                         "targetIp": model.ip,
                         "targetPort": 54321,

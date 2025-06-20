@@ -82,6 +82,7 @@ void NetworkManager::connectToHost(const QString &ip, quint16 port)
 
     m_socket = new QTcpSocket(this);
     qDebug() << "Socket对象已创建:" << m_socket;
+    connect(m_socket, &QTcpSocket::readyRead, this, &NetworkManager::onDataReceived);
 
     // 连接状态信号（调试用）
     connect(m_socket, &QTcpSocket::stateChanged, this, [this](QAbstractSocket::SocketState state) {
@@ -103,6 +104,10 @@ void NetworkManager::connectToHost(const QString &ip, quint16 port)
                 qDebug() << "[错误详情] 代码:" << error << "描述:" << m_socket->errorString();
                 emit connectionError(m_socket->errorString());
             });
+    // 避免端口冲突（尤其在同一台机器测试时）
+    if (!m_socket->bind(QHostAddress::Any, 0)) { // 0 表示随机端口
+        qDebug() << "客户端端口绑定失败:" << m_socket->errorString();
+    }
 
     // 开始连接
     qDebug() << "尝试建立连接...";
@@ -121,18 +126,46 @@ void NetworkManager::connectToHost(const QString &ip, quint16 port)
 void NetworkManager::sendGameData(const QVariantMap &data)
 {
     if (m_socket && m_socket->state() == QAbstractSocket::ConnectedState) {
+        // 获取本地（发送者）和远程（接收者）的IP和端口
+        //QString localAddress = m_socket->localAddress().toString();
+        //quint16 localPort = m_socket->localPort();
+        //QString peerAddress = m_socket->peerAddress().toString();
+        //quint16 peerPort = m_socket->peerPort();
+
+        // 输出发送详情
+        //qDebug() << "=== 数据发送详情 ===";
+        //qDebug() << "发送者:" << localAddress << ":" << localPort;
+        //qDebug() << "接收者:" << peerAddress << ":" << peerPort;
+        //qDebug() << "数据内容:" << data; // 输出 QVariantMap 内容
+        // qDebug() << "===================";
+
+        // 序列化并发送数据
         QByteArray buffer;
         QDataStream stream(&buffer, QIODevice::WriteOnly);
         stream << data;
         m_socket->write(buffer);
+
+        // 可选：输出字节流的16进制格式（用于二进制调试）
+        qDebug() << "原始字节流(hex):" << buffer.toHex();
+    } else {
+        qDebug() << "发送失败：Socket未连接或无效";
     }
 }
-
 void NetworkManager::onNewConnection()
 {
     m_socket = m_server->nextPendingConnection();
-    connect(m_socket, &QTcpSocket::readyRead, this, &NetworkManager::onDataReceived);
-    emit opponentConnected();
+
+    // 关键判断：检查套接字状态是否为已连接
+    if (m_socket->state() == QTcpSocket::ConnectedState) {
+        qDebug() << "TCP连接已确认建立 | 客户端IP:" << m_socket->peerAddress().toString()
+                 << "端口:" << m_socket->peerPort();
+
+        connect(m_socket, &QTcpSocket::readyRead, this, &NetworkManager::onDataReceived);
+        emit opponentConnected(); // 通知UI连接成功
+    } else {
+        qDebug() << "警告：套接字未处于连接状态 | 当前状态:" << m_socket->state();
+        m_socket->deleteLater(); // 清理无效连接
+    }
 }
 
 void NetworkManager::onClientDisconnected()
@@ -254,46 +287,70 @@ void NetworkManager::sendCommand(const QString &command)
     if (m_socket && m_socket->state() == QAbstractSocket::ConnectedState) {
         QVariantMap data;
         data["command"] = command;
-        sendGameData(data);
-        qDebug() << "命令已发送:" << command; // 添加调试信息
+
+        // 获取本地（发送者）和远程（接收者）的IP和端口
+        QString localAddress = m_socket->localAddress().toString();
+        quint16 localPort = m_socket->localPort();
+        QString peerAddress = m_socket->peerAddress().toString();
+        quint16 peerPort = m_socket->peerPort();
+
+        // 输出发送者和接收者信息
+        qDebug() << "=== 命令发送详情 ===";
+        qDebug() << "发送者:" << localAddress << ":" << localPort;
+        qDebug() << "接收者:" << peerAddress << ":" << peerPort;
+        qDebug() << "命令内容:" << command;
+        qDebug() << "===================";
+
+        sendGameData(data); // 发送数据
     }
 }
 
 void NetworkManager::onDataReceived()
 {
+    qDebug() << "正在收取命令----------------------------------------------";
+    if (!m_socket || m_socket->state() != QAbstractSocket::ConnectedState) { return; }
+
     QDataStream stream(m_socket);
-    QVariantMap data;
-    stream >> data;
+    stream.setVersion(QDataStream::Qt_5_15); // 确保版本一致
 
-    qDebug() << "接收到数据:" << data;
+    while (m_socket->bytesAvailable() > 0) {
+        // 检查是否有足够的数据（防止半包）
+        if (m_socket->bytesAvailable() < sizeof(quint32)) { return; }
 
-    if (data.contains("type") && data["type"].toString() == "seed") {
-        quint32 seed = data["seed"].toUInt();
-        emit randomSeedReceived(seed);
-    } else if (data.contains("gameState")) {
-        emit gameStateReceived(data["gameState"].toMap());
-    } else if (data.contains("command")) {
-        QString command = data["command"].toString();
-        if (command == "ready") {
-            emit playerReady();
-        } else if (command == "start") {
-            qDebug() << "接收到开始游戏命令";
-            emit gameStarted();
+        // 尝试读取数据
+        QVariantMap data;
+        stream >> data;
+
+        if (stream.status() != QDataStream::Ok) {
+            qDebug() << "数据流读取错误！";
+            return;
         }
-    } else {
-        emit gameDataReceived(data);
+        qDebug() << "接收到数据:" << data;
+        // 处理命令
+        if (data.contains("command")) {
+            QString cmd = data["command"].toString();
+            if (cmd == "ready") {
+                emit playerReady();
+            } else if (cmd == "start") {
+                emit gameStarted();
+            }
+        } else if (data.contains("type") && data["type"] == "seed") {
+            quint32 seed = data["seed"].toUInt();
+            emit randomSeedReceived(seed);
+        }
     }
 }
 
 void NetworkManager::sendRandomSeed(quint32 seed)
 {
-    if (m_socket && m_socket->state() == QAbstractSocket::ConnectedState) {
+    if (m_socket) {
         QVariantMap data;
         data["type"] = "seed";
         data["seed"] = seed;
         QByteArray buffer;
         QDataStream stream(&buffer, QIODevice::WriteOnly);
-        stream << data;
+        stream << data; // 序列化
         m_socket->write(buffer);
+        qDebug() << "已发送随机种子:" << seed;
     }
 }
