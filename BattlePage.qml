@@ -90,8 +90,13 @@ Page {
                 startButton.enabled = true;
             }
         }
+        function onOpponentConnected() {
+               console.log("服务端确认连接成功！"); // 检查是否触发
+               connectionStatus.color = "green"; // 更新UI
+           }
 
         function onGameStarted() {  //疑似未触发
+                console.log("游戏开始信号已接收");
                 gameScreen.visible = true;
                 gameScreen.startGame();
             }
@@ -112,6 +117,7 @@ Page {
     Component.onCompleted: {
         if (!isHost && targetIp) {
             var realIp = targetIp.startsWith("::ffff:") ? targetIp.substring(7) : targetIp;
+             //console.log(":-------------------------", realIp);
             NetworkManager.connectToHost(realIp, targetPort);
         }
     }
