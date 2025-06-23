@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Window
 import QtMultimedia
-
+import NetworkManager 1.0
 //游戏屏幕页面
 
 Page {
@@ -98,6 +98,9 @@ Page {
     property var opponentState: ({})  // 对手状态
     property var lo
     property int randomSeed: 0
+    property bool gameFinished: false
+    property int opponentFinalDistance: 0
+    property bool isWinner: false
 
     // 游戏背景
     Image {
@@ -111,6 +114,10 @@ Page {
         source: "qrc:/musics/musics/两难.mp3"
         loops:MediaPlayer.Infinite
         Component.onCompleted: { play() }
+    }
+    Button{
+        onClicked:
+            gameOver();
     }
 
     ListModel{ id:activeGrounds }          //地面块容器
@@ -592,9 +599,19 @@ Page {
     }
 
     function gameOver() {
-        is_Dead=true
+        is_Dead = true
         gameRunning = false
-        gameOverDialog.open()
+
+        if (isMultiplayer) {
+            // 发送完成通知，包含最终距离
+            NetworkManager.sendFinishNotification(distance)
+            gameFinished = true
+
+            compareResultsTimer.start()
+        } else {
+            // 单人模式保持原有逻辑
+            gameOverDialog.open()
+        }
     }
 
     //弹簧计时器
@@ -1129,6 +1146,21 @@ Page {
         gameRunning = true;
         console.log("游戏开始！多人模式:", isMultiplayer);
     }
+    // 显示多人对战结果
+    function showMultiplayerResult(isWinner, playerDist, opponentDist) {
+        gameRunning = false
+        battlePage.isWinner = isWinner
+        battlePage.playerDistance = playerDist || 0  // 提供默认值
+        battlePage.opponentDistance = opponentDist || 0
+        if (!isHost) {
+                // 客户端需要反转显示
+                var temp = battlePage.playerDistance;
+                battlePage.playerDistance = battlePage.opponentDistance;
+                battlePage.opponentDistance = temp;
+                battlePage.isWinner = !battlePage.isWinner;
+            }
+        multiplayerResultDialog.open()
+    }
     // 新增游戏状态同步函数
     function syncGameState() {
         if (!isMultiplayer || !isLocalPlayer) return;
@@ -1164,8 +1196,6 @@ Page {
 
     }
 
-
-
     // 在适当位置添加seedrandom函数
     function seedrandom(seed) {
         // 简单的伪随机数生成器实现
@@ -1175,17 +1205,24 @@ Page {
             return seed / 233280;
         };
     }
-
-   // signal gameStateChanged(var state)
     // 处理接收到的对手状态
-        Connections {
-            target: NetworkManager
-            function onGameStateReceived(state) {
-                if (isMultiplayer) {
-                    opponentState = state
-                }
+    Connections {
+        target: NetworkManager
+        function onGameStateReceived(state) {
+            if (isMultiplayer) {
+                opponentState = state
             }
         }
+        function onRandomSeedReceived(seed) {
+            setRandomSeed(seed);
+        }
+        function onGameResultReceived(isWinner, playerDist, opponentDist) {
+            showMultiplayerResult(isWinner, playerDist, opponentDist)
+        }
+        function onPlayerFinished(distance) {
+            opponentFinalDistance = distance
+        }
+    }
 
     // 在游戏循环中定期同步状态
     Timer {
@@ -1194,12 +1231,7 @@ Page {
         repeat: true
         onTriggered: syncGameState()
     }
-    Connections {
-        target: NetworkManager
-        function onRandomSeedReceived(seed) {
-            setRandomSeed(seed);
-        }
-    }
+
 
     // 处理远程玩家状态更新
     onGameStateChanged: {
@@ -1208,7 +1240,6 @@ Page {
             player_y = gameState.playerY
             isJumping = gameState.isJumping
             isSliding = gameState.isSliding
-            // 更新其他状态...
         }
 
     }
@@ -1225,7 +1256,7 @@ Page {
         gameRunning: gameRunning
         z: player.z - 1
         // 使用不同的外观区分对手
-        Image {source:"qrc:/player/Images/player/对手.png"}
+        Image {source:"qrc:/obstacle/Images/obstacle/地刺.png"}
         visible: isMultiplayer && opponentState && opponentState.distance !== undefined
 
     }
@@ -1278,7 +1309,27 @@ Page {
         }
         visible: isMultiplayer && opponentState && opponentState.distance !== undefined
     }
-
+    // 房主比较结果的计时器
+    Timer {
+        id: compareResultsTimer
+        interval: 1000 // 每秒检查一次
+        repeat: true
+        onTriggered: {
+            if (opponentFinalDistance > 0) {
+                // 双方都已完成，比较距离
+                compareResultsTimer.stop()
+                determineWinner()
+            }
+        }
+    }
+    // 确定赢家
+    function determineWinner() {
+        var isWinner = distance > opponentFinalDistance
+        // 发送结果给对手
+        NetworkManager.sendGameResult(isWinner, distance, opponentFinalDistance)
+        // 显示本地结果
+        showMultiplayerResult(isWinner, distance, opponentFinalDistance)
+    }
 
 
     //————————————————————————————奖励关卡——————————————————————————————

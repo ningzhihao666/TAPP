@@ -10,6 +10,10 @@ Page {
     property bool isHost:false
     property bool isReady: false
     property bool opponentReady: false
+    property bool isWinner: false
+    property int playerDistance: 0
+    property int opponentDistance: 0
+
 
     GameScreen {
         id: gameScreen
@@ -82,6 +86,72 @@ Page {
         }
     }
 
+    Dialog {
+        id: multiplayerResultDialog
+        height: Screen.height*3/5
+        width: Screen.width*3/5
+        anchors.centerIn: parent
+        title: "对战结果"
+        modal: true
+        closePolicy: Popup.NoAutoClose
+
+        Image {
+            source: "qrc:/BackGround/Images/BackGround/暂停面板背景.jpg"
+            anchors.fill: parent
+        }
+
+        Column {
+            anchors.centerIn: parent
+            spacing: 20
+
+            Label {
+                text: isWinner ? "胜利!" : "失败!"
+                color: isWinner ? "gold" : "red"
+                font.pixelSize: 48
+                font.bold: true
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Label {
+                text: "你的距离: " + (playerDistance/16).toFixed(1) + " 米"
+                font.pixelSize: 24
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Label {
+                text: "对手距离: " + (opponentDistance/16).toFixed(1) + " 米"
+                font.pixelSize: 24
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+        }
+
+        Rectangle {
+            height: parent.height*0.2
+            width: parent.width*0.5
+            radius: height/2
+            color: "lightgreen"
+            anchors {
+                bottom: parent.bottom
+                bottomMargin: parent.height*0.1
+                horizontalCenter: parent.horizontalCenter
+            }
+
+            Button {
+                anchors.fill: parent
+                background: Rectangle { color: "transparent" }
+                Label {
+                    text: "返回大厅"
+                    color: "black"
+                    anchors.centerIn: parent
+                }
+                onClicked: {
+                    multiplayerResultDialog.close()
+                    stackView.pop()
+                }
+            }
+        }
+    }
+
     Connections {
         target: NetworkManager
         function onPlayerReady() {
@@ -93,6 +163,8 @@ Page {
         function onOpponentConnected() {
                console.log("服务端确认连接成功！"); // 检查是否触发
                connectionStatus.color = "green"; // 更新UI
+               connectionStatus.children[0].text="已连接";
+
            }
 
         function onGameStarted() {  //疑似未触发
@@ -112,6 +184,15 @@ Page {
                     gameScreen.setRandomSeed(seed);
                 }
             }
+        function onPlayerDefeated() {
+               console.log("收到对手失败通知");
+               showMultiplayerResult(true); // true表示胜利
+           }
+
+           function onVictoryAchieved() {
+               console.log("收到对手胜利通知");
+               showMultiplayerResult(false); // false表示失败
+           }
     }
 
     Component.onCompleted: {
