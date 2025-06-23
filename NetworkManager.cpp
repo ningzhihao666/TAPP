@@ -333,6 +333,17 @@ void NetworkManager::onDataReceived()
                 emit playerReady();
             } else if (cmd == "start") {
                 emit gameStarted();
+            } else if (cmd == "finished") { // 玩家完成游戏
+                quint32 distance = data["distance"].toUInt();
+                emit playerFinished(distance);
+            } else if (cmd == "result") { // 游戏结果
+                bool isWinner = data["isWinner"].toBool();
+                quint32 playerDist = data["playerDistance"].toUInt();
+                quint32 opponentDist = data["opponentDistance"].toUInt();
+                // 添加接收调试输出
+                qDebug() << "收到游戏结果 - 玩家距离:" << playerDist << "对手距离:" << opponentDist
+                         << "胜利者:" << (isWinner ? "本地玩家" : "对手");
+                emit gameResultReceived(isWinner, playerDist, opponentDist);
             }
         } // 处理游戏状态
         else if (data.contains("playerX") && data.contains("playerY")) {
@@ -355,5 +366,32 @@ void NetworkManager::sendRandomSeed(quint32 seed)
         stream << data; // 序列化
         m_socket->write(buffer);
         qDebug() << "已发送随机种子:" << seed;
+    }
+}
+
+void NetworkManager::sendFinishNotification(quint32 distance)
+{
+    if (m_socket && m_socket->state() == QAbstractSocket::ConnectedState) {
+        QVariantMap data;
+        data["command"] = "finished";
+        data["distance"] = distance;
+
+        sendGameData(data);
+    }
+}
+
+void NetworkManager::sendGameResult(bool isWinner, quint32 playerDistance, quint32 opponentDistance)
+{
+    if (m_socket && m_socket->state() == QAbstractSocket::ConnectedState) {
+        QVariantMap data;
+        data["command"] = "result";
+        data["isWinner"] = isWinner;
+        data["playerDistance"] = playerDistance;
+        data["opponentDistance"] = opponentDistance;
+        // 添加调试输出
+        qDebug() << "发送游戏结果 - 玩家距离:" << playerDistance << "对手距离:" << opponentDistance
+                 << "胜利者:" << (isWinner ? "本地玩家" : "对手");
+
+        sendGameData(data);
     }
 }

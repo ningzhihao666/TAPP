@@ -36,6 +36,9 @@ public:
     Q_INVOKABLE void sendGameState(const QVariantMap &state);
     Q_INVOKABLE void sendRandomSeed(quint32 seed);
 
+    Q_INVOKABLE void sendFinishNotification(quint32 distance);
+    Q_INVOKABLE void sendGameResult(bool isWinner, quint32 playerDistance, quint32 opponentDistance);
+
 signals:
     void socketStateChanged();
     void peerDiscovered(const QString &ip, const QString &name);
@@ -46,10 +49,14 @@ signals:
     void isConnected();
     void serverStarted(quint16 port);
     void serverStartFailed(const QString &error);
+    void playerFinished(quint32 finalDistance);                                               // 玩家完成游戏信号
+    void gameResultReceived(bool isWinner, quint32 playerDistance, quint32 opponentDistance); // 游戏结果信号
 
     //游戏进行相关信号
-    void gameStarted(); // 游戏开始信号
-    void playerReady(); // 玩家准备信号
+    void gameStarted();     // 游戏开始信号
+    void playerReady();     // 玩家准备信号
+    void playerDefeated();  // 玩家被击败信号
+    void victoryAchieved(); // 胜利信号
 
     void randomSeedReceived(quint32 seed); //使用随机种子来同步确保随机生成的障碍物等等都是生成的一样的位置
 
