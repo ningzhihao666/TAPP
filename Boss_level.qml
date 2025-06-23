@@ -15,6 +15,7 @@ Page{
     property int  sc_y:Screen.height/100
     property bool gameBegin:false                         //游戏开始控制
     property int  ownCoins:0                              //金币数量
+    property bool first_open:false                        //控制难度选择窗口的显示
 
     //地图属性
     property int  tileSize:Screen.height*0.1              //每个格子的大小
@@ -58,7 +59,7 @@ Page{
     property real knockBackAngle:0                        //受击移动角度
     property bool isKnockback:false                       //是否被攻击后退
     property int  xuelian_Size:Screen.height*0.2          //血镰的大小
-    property int  deathEye_size:Screen.height*0.25         //死神之眼的大小
+    property int  deathEye_size:Screen.height*0.25        //死神之眼的大小
 
     //金币属性
     property int coin_size:Screen.height*0.05             //金币大小
@@ -83,7 +84,11 @@ Page{
 
     //图片资源
     property string dizhuan:"qrc:/boss_level/Images/boss_level/地砖.jpg"
-    property string qiangti:"qrc:/boss_level/Images/boss_level/墙体.png"
+    property string qiangti:"qrc:/boss_level/Images/boss_level/墙体.jpg"
+
+    Component.onCompleted: {
+        if(first_open) chos_le.open()
+    }
 
     //地图容器
     Item{
@@ -249,8 +254,9 @@ Page{
         color:"transparent"
         z:10
         Image{
-            source:"qrc:/player/Images/player/页面图.png"
+            source:"qrc:/boss_level/Images/boss_level/主角1.png"
             anchors.fill:parent
+            fillMode: Image.PreserveAspectFit
         }
 
         //玩家在地图上的实际位置(人物中心点位置)

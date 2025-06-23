@@ -19,8 +19,11 @@ Page{
     //本地存储数据
     property string historyScores:"0,0,0"                       //历史前三得分
     property string historyDistance:"0,0,0"                     //历史前三距离
+    property string historyCoins:"0"                            //历史金币数量
+    property string sysThumId:"1"                               //系统主题ID
     property int coin_num:0                                     //金币数量
     property int masonry_num:0                                  //砖石数量
+    property int thumId:1                                       //主题号
 
     // 转换为数组的只读属性
     property var history_Scores: historyScores.split(',').map(Number)
@@ -36,6 +39,8 @@ Page{
 
         property alias historyScores:page_begin.historyScores
         property alias historyDistance:page_begin.historyDistance
+        property alias historyCoins:page_begin.historyCoins
+        property alias sysThumId:page_begin.sysThumId
     }
 
     //初始化历史记录
@@ -50,10 +55,12 @@ Page{
         //转化字符串为数组
         var scoreArray=historyScores.split(',').map(Number)
         var distanceArray=historyDistance.split(',').map(Number)
+        var coins=Number(historyCoins)
 
         //更新记录
         scoreArray.push(score)
         distanceArray.push(distance)
+        coins+=coin_num
 
         //排序保留前三
         scoreArray.sort((a,b)=>b-a)
@@ -62,6 +69,8 @@ Page{
         //更新字符串属性
         historyScores=scoreArray.slice(0,3).join(',')
         historyDistance=distanceArray.slice(0,3).join(',')
+        historyCoins=coins.toString()
+        sysThumId=thumId.toString()
 
         gameSettings.sync()
     }
@@ -181,7 +190,7 @@ Page{
                 left:coin_l.right;  leftMargin: parent.width*0.04
                 verticalCenter: parent.verticalCenter
             }
-            Label{text:coin_num;  color:"black";  anchors.centerIn:parent  }
+            Label{text:historyCoins;  color:"black";  anchors.centerIn:parent  }
         }
     }
 
@@ -278,21 +287,33 @@ Page{
             background: Rectangle{ color:"transparent";}
             anchors{left:parent.left;  top:parent.top}
             Label{text:"跑酷模式"; color:"black"; anchors.centerIn:parent}
-            onClicked: { model_cs.name="跑酷模式" }
+            onClicked: {
+                model_cs.name="跑酷模式"
+                model_dialog=false
+                model.click_l=false
+            }
         }
         Button{
             height:parent.height;   width:parent.width/3;
             background: Rectangle{ color:"transparent";}
             anchors{horizontalCenter: parent.horizontalCenter;  top:parent.top}
             Label{text:"BOSS挑战"; color:"black"; anchors.centerIn:parent}
-            onClicked: { model_cs.name="BOSS挑战" }
+            onClicked: {
+                model_cs.name="BOSS挑战"
+                model_dialog=false
+                model.click_l=false
+            }
         }
         Button{
             height:parent.height;   width:parent.width/3
             background: Rectangle{ color:"transparent";}
             anchors{right:parent.right;  top:parent.top}
             Label{text:"双人互联"; color:"black"; anchors.centerIn:parent}
-            onClicked: { model_cs.name="双人互联" }
+            onClicked: {
+                model_cs.name="双人互联"
+                model_dialog=false
+                model.click_l=false
+            }
         }
     }
 
@@ -316,12 +337,13 @@ Page{
             onClicked: {
                 if(model_csl.text==="跑酷模式"){
                     stackView.replace("GameScreen.qml",{
-                                  "gameRunning":true
+                                  "gameRunning":true,
+                                  "thumId":thumId
                                   })
                 }
                 if(model_csl.text==="BOSS挑战"){
                     stackView.push("Boss_level.qml",{
-                                  "gameBegin":true
+                                  "first_open":true
                                   })
                 }
                 if(model_csl.text==="双人互联"){

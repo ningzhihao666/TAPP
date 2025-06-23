@@ -33,7 +33,7 @@ Rectangle {
         Button {
             background: Rectangle{ color:"white";   radius:5}
             text: "设置"
-            onClicked: stackView.push("Boss_level.qml")
+            onClicked: stackView.push("Settings.qml")
             anchors.horizontalCenter: parent.horizontalCenter
         }
 

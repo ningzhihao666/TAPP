@@ -18,6 +18,7 @@ Page {
     property int  sc_y: Screen.height/100                       //屏幕纵向划分为100份（因为手机横屏）
     property int  speed:sc_x*1                                  //速度
     property int  max_speed:sc_x*4                              //最大速度
+    property int  thumId:1                                      //主题号
 
     //—————————————————————————————————地面块属性————————————————————————————————————
     property int  groundheight:Screen.height*4/5                //初始化地面高度为屏幕下方1/5
@@ -149,6 +150,22 @@ Page {
         //初始化金币
         for(var i=0;i<10;i++){
             generateCoin()
+        }
+
+        //初始化主题
+        switch (thumId){
+        case 1:
+            background_img.source="qrc:/page_settings/Images/page_settings/春江花月.jpg"
+            break;
+        case 2:
+            background_img.source="qrc:/page_settings/Images/page_settings/皮卡丘.jpg"
+            break;
+        case 3:
+            background_img.source="qrc:/page_settings/Images/page_settings/线条小狗.jpg"
+            break;
+        case 4:
+            background_img.source="qrc:/page_settings/Images/page_settings/星空下的约定.jpg"
+            break;
         }
     }
 

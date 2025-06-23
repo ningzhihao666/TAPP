@@ -147,7 +147,8 @@ Page{
                 console.log("按钮被点击")
                 stackView.replace("Page_begin.qml",{
                                   "current_Score":score,
-                                  "current_Distance":distance
+                                  "current_Distance":distance,
+                                  "coin_num":coins_num
                                   })
             }
         }

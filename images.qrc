@@ -52,7 +52,6 @@
     </qresource>
     <qresource prefix="/boss_level">
         <file>Images/boss_level/手里剑.png</file>
-        <file>Images/boss_level/墙体.png</file>
         <file>Images/boss_level/生命.png</file>
         <file>Images/boss_level/boss.png</file>
         <file>Images/boss_level/攻击.png</file>
@@ -63,9 +62,20 @@
         <file>Images/boss_level/地砖.jpg</file>
         <file>Images/boss_level/血镰.png</file>
         <file>Images/boss_level/死神之眼.png</file>
+        <file>Images/boss_level/墙体.jpg</file>
+        <file>Images/boss_level/主角1.png</file>
     </qresource>
     <qresource prefix="/page_begin">
         <file>Images/page_begin/切换.png</file>
         <file>Images/page_begin/主页图.png</file>
+    </qresource>
+    <qresource prefix="/page_settings">
+        <file>Images/page_settings/返回.png</file>
+        <file>Images/page_settings/背景.jpg</file>
+        <file>Images/page_settings/星空下的约定.jpg</file>
+        <file>Images/page_settings/小白兔.jpg</file>
+        <file>Images/page_settings/线条小狗.jpg</file>
+        <file>Images/page_settings/皮卡丘.jpg</file>
+        <file>Images/page_settings/春江花月.jpg</file>
     </qresource>
 </RCC>
