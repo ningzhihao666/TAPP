@@ -19,6 +19,18 @@ Page {
     property int  speed:sc_x*1                                  //速度
     property int  max_speed:sc_x*4                              //最大速度
     property int  thumId:1                                      //主题号
+    property int  musicId:1                                     //音乐号
+
+    //音乐资源
+    property string music1:"qrc:/musics/musics/两难.mp3"
+    property string music2:"qrc:/musics/musics/My Heart Will Go On.mp3"
+    property string music3:"qrc:/musics/musics/无法忘记你.mp3"
+    property string music4:"qrc:/musics/musics/没成功前说什么都像借口.mp3"
+    property string music5:"qrc:/musics/musics/病变.mp3"
+    property string music6:"qrc:/musics/musics/跳楼机.mp3"
+    property string music7:"qrc:/musics/musics/这次你真的走了.mp3"
+    property string music8:"qrc:/musics/musics/那个男孩.mp3"
+    property string music9:"qrc:/musics/musics/阳光开朗大男孩.mp3"
 
     //—————————————————————————————————地面块属性————————————————————————————————————
     property int  groundheight:Screen.height*4/5                //初始化地面高度为屏幕下方1/5
@@ -57,6 +69,8 @@ Page {
     property real gravity:sc_y*1.4                              //重力加速度
     property int  jump_top:Screen.height*0.25                   //跳跃的最大距离
     property bool need_jump:false                               //用于死亡条件1是否需要跳跃
+    property int  jump_MaxNum:2                                 //最大跳跃次数
+    property int  jump_NumNow:0                                 //当前跳跃次数
 
     property int  nextground_x:1                                //下一个地面块的x坐标
     property int  nextground_top:Screen.height*4/5              //下一个地面块顶面top
@@ -110,6 +124,7 @@ Page {
     }
 
     MediaPlayer {
+        id:mediaplayer
         audioOutput: AudioOutput { volume:1 }
         source: "qrc:/musics/musics/两难.mp3"
         loops:MediaPlayer.Infinite
@@ -172,6 +187,36 @@ Page {
             break;
         case 4:
             background_img.source="qrc:/page_settings/Images/page_settings/星空下的约定.jpg"
+            break;
+        }
+
+        switch (musicId){
+        case 1:
+            mediaplayer.source=music1
+            break;
+        case 2:
+            mediaplayer.source=music2
+            break;
+        case 3:
+            mediaplayer.source=music3
+            break;
+        case 4:
+            mediaplayer.source=music4
+            break;
+        case 5:
+            mediaplayer.source=music5
+            break;
+        case 6:
+            mediaplayer.source=music6
+            break;
+        case 7:
+            mediaplayer.source=music7
+            break;
+        case 8:
+            mediaplayer.source=music8
+            break;
+        case 9:
+            mediaplayer.source=music9
             break;
         }
     }
@@ -253,9 +298,12 @@ Page {
     }
 
     //人物跳跃
-    function jump(){
+    function jump(is_daoju){
         if(!isJumping  && !isSliding){
-            isJumping=true
+            if(jump_NumNow<jump_MaxNum){
+                isJumping=true
+                if(!not_daoju) jump_NumNow++
+            }
         }
     }
 
@@ -471,6 +519,7 @@ Page {
                         gameOver()
                         return    }
                     player_y=ground.top-player_height
+                    jump_NumNow=0
                     isDowning=false             //下落停止
                 }
             }

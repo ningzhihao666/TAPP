@@ -31,6 +31,14 @@
     <qresource prefix="/musics">
         <file>musics/两难.mp3</file>
         <file>musics/跳楼机.mp3</file>
+        <file>musics/My Heart Will Go On.mp3</file>
+        <file>musics/这次你真的走了.mp3</file>
+        <file>musics/阳光开朗大男孩.mp3</file>
+        <file>musics/无法忘记你.mp3</file>
+        <file>musics/晴天.mp3</file>
+        <file>musics/那个男孩.mp3</file>
+        <file>musics/没成功前说什么都像借口.mp3</file>
+        <file>musics/病变.mp3</file>
     </qresource>
     <qresource prefix="/obstacle">
         <file>Images/obstacle/墙.png</file>
@@ -77,5 +85,6 @@
         <file>Images/page_settings/线条小狗.jpg</file>
         <file>Images/page_settings/皮卡丘.jpg</file>
         <file>Images/page_settings/春江花月.jpg</file>
+        <file>Images/page_settings/设置.png</file>
     </qresource>
 </RCC>

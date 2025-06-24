@@ -47,7 +47,8 @@ Item {
 
                 if (isInCollisionArea) {
                     // 在碰撞区域内
-                    jump();
+                    var not_daoju=false
+                    jump(not_daoju);
                     daojugenerator.removeDaoju(daoju);
                     daojugenerator.spawnReward(daoju);
                     i--;

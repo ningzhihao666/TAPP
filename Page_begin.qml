@@ -21,9 +21,11 @@ Page{
     property string historyDistance:"0,0,0"                     //历史前三距离
     property string historyCoins:"0"                            //历史金币数量
     property string sysThumId:"1"                               //系统主题ID
+    property string sysMusicId:"1"                              //系统音乐ID
     property int coin_num:0                                     //金币数量
     property int masonry_num:0                                  //砖石数量
     property int thumId:1                                       //主题号
+    property int musicId:1                                      //音乐号
 
     // 转换为数组的只读属性
     property var history_Scores: historyScores.split(',').map(Number)
@@ -41,6 +43,7 @@ Page{
         property alias historyDistance:page_begin.historyDistance
         property alias historyCoins:page_begin.historyCoins
         property alias sysThumId:page_begin.sysThumId
+        property alias sysMusicId:page_begin.sysMusicId                                    //音乐号
     }
 
     //初始化历史记录
@@ -71,6 +74,7 @@ Page{
         historyDistance=distanceArray.slice(0,3).join(',')
         historyCoins=coins.toString()
         sysThumId=thumId.toString()
+        sysMusicId=musicId.toString()
 
         gameSettings.sync()
     }
@@ -85,6 +89,21 @@ Page{
         source: "qrc:/musics/musics/跳楼机.mp3"
         loops:MediaPlayer.Infinite
         Component.onCompleted: { play() }
+    }
+
+    //设置
+    Button{
+        height:Screen.height*0.1;width:height
+        background: Rectangle{ color:"transparent" }
+        anchors{
+            left:parent.left;   leftMargin: Screen.width*0.05
+            top:parent.top;    topMargin: Screen.height*0.05
+        }
+        Image{
+            source:"qrc:/page_settings/Images/page_settings/设置.png"
+            anchors.fill:parent
+        }
+        onClicked: stackView.push("Settings.qml")
     }
 
     //历史得分榜
@@ -338,7 +357,8 @@ Page{
                 if(model_csl.text==="跑酷模式"){
                     stackView.replace("GameScreen.qml",{
                                   "gameRunning":true,
-                                  "thumId":thumId
+                                  "thumId":thumId,
+                                  "musicId":musicId
                                   })
                 }
                 if(model_csl.text==="BOSS挑战"){

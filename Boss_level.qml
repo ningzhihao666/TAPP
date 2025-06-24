@@ -215,7 +215,8 @@ Page{
                 Label{ text:"重新开始";  color:"black";  anchors.centerIn:parent}
                 onClicked: { gamePauseDialog.close();
                     stackView.replace("Boss_level.qml",{
-                                      "gameBegin":true
+                                      "gameBegin":true,
+                                      "coin_num":ownCoins
                                       }) }
                 anchors.fill:parent
             }
@@ -232,7 +233,9 @@ Page{
                 background: Rectangle{color:"transparent"}
                 Label{ text:"退出游戏";  color:"black";  anchors.centerIn:parent}
                 onClicked: {
-                    stackView.replace("Page_begin.qml")
+                    stackView.replace("Page_begin.qml",{
+                                      "coin_num":ownCoins
+                                      })
                     gamePauseDialog.close();
                 }
                 anchors.fill:parent
