@@ -29,9 +29,9 @@ qt_add_qml_module(apptiantiankupao
     QML_FILES BattlePage.qml
     SOURCES NetworkManager.h
     SOURCES NetworkManager.cpp
+    QML_FILES Settings.qml
     RESOURCES android/gradle/wrapper/gradle-wrapper.properties android/gradle/wrapper/gradle-wrapper.jar
     RESOURCES android/gradlew.bat android/gradlew android/gradle.properties android/build.gradle android/AndroidManifest.xml
-    QML_FILES Settings.qml
 )
 
 target_compile_features(apptiantiankupao PRIVATE cxx_std_20)

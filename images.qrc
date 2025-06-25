@@ -27,6 +27,7 @@
         <file>Images/BackGround/距离.png</file>
         <file>Images/BackGround/暂停.png</file>
         <file>Images/BackGround/暂停面板背景.jpg</file>
+        <file>Images/BackGround/元气之战.jpg</file>
     </qresource>
     <qresource prefix="/musics">
         <file>musics/两难.mp3</file>
