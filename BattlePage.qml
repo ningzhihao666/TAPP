@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import NetworkManager 1.0
+
 
 
 Page {
@@ -9,10 +9,12 @@ Page {
     property int targetPort:0
     property bool isHost:false
     property bool isReady: false
-    property bool opponentReady: false
-    property bool isWinner: false
-    property int playerDistance: 0
-    property int opponentDistance: 0
+    property bool opponentReady: false  //对手是否准备
+    property bool isWinner: false      //是否是赢家
+    property int playerDistance: 0     //本机玩家的距离
+    property int opponentDistance: 0   //对手目前的距离
+    property bool isMultiplayer: true  // 添加这个属性
+    property bool opponentDead: false  // 添加对手死亡状态
 
     Image{
         source:"qrc:/page_begin/Images/page_begin/互联进入页面.jpg"
@@ -64,13 +66,13 @@ Page {
             onClicked: {
                 // 如果是房主，先发送随机种子
                 if (isHost) {
-                    var seed = Math.floor(Math.random() * 1000000);
+                    var seed = 43
                     gameScreen.setRandomSeed(seed);
                     NetworkManager.sendRandomSeed(seed);
                 }
                 // 然后发送开始命令
                 NetworkManager.sendCommand("start");
-                gameScreen.startGame(); // 直接调用，避免依赖网络信号
+                gameScreen.startGame(); //开始游戏
             }
         }
 
@@ -89,6 +91,34 @@ Page {
             stackView.pop();
         }
     }
+    // 等待对手完成页面
+    Rectangle {
+        id: waitingPage
+        anchors.fill: parent
+        color: "#80000000" // 半透明黑色背景
+        visible: false
+        z: 10 // 确保在最上层
+
+        Column {
+            anchors.centerIn: parent
+            spacing: 20
+
+            Text {
+                text: "等待对手完成..."
+                color: "white"
+                font.pixelSize: 24
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            ProgressBar {
+                indeterminate: true
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width * 0.6
+            }
+        }
+    }
+
+
 
     Dialog {
         id: multiplayerResultDialog
@@ -188,15 +218,21 @@ Page {
                     gameScreen.setRandomSeed(seed);
                 }
             }
+        function onOpponentDefeated() {  //接收对手是否死亡游戏结束通知处理
+                gameScreen.opponentDead = true;
+
+            }
         function onPlayerDefeated() {
                console.log("收到对手失败通知");
                showMultiplayerResult(true); // true表示胜利
            }
 
            function onVictoryAchieved() {
-               console.log("收到对手胜利通知");
+               console.log("收到对手胜利通知");//表明本玩家是失败者，就关闭等待页面同时出现结算页面
+               waitingPage.visible=false;
                showMultiplayerResult(false); // false表示失败
            }
+
     }
 
     Component.onCompleted: {

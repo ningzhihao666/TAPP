@@ -9,15 +9,12 @@ Item {
     property bool isAttracting: false
     property int attractDuration: 5000  // 吸引力持续5秒
     property var coinGenerator
-
-
-    signal daojuCollected()
     signal obstacleHit()
     signal wallHit(var wall)
+    signal daojuCollected()
     signal attractActivated(int duration)  // 吸引力激活信号
     signal enlargeActivated(int duration)
     signal shieldActivated(int duration)
-
     property int  minObstacleSpacing: Screen.width*0.1       // 障碍物最小间距
 
     Timer {
@@ -41,14 +38,14 @@ Item {
 
                 // 检查玩家是否在碰撞区域内
                 const isInCollisionArea = player.y + player.height <= topCollider.y + topCollider.height + 5 &&
-                                        player.y + player.height >= topCollider.y &&
+                                        player.y + player.height >= topCollider.y*0.98 &&
                                         player.x + player.width > topCollider.x &&
                                         player.x < topCollider.x + topCollider.width;
 
                 if (isInCollisionArea) {
                     // 在碰撞区域内
-                    var not_daoju=false
-                    jump(not_daoju);
+                    var is_daoju=true
+                    jump(is_daoju);
                     daojugenerator.removeDaoju(daoju);
                     daojugenerator.spawnReward(daoju);
                     i--;
@@ -71,10 +68,10 @@ Item {
                         attractActivated(5000);
                         break;
                     case "enlarge":
-                        enlargeActivated(2000);
+                        enlargeActivated(5000);
                         break;
                     case "shield":
-                        shieldActivated(2000);
+                        shieldActivated(5000);
                         break;
                 }
                     daojugenerator.removeDaoju(daoju);

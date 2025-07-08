@@ -1,11 +1,11 @@
 // BattleLobby.qml - 对战大厅页面
 import QtQuick
 import QtQuick.Controls
-import NetworkManager 1.0  // 确保导入路径与注册时一致
+
 
 Page {
     id: battleLobby
-    property var discoveredPeers: ListModel {}
+    property var discoveredPeers: ListModel {}  //存放发现的房间
     property bool isHost: false  // 默认为客户端模式，创建房间时设为 true
 
     Image{
@@ -128,7 +128,7 @@ Page {
                         discoveredPeers.append({"ip": ip, "name": name});
                         statusText.text = "发现新房间: " + name;
                     }
-                }
+        }
 }
 
 }

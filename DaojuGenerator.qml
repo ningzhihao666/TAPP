@@ -16,11 +16,6 @@ Item {
     property real enlargeChance: 0.9
     property int maxTotal: 3
     property int maxPerType: 2
-    property var typeCount: ({
-           "double": 0,
-           "attract": 0,
-           "enlarge": 0
-       })
     property bool validParent: parent && parent.width > 0 && parent.height > 0
     property ListModel activeGrounds: ListModel {}
     property int consecutiveCount: 0
@@ -57,8 +52,9 @@ Item {
         }
     }
 
+//生成奖励道具
     function spawnReward(box) {
-        const rewardTypes = ["double", "attract", "enlarge","coin","shield"];
+        const rewardTypes = ["double", "attract", "enlarge","shield"];
         var index=Math.floor(Math.random()*rewardTypes.length)
         const type =rewardTypes[index];
 
@@ -108,6 +104,7 @@ Item {
         }
     }
 
+    //生成箱子
     function spawndaoju() {
         if (coolingDown || daojus.count >= maxTotal || activeGrounds.count === 0) return;
 
@@ -215,7 +212,7 @@ Item {
             property string type: "box"
             property var groundRef
             property real speed: 0
-            property bool isTouched: false
+
             color: "transparent"
 
             Rectangle {
@@ -231,7 +228,7 @@ Item {
             }
 
             Timer {
-                interval: 16
+                interval: 1
                 running: daojugenerator.running
                 repeat: true
                 onTriggered: {

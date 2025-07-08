@@ -10,8 +10,8 @@
 #include <QVariantMap>
 #include <QAbstractSocket>
 #include <qqmlintegration.h>
-#include <QQmlEngine> // 添加这行
-#include <QJSEngine>  // 添加这行
+#include <QQmlEngine>
+#include <QJSEngine>
 
 class NetworkManager : public QObject
 {
@@ -57,6 +57,7 @@ signals:
     void playerReady();     // 玩家准备信号
     void playerDefeated();  // 玩家被击败信号
     void victoryAchieved(); // 胜利信号
+    void opponentDefeated(); // 对手被击败信号
 
     void randomSeedReceived(quint32 seed); //使用随机种子来同步确保随机生成的障碍物等等都是生成的一样的位置
 

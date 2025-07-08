@@ -340,10 +340,10 @@ void NetworkManager::onDataReceived()
                 bool isWinner = data["isWinner"].toBool();
                 quint32 playerDist = data["playerDistance"].toUInt();
                 quint32 opponentDist = data["opponentDistance"].toUInt();
-                // 添加接收调试输出
-                qDebug() << "收到游戏结果 - 玩家距离:" << playerDist << "对手距离:" << opponentDist
-                         << "胜利者:" << (isWinner ? "本地玩家" : "对手");
+                //qDebug() << "收到游戏结果 - 玩家距离:" << playerDist << "对手距离:" << opponentDist << "胜利者:" << (isWinner ? "本地玩家" : "对手");
                 emit gameResultReceived(isWinner, playerDist, opponentDist);
+            } else if (cmd == "defeated") {
+                emit opponentDefeated();
             }
         } // 处理游戏状态
         else if (data.contains("playerX") && data.contains("playerY")) {
