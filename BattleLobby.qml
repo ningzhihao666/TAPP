@@ -1,7 +1,7 @@
 // BattleLobby.qml - 对战大厅页面
 import QtQuick
 import QtQuick.Controls
-
+import QtQuick.Window
 
 Page {
     id: battleLobby
@@ -14,11 +14,19 @@ Page {
     }
 
     Column {
-        anchors.centerIn: parent
-        spacing: 20
+        height:Screen.height*0.8
+        width:Screen.width*0.3
+        anchors{
+            left:parent.left;    leftMargin: Screen.width*0.05
+            verticalCenter: parent.verticalCenter
+        }
+
+        spacing: parent.height*0.1
 
         Button {
+            height:parent.height*0.15;  width:parent.width*0.6
             text: "创建房间"
+            anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
                 try {
                     // 先启动服务器
@@ -41,6 +49,8 @@ Page {
 
         Button {
             text: "搜索房间"
+            height:parent.height*0.15;  width:parent.width*0.6
+            anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
                 statusText.text = "正在搜索房间..."
                 try {
@@ -68,10 +78,39 @@ Page {
             }
         }
 
+        Button {
+            text: "返回"
+            height:parent.height*0.15;  width:parent.width*0.6
+            anchors.horizontalCenter: parent.horizontalCenter
+            onClicked: stackView.pop()
+        }
+    }
+
+    Rectangle{
+        width: Screen.width*0.6;  height: Screen.height*0.8
+        radius:width*0.15;    border.width:Screen.height*0.05;    color:"transparent"
+        border.color:"lightblue"
+        anchors{
+            right:parent.right
+            rightMargin: Screen.width*0.05
+            verticalCenter: parent.verticalCenter
+        }
+
+        Rectangle{
+            id:liebiao;   color:"transparent"
+            height:parent.height*0.1;   width:parent.width*0.4;  radius:width/8
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top:parent.top
+            Label{ text:"房间列表";  color:"black";  anchors.centerIn: parent}
+        }
         ListView {
-            width: 300
-            height: 200
+            height:parent.height*0.9; width:parent.width
+            anchors{
+                top:liebiao.bottom
+                horizontalCenter: parent.horizontalCenter
+            }
             model: discoveredPeers
+
             delegate: Button {
                 width: parent.width
                 text: model.name + " (" + model.ip + ")"
@@ -83,11 +122,6 @@ Page {
                     })
                 }
             }
-        }
-
-        Button {
-            text: "返回"
-            onClicked: stackView.pop()
         }
     }
 

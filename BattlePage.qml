@@ -32,10 +32,14 @@ Page {
     // 连接状态显示
     Rectangle {
         id: connectionStatus
-        anchors.top: parent.top
-        anchors.horizontalCenter: parent.horizontalCenter
-        width: 200
-        height: 40
+        anchors{
+            right:parent.right;   rightMargin: Screen.width*0.05
+            top:parent.top;   topMargin: Screen.height*0.14
+
+        }
+
+        width: Screen.width*0.1
+        height: Screen.height*0.1
         color: NetworkManager.socketState === 3 ? "green" : "red"
         Text {
             anchors.centerIn: parent
@@ -82,15 +86,25 @@ Page {
         }
     }
 
-    Button {
-        text: "断开连接"
-        anchors.bottom: parent.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-        onClicked: {
-            NetworkManager.disconnectFromHost();
-            stackView.pop();
+    Rectangle{
+        width:Screen.width*0.1
+        height:Screen.height*0.1
+
+        anchors{
+            left:parent.left;  leftMargin:parent.width*0.05
+            top:parent.top;   topMargin: Screen.height*0.14
+        }
+        Label{ text: "断开连接"; color:"black"; anchors.centerIn:parent}
+        Button {
+            background: Rectangle{ color:"transparent" }
+            onClicked: {
+                NetworkManager.disconnectFromHost();
+                stackView.pop();
+            }
         }
     }
+
+
     // 等待对手完成页面
     Rectangle {
         id: waitingPage
