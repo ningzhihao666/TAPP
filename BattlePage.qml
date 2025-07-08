@@ -14,6 +14,10 @@ Page {
     property int playerDistance: 0
     property int opponentDistance: 0
 
+    Image{
+        source:"qrc:/page_begin/Images/page_begin/互联进入页面.jpg"
+        anchors.fill:parent
+    }
 
     GameScreen {
         id: gameScreen

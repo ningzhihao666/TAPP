@@ -77,6 +77,8 @@
     <qresource prefix="/page_begin">
         <file>Images/page_begin/切换.png</file>
         <file>Images/page_begin/主页图.png</file>
+        <file>Images/page_begin/互联进入页面.jpg</file>
+        <file>Images/page_begin/互联大厅页面.jpg</file>
     </qresource>
     <qresource prefix="/page_settings">
         <file>Images/page_settings/返回.png</file>

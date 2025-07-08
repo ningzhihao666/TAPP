@@ -8,6 +8,11 @@ Page {
     property var discoveredPeers: ListModel {}
     property bool isHost: false  // 默认为客户端模式，创建房间时设为 true
 
+    Image{
+        source:"qrc:/page_begin/Images/page_begin/互联大厅页面.jpg"
+        anchors.fill:parent
+    }
+
     Column {
         anchors.centerIn: parent
         spacing: 20
